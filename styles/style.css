@@ -1,0 +1,235 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Montserrat", Arial, sans-serif;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+a {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+header {
+  min-height: 380px;
+}
+header .mainInfo {
+  min-height: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  line-height: 1.55;
+  padding-top: 60px;
+  padding-bottom: 45px;
+}
+header .mainInfo .mainName {
+  font-size: 50px;
+  text-transform: uppercase;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  color: #821212;
+}
+header .mainInfo .mainDesription {
+  font-size: 20px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 300;
+}
+header .mainInfo .socialMedia {
+  height: 36px;
+}
+header ul {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+}
+
+.pictures {
+  min-height: 633px;
+  height: auto;
+  background-color: #821212;
+}
+.pictures .picturesPhoto {
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 105px;
+  padding-bottom: 90px;
+  justify-content: space-around;
+  align-content: center;
+}
+.pictures .picturesPhoto .imgPictures {
+  width: 360px;
+  height: 360px;
+  object-fit: cover;
+  margin-bottom: 20px;
+}
+
+.christmasMarathon {
+  padding-top: 105px;
+  padding-bottom: 90px;
+  height: 341px;
+}
+.christmasMarathon_title {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(545px, 1fr));
+  text-align: center;
+  align-content: center;
+  justify-content: center;
+  margin-bottom: 105px;
+}
+.christmasMarathon_title .christmasMarathon_title_L h1 {
+  font-weight: 600;
+  font-size: clamp(24px, 15vw, 74px);
+  color: #821212;
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+  text-align: left;
+}
+.christmasMarathon_title .christmasMarathon_title_L p {
+  text-align: left;
+  font-family: "Montserrat", sans-serif;
+  font-size: clamp(10px, 3vw, 14px);
+  font-weight: bold;
+  line-height: 1.35;
+  color: #666;
+}
+.christmasMarathon_title .christmasMarathon_title_R p {
+  text-align: left;
+  font-family: "Montserrat", sans-serif;
+  font-size: clamp(14px, 3vw, 18px);
+  font-weight: 300;
+  line-height: 1.5;
+}
+.christmasMarathon_title .christmasMarathon_title_R p .textItalic {
+  font-style: italic;
+}
+.christmasMarathon_title .christmasMarathon_title_R .textBold {
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+}
+.christmasMarathon_title button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.backPrices {
+  height: 135px;
+  background-color: #821212;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.backPrices h1 {
+  color: white;
+  text-transform: uppercase;
+  font-family: "Montserrat", sans-serif;
+  font-size: 52px;
+  font-weight: 600;
+}
+
+.prices_cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.prices_cards .card {
+  display: flex;
+  flex-direction: column;
+  margin-right: 20px;
+  margin-left: 20px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  width: 320px;
+  height: 381px;
+  align-items: center;
+  text-align: center;
+  box-sizing: border-box;
+}
+.prices_cards .card img {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 25px;
+}
+.prices_cards .card h2 {
+  font-family: "Montserrat", sans-serif;
+  margin-top: 12px;
+  margin-bottom: 25px;
+  color: #821212;
+}
+.prices_cards .card p {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.7;
+}
+.prices_cards .card p .textBold {
+  font-weight: bold;
+}
+.prices_cards .card .price {
+  margin-top: auto;
+  font-weight: 600;
+  font-size: 20px;
+  text-transform: uppercase;
+}
+.prices .buttonContainer {
+  display: flex;
+  justify-content: center;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 75px;
+  margin-bottom: 90px;
+}
+.prices .buttonContainer .button {
+  width: 270px;
+  height: 60px;
+  background-color: #821212;
+  border-radius: 30px;
+  font-size: 16px;
+}
+.prices .buttonContainer .button a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  color: white;
+  text-transform: uppercase;
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+}
+
+@media (max-width: 1110px) {
+  .christmasMarathon_title {
+    margin-bottom: 0px;
+    grid-template-columns: 1fr;
+  }
+  .christmasMarathon_title h1 {
+    text-align: center;
+  }
+  .christmasMarathon_title p {
+    text-align: center;
+    padding: 30px;
+  }
+}
+@media (max-width: 360px) {
+  .pictures {
+    margin-top: 20px;
+  }
+  .pictures .picturesPhoto .imgPictures {
+    width: 300px;
+    height: 300px;
+  }
+}/*# sourceMappingURL=style.css.map */
