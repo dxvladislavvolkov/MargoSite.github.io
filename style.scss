@@ -1,3 +1,5 @@
+
+
 * {
   margin: 0;
   padding: 0;
@@ -43,7 +45,7 @@ header {
     }
 
     .mainDesription {
-      font-size: 20px;
+      font-size: 18px;
       font-family: $font-default;
       font-weight: 300;
     }
@@ -54,12 +56,22 @@ header {
   }
 
   ul {
-    list-style-type: none;
     display: flex;
-    align-items: center;
     justify-content: center;
-    gap: 30px;
-  }
+    align-items: center;
+    gap: 15px;
+
+    li {
+        width: 30px;
+        height: 30px;
+        background-color: $color-default;
+        border-radius: 50%; /* Делает элемент круглым */
+        display: flex;
+        align-items: center; /* Центровка содержимого по вертикали */
+        justify-content: center; /* Центровка содержимого по горизонтали */
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+}
 }
 
 .pictures {
@@ -87,7 +99,7 @@ header {
 .christmasMarathon {
   padding-top: 105px;
   padding-bottom: 90px;
-  height: 341px;
+  min-height: 341px;
 
   &_title {
     display: grid;
@@ -175,7 +187,7 @@ header {
       margin-left: 20px;
       margin-top: 30px;
       margin-bottom: 30px;
-      width: 320px;
+      width: 300px;
       height: 381px;
       align-items: center;
       text-align: center;
@@ -197,7 +209,7 @@ header {
       p {
         font-family: $font-default;
         font-weight: 400;
-        font-size: 13px;
+        font-size: 12px;
         line-height: 1.7;
 
         .textBold {
@@ -244,6 +256,324 @@ header {
     }
   }
 }
+
+.aboutMe {
+    .backPrices {
+        margin-bottom: 90px;
+    }
+
+    .aboutMeFull {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+        .aboutMeDescription {
+            font-size: 16px;
+            line-height: 1.9;
+            margin: 0 20px;
+            min-width: 460px;
+
+            .mission {
+                color: $color-default;
+                font-weight: bold;
+            }
+        }
+
+        .aboutMePhoto {
+            img {
+                min-width: 460px;
+                height: 612px;
+                margin: 0 55px;
+            }
+        }
+    }
+}
+
+.myEducation {
+    margin-bottom: 90px;
+
+    .backPrices {
+        margin: 90px 0;
+    }
+
+    %animation-default {
+        opacity: 1 !important;
+        z-index: 3;
+      }
+      
+      @mixin carousel($items, $animation: 'default') {
+        .carousel {
+            position: relative;
+            width: 900px; /* Фиксированная ширина */
+            height: 560px; /* Фиксированная высота */
+            overflow: hidden; /* Скрываем всё, что выходит за границы */
+            margin: 0 auto;
+      
+          > input[type="radio"] {
+            position: absolute;
+            left: 0;
+            opacity: 0;
+            top: 0;
+      
+            &:checked {
+              ~ .carousel__items .carousel__item,
+              ~ .carousel__prev > label,
+              ~ .carousel__next > label {
+                opacity: 0;
+              }
+            }
+      
+            @for $i from 1 through $items {
+              &:nth-child(#{$i}) {
+                &:checked {
+                  ~ .carousel__items .carousel__item {
+                    @if $animation == 'default' {
+                      &:nth-child(#{$i}) {
+                        opacity: 1;
+                      }
+                    }
+                  }
+      
+                  ~ .carousel__prev {
+                    > label {
+                      @if $i == 1 {
+                        &:nth-child(#{$items}) {
+                          @extend %animation-default;
+                        }
+                      } @else if $i == $items {
+                        &:nth-child(#{$items - 1}) {
+                          @extend %animation-default;
+                        }
+                      } @else {
+                        &:nth-child(#{$i - 1}) {
+                          @extend %animation-default;
+                        }
+                      }
+                    }
+                  }
+      
+                  ~ .carousel__next {
+                    > label {
+                      @if $i == $items {
+                        &:nth-child(1) {
+                          @extend %animation-default;
+                        }
+                      } @else {
+                        &:nth-child(#{$i + 1}) {
+                          @extend %animation-default;
+                        }
+                      }
+                    }
+                  }
+      
+                  ~ .carousel__nav {
+                    > label {
+                      &:nth-child(#{$i}) {
+                        background: #821212;
+                        cursor: default;
+                        pointer-events: none;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+      
+          &__items {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            width: 100%; /* Подстраиваем под ширину карусели */
+            height: 100%; /* Подстраиваем под высоту карусели */
+            display: flex; /* Упрощённое позиционирование для карусели */
+            position: relative;
+          }
+      
+          &__item {
+            flex: 0 0 100%; /* Каждый элемент занимает 100% ширины карусели */
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            transition: opacity 2s; /* Плавное появление */
+            opacity: 0; /* Скрываем по умолчанию */
+            z-index: 1;
+      
+            img {
+                width: 100%; /* Ширина под контейнер */
+                height: 100%; /* Высота под контейнер */
+                object-fit: contain; /* Вписываем фото без обрезки */
+                display: block;
+            }
+          }
+      
+          &__prev,
+          &__next {
+            > label {
+              border-radius: 50%;
+              cursor: pointer;
+              display: block;
+              width: 40px;
+              height: 40px;
+              position: absolute;
+              top: 50%;
+              transform: translateY(-50%);
+              -webkit-transform: translateY(-50%);
+              transition: all .3s ease;
+              -webkit-transition: all .3s ease;
+              opacity: 0;
+              z-index: 2;
+      
+              &:hover,
+              &:focus {
+                opacity: .5 !important;
+              }
+      
+              &:before,
+              &:after {
+                content: "";
+                position: absolute;
+                width: inherit;
+                height: inherit;
+              }
+      
+              &:before {
+                background: linear-gradient(to top, #821212 0%, #821212 10%, rgba(51, 51, 51, 0) 10%),
+                            linear-gradient(to left, #821212 0%, #821212 10%, rgba(51, 51, 51, 0) 10%);
+                width: 60%;
+                height: 60%;
+                top: 20%;
+              }
+            }
+          }
+      
+          &__prev {
+            > label {
+              left: 2%;
+      
+              &:before {
+                left: 35%;
+                top: 20%;
+                transform: rotate(135deg);
+                -webkit-transform: rotate(135deg);
+              }
+            }
+          }
+      
+          &__next {
+            > label {
+              right: 2%;
+      
+              &:before {
+                left: 10%;
+                transform: rotate(315deg);
+                -webkit-transform: rotate(315deg);
+              }
+            }
+          }
+      
+          &__nav {
+            position: absolute;
+            bottom: 3%;
+            left: 0;
+            text-align: center;
+            width: 100%;
+            z-index: 3;
+      
+            > label {
+              border: 1px solid #666;
+              display: inline-block;
+              border-radius: 50%;
+              cursor: pointer;
+              margin: 0 .125%;
+              width: 20px;
+              height: 20px;
+            }
+          }
+        }
+      }
+      
+      *,
+      *:before,
+      *:after {
+        box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+      }
+      
+      body {
+        background: #fcfcfc;
+        margin: 0;
+      }
+      
+      .container {
+        width: 900px;
+        min-width: 900px;
+        margin: 50px auto;
+      }
+      
+      @include carousel(5);
+}
+
+footer {
+    background-color: $color-default;
+    height: 560px;
+    text-align: center;
+
+    .footerText {
+        padding-top: 90px;
+
+        h3 {
+            font-weight: 600;
+            font-size: 36px;
+            color: white;
+    
+        }
+    }
+
+    .footerDivider {
+        background-color: white;
+        max-width: 100px;
+        width: 100%;
+        height: 1px;
+        margin-top: 45px;
+    }
+
+    .margin-auto {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .footerContact {
+        padding-top: 85px;
+        p {
+            color: white;
+        }
+    }
+
+    .footerSocial {
+        padding-top: 70px;
+        ul {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 5px;
+
+            li {
+                width: 30px;
+                height: 30px;
+                background-color: white;
+                border-radius: 50%; /* Делает элемент круглым */
+                display: flex;
+                align-items: center; /* Центровка содержимого по вертикали */
+                justify-content: center; /* Центровка содержимого по горизонтали */
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            }
+        }
+    }
+}
+
 
 @media (max-width: 1110px) {
   .christmasMarathon {
