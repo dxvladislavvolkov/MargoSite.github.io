@@ -60,18 +60,34 @@ header {
     justify-content: center;
     align-items: center;
     gap: 15px;
-
+  
     li {
-        width: 30px;
-        height: 30px;
-        background-color: $color-default;
-        border-radius: 50%; /* Делает элемент круглым */
-        display: flex;
-        align-items: center; /* Центровка содержимого по вертикали */
-        justify-content: center; /* Центровка содержимого по горизонтали */
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      width: 30px;
+      height: 30px;
+      background-color: $color-default;
+      border-radius: 50%; /* Делает элемент круглым */
+      display: flex;
+      align-items: center; /* Центровка содержимого по вертикали */
+      justify-content: center; /* Центровка содержимого по горизонтали */
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     }
-}
+  
+    a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%; /* Растягиваем <a> на весь размер родителя */
+      height: 100%; /* Аналогично с высотой */
+      border-radius: 50%; /* Подстраиваем под форму круга */
+      text-decoration: none; /* Убираем стандартное подчеркивание ссылок */
+    }
+  
+    img {
+      max-width: 100%; /* Масштабируем картинку */
+      max-height: 100%;
+      border-radius: 50%; /* Убедитесь, что картинка тоже круглая */
+    }
+  }
 }
 
 .pictures {
@@ -558,19 +574,35 @@ footer {
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 5px;
-
+            gap: 15px;
+          
             li {
-                width: 30px;
-                height: 30px;
-                background-color: white;
-                border-radius: 50%; /* Делает элемент круглым */
-                display: flex;
-                align-items: center; /* Центровка содержимого по вертикали */
-                justify-content: center; /* Центровка содержимого по горизонтали */
-                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+              width: 30px;
+              height: 30px;
+              background-color: white;
+              border-radius: 50%; /* Делает элемент круглым */
+              display: flex;
+              align-items: center; /* Центровка содержимого по вертикали */
+              justify-content: center; /* Центровка содержимого по горизонтали */
+              box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
             }
-        }
+          
+            a {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              width: 100%; /* Растягиваем <a> на весь размер родителя */
+              height: 100%; /* Аналогично с высотой */
+              border-radius: 50%; /* Подстраиваем под форму круга */
+              text-decoration: none; /* Убираем стандартное подчеркивание ссылок */
+            }
+          
+            img {
+              max-width: 100%; /* Масштабируем картинку */
+              max-height: 100%;
+              border-radius: 50%; /* Убедитесь, что картинка тоже круглая */
+            }
+          }
     }
 }
 
