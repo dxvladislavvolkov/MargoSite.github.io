@@ -239,22 +239,40 @@ header ul img {
   margin-bottom: 90px;
 }
 .aboutMe .aboutMeFull {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
 .aboutMe .aboutMeFull .aboutMeDescription {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-size: 16px;
   line-height: 1.9;
-  margin: 0 20px;
+  width: 50%;
   min-width: 460px;
+  max-width: 600px;
+  padding-bottom: 20px;
+}
+.aboutMe .aboutMeFull .aboutMeDescription p {
+  margin: 0;
 }
 .aboutMe .aboutMeFull .aboutMeDescription .mission {
   color: #821212;
   font-weight: bold;
 }
+.aboutMe .aboutMeFull .aboutMePhoto {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+}
 .aboutMe .aboutMeFull .aboutMePhoto img {
-  min-width: 460px;
-  height: 612px;
+  width: 100%;
+  max-width: 480px;
+  height: auto;
   margin: 0 55px;
 }
 
