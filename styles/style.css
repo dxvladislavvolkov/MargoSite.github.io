@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   margin: 0;
   padding: 0;
@@ -39,7 +40,7 @@ header .mainInfo .mainName {
   color: #821212;
 }
 header .mainInfo .mainDesription {
-  font-size: 20px;
+  font-size: 18px;
   font-family: "Montserrat", sans-serif;
   font-weight: 300;
 }
@@ -47,11 +48,20 @@ header .mainInfo .socialMedia {
   height: 36px;
 }
 header ul {
-  list-style-type: none;
   display: flex;
-  align-items: center;
   justify-content: center;
-  gap: 30px;
+  align-items: center;
+  gap: 15px;
+}
+header ul li {
+  width: 30px;
+  height: 30px;
+  background-color: #821212;
+  border-radius: 50%; /* Делает элемент круглым */
+  display: flex;
+  align-items: center; /* Центровка содержимого по вертикали */
+  justify-content: center; /* Центровка содержимого по горизонтали */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .pictures {
@@ -77,7 +87,7 @@ header ul {
 .christmasMarathon {
   padding-top: 105px;
   padding-bottom: 90px;
-  height: 341px;
+  min-height: 341px;
 }
 .christmasMarathon_title {
   display: grid;
@@ -151,7 +161,7 @@ header ul {
   margin-left: 20px;
   margin-top: 30px;
   margin-bottom: 30px;
-  width: 320px;
+  width: 300px;
   height: 381px;
   align-items: center;
   text-align: center;
@@ -171,7 +181,7 @@ header ul {
 .prices_cards .card p {
   font-family: "Montserrat", sans-serif;
   font-weight: 400;
-  font-size: 13px;
+  font-size: 12px;
   line-height: 1.7;
 }
 .prices_cards .card p .textBold {
@@ -209,6 +219,254 @@ header ul {
   text-transform: uppercase;
   font-family: "Montserrat", sans-serif;
   font-weight: bold;
+}
+
+.aboutMe .backPrices {
+  margin-bottom: 90px;
+}
+.aboutMe .aboutMeFull {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.aboutMe .aboutMeFull .aboutMeDescription {
+  font-size: 16px;
+  line-height: 1.9;
+  margin: 0 20px;
+  min-width: 460px;
+}
+.aboutMe .aboutMeFull .aboutMeDescription .mission {
+  color: #821212;
+  font-weight: bold;
+}
+.aboutMe .aboutMeFull .aboutMePhoto img {
+  min-width: 460px;
+  height: 612px;
+  margin: 0 55px;
+}
+
+.myEducation {
+  margin-bottom: 90px;
+}
+.myEducation .backPrices {
+  margin: 90px 0;
+}
+.myEducation .carousel > input[type=radio]:nth-child(5):checked ~ .carousel__next > label:nth-child(1), .myEducation .carousel > input[type=radio]:nth-child(5):checked ~ .carousel__prev > label:nth-child(4), .myEducation .carousel > input[type=radio]:nth-child(4):checked ~ .carousel__next > label:nth-child(5), .myEducation .carousel > input[type=radio]:nth-child(4):checked ~ .carousel__prev > label:nth-child(3), .myEducation .carousel > input[type=radio]:nth-child(3):checked ~ .carousel__next > label:nth-child(4), .myEducation .carousel > input[type=radio]:nth-child(3):checked ~ .carousel__prev > label:nth-child(2), .myEducation .carousel > input[type=radio]:nth-child(2):checked ~ .carousel__next > label:nth-child(3), .myEducation .carousel > input[type=radio]:nth-child(2):checked ~ .carousel__prev > label:nth-child(1), .myEducation .carousel > input[type=radio]:nth-child(1):checked ~ .carousel__next > label:nth-child(2), .myEducation .carousel > input[type=radio]:nth-child(1):checked ~ .carousel__prev > label:nth-child(5) {
+  opacity: 1 !important;
+  z-index: 3;
+}
+.myEducation *,
+.myEducation *:before,
+.myEducation *:after {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+.myEducation body {
+  background: #fcfcfc;
+  margin: 0;
+}
+.myEducation .container {
+  width: 900px;
+  min-width: 900px;
+  margin: 50px auto;
+}
+.myEducation .carousel {
+  position: relative;
+  width: 900px; /* Фиксированная ширина */
+  height: 560px; /* Фиксированная высота */
+  overflow: hidden; /* Скрываем всё, что выходит за границы */
+  margin: 0 auto;
+}
+.myEducation .carousel > input[type=radio] {
+  position: absolute;
+  left: 0;
+  opacity: 0;
+  top: 0;
+}
+.myEducation .carousel > input[type=radio]:checked ~ .carousel__items .carousel__item,
+.myEducation .carousel > input[type=radio]:checked ~ .carousel__prev > label,
+.myEducation .carousel > input[type=radio]:checked ~ .carousel__next > label {
+  opacity: 0;
+}
+.myEducation .carousel > input[type=radio]:nth-child(1):checked ~ .carousel__items .carousel__item:nth-child(1) {
+  opacity: 1;
+}
+.myEducation .carousel > input[type=radio]:nth-child(1):checked ~ .carousel__nav > label:nth-child(1) {
+  background: #821212;
+  cursor: default;
+  pointer-events: none;
+}
+.myEducation .carousel > input[type=radio]:nth-child(2):checked ~ .carousel__items .carousel__item:nth-child(2) {
+  opacity: 1;
+}
+.myEducation .carousel > input[type=radio]:nth-child(2):checked ~ .carousel__nav > label:nth-child(2) {
+  background: #821212;
+  cursor: default;
+  pointer-events: none;
+}
+.myEducation .carousel > input[type=radio]:nth-child(3):checked ~ .carousel__items .carousel__item:nth-child(3) {
+  opacity: 1;
+}
+.myEducation .carousel > input[type=radio]:nth-child(3):checked ~ .carousel__nav > label:nth-child(3) {
+  background: #821212;
+  cursor: default;
+  pointer-events: none;
+}
+.myEducation .carousel > input[type=radio]:nth-child(4):checked ~ .carousel__items .carousel__item:nth-child(4) {
+  opacity: 1;
+}
+.myEducation .carousel > input[type=radio]:nth-child(4):checked ~ .carousel__nav > label:nth-child(4) {
+  background: #821212;
+  cursor: default;
+  pointer-events: none;
+}
+.myEducation .carousel > input[type=radio]:nth-child(5):checked ~ .carousel__items .carousel__item:nth-child(5) {
+  opacity: 1;
+}
+.myEducation .carousel > input[type=radio]:nth-child(5):checked ~ .carousel__nav > label:nth-child(5) {
+  background: #821212;
+  cursor: default;
+  pointer-events: none;
+}
+.myEducation .carousel__items {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  width: 100%; /* Подстраиваем под ширину карусели */
+  height: 100%; /* Подстраиваем под высоту карусели */
+  display: flex; /* Упрощённое позиционирование для карусели */
+  position: relative;
+}
+.myEducation .carousel__item {
+  flex: 0 0 100%; /* Каждый элемент занимает 100% ширины карусели */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: opacity 2s; /* Плавное появление */
+  opacity: 0; /* Скрываем по умолчанию */
+  z-index: 1;
+}
+.myEducation .carousel__item img {
+  width: 100%; /* Ширина под контейнер */
+  height: 100%; /* Высота под контейнер */
+  object-fit: contain; /* Вписываем фото без обрезки */
+  display: block;
+}
+.myEducation .carousel__prev > label, .myEducation .carousel__next > label {
+  border-radius: 50%;
+  cursor: pointer;
+  display: block;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  opacity: 0;
+  z-index: 2;
+}
+.myEducation .carousel__prev > label:hover, .myEducation .carousel__prev > label:focus, .myEducation .carousel__next > label:hover, .myEducation .carousel__next > label:focus {
+  opacity: 0.5 !important;
+}
+.myEducation .carousel__prev > label:before, .myEducation .carousel__prev > label:after, .myEducation .carousel__next > label:before, .myEducation .carousel__next > label:after {
+  content: "";
+  position: absolute;
+  width: inherit;
+  height: inherit;
+}
+.myEducation .carousel__prev > label:before, .myEducation .carousel__next > label:before {
+  background: linear-gradient(to top, #821212 0%, #821212 10%, rgba(51, 51, 51, 0) 10%), linear-gradient(to left, #821212 0%, #821212 10%, rgba(51, 51, 51, 0) 10%);
+  width: 60%;
+  height: 60%;
+  top: 20%;
+}
+.myEducation .carousel__prev > label {
+  left: 2%;
+}
+.myEducation .carousel__prev > label:before {
+  left: 35%;
+  top: 20%;
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+}
+.myEducation .carousel__next > label {
+  right: 2%;
+}
+.myEducation .carousel__next > label:before {
+  left: 10%;
+  transform: rotate(315deg);
+  -webkit-transform: rotate(315deg);
+}
+.myEducation .carousel__nav {
+  position: absolute;
+  bottom: 3%;
+  left: 0;
+  text-align: center;
+  width: 100%;
+  z-index: 3;
+}
+.myEducation .carousel__nav > label {
+  border: 1px solid #666;
+  display: inline-block;
+  border-radius: 50%;
+  cursor: pointer;
+  margin: 0 0.125%;
+  width: 20px;
+  height: 20px;
+}
+
+footer {
+  background-color: #821212;
+  height: 560px;
+  text-align: center;
+}
+footer .footerText {
+  padding-top: 90px;
+}
+footer .footerText h3 {
+  font-weight: 600;
+  font-size: 36px;
+  color: white;
+}
+footer .footerDivider {
+  background-color: white;
+  max-width: 100px;
+  width: 100%;
+  height: 1px;
+  margin-top: 45px;
+}
+footer .margin-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+footer .footerContact {
+  padding-top: 85px;
+}
+footer .footerContact p {
+  color: white;
+}
+footer .footerSocial {
+  padding-top: 70px;
+}
+footer .footerSocial ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+footer .footerSocial ul li {
+  width: 30px;
+  height: 30px;
+  background-color: white;
+  border-radius: 50%; /* Делает элемент круглым */
+  display: flex;
+  align-items: center; /* Центровка содержимого по вертикали */
+  justify-content: center; /* Центровка содержимого по горизонтали */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 @media (max-width: 1110px) {
