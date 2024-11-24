@@ -63,6 +63,20 @@ header ul li {
   justify-content: center; /* Центровка содержимого по горизонтали */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
+header ul a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%; /* Растягиваем <a> на весь размер родителя */
+  height: 100%; /* Аналогично с высотой */
+  border-radius: 50%; /* Подстраиваем под форму круга */
+  text-decoration: none; /* Убираем стандартное подчеркивание ссылок */
+}
+header ul img {
+  max-width: 100%; /* Масштабируем картинку */
+  max-height: 100%;
+  border-radius: 50%; /* Убедитесь, что картинка тоже круглая */
+}
 
 .pictures {
   min-height: 633px;
@@ -456,7 +470,7 @@ footer .footerSocial ul {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 5px;
+  gap: 15px;
 }
 footer .footerSocial ul li {
   width: 30px;
@@ -467,6 +481,20 @@ footer .footerSocial ul li {
   align-items: center; /* Центровка содержимого по вертикали */
   justify-content: center; /* Центровка содержимого по горизонтали */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+footer .footerSocial ul a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%; /* Растягиваем <a> на весь размер родителя */
+  height: 100%; /* Аналогично с высотой */
+  border-radius: 50%; /* Подстраиваем под форму круга */
+  text-decoration: none; /* Убираем стандартное подчеркивание ссылок */
+}
+footer .footerSocial ul img {
+  max-width: 100%; /* Масштабируем картинку */
+  max-height: 100%;
+  border-radius: 50%; /* Убедитесь, что картинка тоже круглая */
 }
 
 @media (max-width: 1110px) {
