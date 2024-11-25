@@ -15,6 +15,14 @@
 
   <body>
     <header>
+      <nav class="navigation">
+        <ul class="menu">
+          <li><a href="#marathon">Рождественский марафон</a></li>
+          <li><a href="#prices">Тарифы</a></li>
+          <li><a href="#aboutMe">Обо мне</a></li>
+          <li><a href="#contacts">Контакты</a></li>
+        </ul>
+      </nav>
       <div class="container">
         <div class="mainInfo">
           <h1 class="mainName">Margarita Volkova</h1>
@@ -24,15 +32,24 @@
           </p>
         </div>
         <div class="socialMedia">
-          <ul>
-            <li>
-              <a href="#"><img src="" alt="" /></a>
+          <ul class="ul">
+            <li class="li">
+              <a class="a" href="https://t.me/maggvlk" target="_blank"
+                ><img class="img" src="img/telegram.svg" alt=""
+              /></a>
             </li>
-            <li>
-              <a href="#"><img src="" alt="" /></a>
+            <li class="li">
+              <a class="a" href="https://wa.me/79537444988" target="_blank"
+                ><img class="img" src="img/whatsapp.svg" alt=""
+              /></a>
             </li>
-            <li>
-              <a href="#"><img src="" alt="" /></a>
+            <li class="li">
+              <a
+                class="a"
+                href="https://www.instagram.com/maggvlk/"
+                target="_blank"
+                ><img class="img" src="img/insta.svg" alt=""
+              /></a>
             </li>
           </ul>
         </div>
@@ -46,11 +63,10 @@
           <img class="imgPictures" src="img/thirdMain.jpeg" alt="" />
         </div>
       </div>
-      <div class="christmasMarathon container">
+      <div class="christmasMarathon container" id="marathon">
         <div class="christmasMarathon_title">
           <div class="christmasMarathon_title_L">
             <h1>Christmas<br />Marathon</h1>
-            <br />
             <p>🎁 Скидка 10% при покупке 2 и более тарифов!</p>
           </div>
           <div class="christmasMarathon_title_R">
@@ -75,14 +91,14 @@
           </div>
         </div>
       </div>
-      <div class="prices">
+      <div class="prices" id="prices">
         <div class="backPrices">
           <h1>Тарифы для взрослых</h1>
         </div>
         <div class="prices_cards container">
           <div class="card">
             <img src="img/1сard.png" alt="" />
-            <h2>САМ СЕБЕ УЧИТЕЛЬ</h2>
+            <h2>САМ СЕБЕ СНЕГОВИК</h2>
             <p class="pTextDescription">
               Самостоятельное прохождение марафона на платформе ProgressMe
               <span class="textBold">БЕЗ</span> проверки. Минимальный уровень
@@ -92,7 +108,7 @@
           </div>
           <div class="card">
             <img src="img/2card.png" alt="" />
-            <h2>С ПОДДЕРЖКОЙ</h2>
+            <h2>ВМЕСТЕ С ЭЛЬФАМИ</h2>
             <p class="pTextDescription">
               Самостоятельное прохождение марафона на платформе ProgressMe
               <span class="textBold">С</span> проверкой от меня. Минимальный
@@ -117,7 +133,7 @@
         <div class="prices_cards container">
           <div class="card">
             <img src="img/4card.png" alt="" />
-            <h2>СВОЁ ПРИКЛЮЧЕНИЕ</h2>
+            <h2>СНЕЖНЫЙ КВЕСТ</h2>
             <p class="pTextDescription">
               Самостоятельное прохождение марафона на платформе ProgressMe
               <span class="textBold">БЕЗ</span> проверки. Минимальный уровень
@@ -152,7 +168,7 @@
           </div>
         </div>
       </div>
-      <div class="aboutMe">
+      <div class="aboutMe" id="aboutMe">
         <div class="backPrices">
           <h1>Обо мне</h1>
         </div>
@@ -164,7 +180,8 @@
               English, провожу разговорные клубы и марафоны. На данный момент
               веду уроки только онлайн. <br /><br />
 
-              <span class="mission">Моя миссия</span> — сделать английский частью жизни моих студентов.<br /><br />
+              <span class="mission">Моя миссия</span> — сделать английский
+              частью жизни моих студентов.<br /><br />
 
               В своей работе я использую несколько подходов в зависимости от
               цели студента, а именно: коммуникативный, лексический или задачный
@@ -180,68 +197,83 @@
             </p>
           </div>
           <div class="aboutMePhoto">
-            <img src="img/Margo.jpg" alt="">
+            <img src="img/Margo.jpg" alt="" />
           </div>
         </div>
       </div>
-      <div class="myEducation">
+<!--       <div class="myEducation">
         <div class="backPrices">
           <h1>Моё образование</h1>
         </div>
         <div class="container">
           <div class="carousel">
-            <input type="radio" id="carousel-1" name="carousel[]" checked>
-            <input type="radio" id="carousel-2" name="carousel[]">
-             <input type="radio" id="carousel-3" name="carousel[]">
-            <input type="radio" id="carousel-4" name="carousel[]">
-            <input type="radio" id="carousel-5" name="carousel[]">
+            <input type="radio" id="carousel-1" name="carousel[]" checked />
+            <input type="radio" id="carousel-2" name="carousel[]" />
+            <input type="radio" id="carousel-3" name="carousel[]" />
+            <input type="radio" id="carousel-4" name="carousel[]" />
+            <input type="radio" id="carousel-5" name="carousel[]" />
             <ul class="carousel__items">
-              <li class="carousel__item"><img src="img/edu1.jpg" alt=""></li>
-              <li class="carousel__item"><img src="img/edu2.jpg" alt=""></li>
-              <li class="carousel__item"><img src="img/edu3.jpeg" alt=""></li>
-              <li class="carousel__item"><img src="img/edu4.jpeg" alt=""></li>
-              <li class="carousel__item"><img src="img/edu5.jpg" alt=""></li>
+              <li class="carousel__item"><img src="img/edu1.jpg" alt="" /></li>
+              <li class="carousel__item"><img src="img/edu2.jpg" alt="" /></li>
+              <li class="carousel__item"><img src="img/edu3.jpeg" alt="" /></li>
+              <li class="carousel__item"><img src="img/edu4.jpeg" alt="" /></li>
+              <li class="carousel__item"><img src="img/edu5.jpg" alt="" /></li>
             </ul>
-             <div class="carousel__prev">
-               <label for="carousel-1"></label>
-               <label for="carousel-2"></label>
-               <label for="carousel-3"></label>
-               <label for="carousel-4"></label>
-               <label for="carousel-5"></label>
-             </div>
-             <div class="carousel__next">
-               <label for="carousel-1"></label>
-               <label for="carousel-2"></label>
-               <label for="carousel-3"></label>
-               <label for="carousel-4"></label>
-               <label for="carousel-5"></label>
-             </div>
-             <div class="carousel__nav">
-               <label for="carousel-1"></label>
-               <label for="carousel-2"></label>
-               <label for="carousel-3"></label>
-               <label for="carousel-4"></label>
-               <label for="carousel-5"></label>
-             </div>
-           </div>
-         </div>
-      </div>
+            <div class="carousel__prev">
+              <label for="carousel-1"></label>
+              <label for="carousel-2"></label>
+              <label for="carousel-3"></label>
+              <label for="carousel-4"></label>
+              <label for="carousel-5"></label>
+            </div>
+            <div class="carousel__next">
+              <label for="carousel-1"></label>
+              <label for="carousel-2"></label>
+              <label for="carousel-3"></label>
+              <label for="carousel-4"></label>
+              <label for="carousel-5"></label>
+            </div>
+            <div class="carousel__nav">
+              <label for="carousel-1"></label>
+              <label for="carousel-2"></label>
+              <label for="carousel-3"></label>
+              <label for="carousel-4"></label>
+              <label for="carousel-5"></label>
+            </div>
+          </div>
+        </div>
+      </div> -->
     </main>
     <footer>
-        <div class="footerText">
-          <h3>По всем вопросам<br> сотрудничества</h3>
-        </div>
-        <div class="footerDivider margin-auto"></div>
-        <div class="footerContact">
-          <p>E-mail: mvikhareva@icloud.com</p>
-        </div>
-        <div class="footerSocial">
-          <ul>
-            <li><a href="#"><img src="" alt=""></a></li>
-            <li><a href="#"><img src="" alt=""></a></li>
-            <li><a href="#"><img src="" alt=""></a></li>
-          </ul>
-        </div>
+      <div class="footerText" id="contacts">
+        <h3>
+          По всем вопросам<br />
+          сотрудничества
+        </h3>
+      </div>
+      <div class="footerDivider margin-auto"></div>
+      <div class="footerContact">
+        <p>E-mail: mvikhareva@icloud.com</p>
+      </div>
+      <div class="footerSocial">
+        <ul>
+          <li>
+            <a href="https://t.me/maggvlk" target="_blank"
+              ><img src="img/telegram_red.svg" alt=""
+            /></a>
+          </li>
+          <li>
+            <a href="https://wa.me/79537444988" target="_blank"
+              ><img src="img/whatsapp_red.svg" alt=""
+            /></a>
+          </li>
+          <li>
+            <a href="https://www.instagram.com/maggvlk/" target="_blank"
+              ><img src="img/instagram_red.svg" alt=""
+            /></a>
+          </li>
+        </ul>
+      </div>
     </footer>
   </body>
 </html>

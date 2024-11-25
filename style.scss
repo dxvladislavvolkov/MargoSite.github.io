@@ -1,8 +1,11 @@
-
-
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
@@ -16,6 +19,7 @@ $color-default: #821212;
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
+  padding: 0 1rem;
 }
 
 a {
@@ -25,6 +29,34 @@ a {
 
 header {
   min-height: 380px;
+
+  .navigation {
+    min-height: 80px;
+    background-color: $color-default;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 40px;
+
+    ul {
+      display: flex;
+      gap: 40px;
+      list-style: none; /* Убираем маркеры списка */
+      margin: 0;
+      padding: 0;
+
+      li {
+        list-style-type: none;
+        a {
+          text-transform: uppercase;
+          color: white;
+          font-weight: 600;
+          font-size: 14px;
+          text-decoration: none;
+        }
+      }
+    }
+  }
 
   .mainInfo {
     min-height: 150px;
@@ -55,24 +87,29 @@ header {
     }
   }
 
-  ul {
+  .ul {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 15px;
-  
-    li {
+    padding-bottom: 90px;
+
+    .img {
+      width: 18px;
+    }
+
+    .li {
       width: 30px;
       height: 30px;
       background-color: $color-default;
-      border-radius: 50%; /* Делает элемент круглым */
+      border-radius: 50%;
       display: flex;
-      align-items: center; /* Центровка содержимого по вертикали */
-      justify-content: center; /* Центровка содержимого по горизонтали */
+      align-items: center;
+      justify-content: center;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     }
-  
-    a {
+
+    .a {
       display: flex;
       justify-content: center;
       align-items: center;
@@ -81,8 +118,8 @@ header {
       border-radius: 50%; /* Подстраиваем под форму круга */
       text-decoration: none; /* Убираем стандартное подчеркивание ссылок */
     }
-  
-    img {
+
+    .img {
       max-width: 100%; /* Масштабируем картинку */
       max-height: 100%;
       border-radius: 50%; /* Убедитесь, что картинка тоже круглая */
@@ -126,6 +163,11 @@ header {
     margin-bottom: 105px;
 
     .christmasMarathon_title_L {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
       h1 {
         font-weight: 600;
         font-size: clamp(24px, 15vw, 74px);
@@ -138,10 +180,11 @@ header {
       p {
         text-align: left;
         font-family: $font-default;
-        font-size: clamp(10px, 3vw, 14px);
+        font-size: clamp(10px, 3vw, 18px);
         font-weight: bold;
         line-height: 1.35;
         color: #666;
+        padding-top: 30px;
       }
     }
 
@@ -174,23 +217,23 @@ header {
 }
 
 .backPrices {
-    height: 135px;
-    background-color: $color-default;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  height: 135px;
+  background-color: $color-default;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-    h1 {
-      color: white;
-      text-transform: uppercase;
-      font-family: $font-default;
-      font-size: 52px;
-      font-weight: 600;
-    }
+
+  h1 {
+    color: white;
+    text-transform: uppercase;
+    font-family: $font-default;
+    font-weight: 600;
+    font-size: clamp(30px, 4vw, 52px);
   }
+}
 
 .prices {
-
   &_cards {
     display: flex;
     flex-wrap: wrap;
@@ -220,6 +263,7 @@ header {
         margin-top: 12px;
         margin-bottom: 25px;
         color: $color-default;
+        white-space: nowrap;
       }
 
       p {
@@ -229,8 +273,8 @@ header {
         line-height: 1.7;
 
         .textBold {
-            font-weight: bold;
-          }
+          font-weight: bold;
+        }
       }
 
       .price {
@@ -274,366 +318,397 @@ header {
 }
 
 .aboutMe {
-    
-    .backPrices {
-        margin-bottom: 90px;
+  .backPrices {
+    margin-bottom: 90px;
+  }
+
+  .aboutMeFull {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+    .aboutMeDescription {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 16px;
+      line-height: 1.9;
+      width: 50%;
+      min-width: 390px;
+      max-width: 600px;
+      padding-bottom: 20px;
+
+      p {
+        margin: 0;
+      }
+
+      .mission {
+        color: $color-default;
+        font-weight: bold;
+      }
     }
 
-    .aboutMeFull {
-        display: flex;
-        flex-wrap: wrap; 
-        justify-content: center; 
-        align-items: center;
+    .aboutMePhoto {
+      display: flex;
+      flex: 1 1 45%;
+      justify-content: center;
+      align-items: center;
+      max-width: 600px;
+
+      img {
         width: 100%;
-
-        .aboutMeDescription {
-            display: flex;
-            justify-content: center; 
-            align-items: center; 
-            font-size: 16px;
-            line-height: 1.9;
-            width: 50%;
-            min-width: 460px;
-            max-width: 600px;
-            padding-bottom: 20px;
-
-            p {
-                margin: 0;
-            }
-
-            .mission {
-                color: $color-default;
-                font-weight: bold;
-            }
-        }
-
-        .aboutMePhoto {
-            display: flex; 
-            justify-content: center;
-            align-items: center;
-            width: 50%;
-
-            img {
-                width: 100%;
-                max-width: 480px;
-                height: auto;
-                margin: 0 55px;
-            }
-        }
+        max-width: 480px;
+        height: auto;
+        margin: 0 55px;
+      }
     }
+  }
 }
 
 .myEducation {
-    margin-bottom: 90px;
+  margin-bottom: 90px;
 
-    .backPrices {
-        margin: 90px 0;
-    }
+  .backPrices {
+    margin: 90px 0;
+  }
 
-    %animation-default {
-        opacity: 1 !important;
-        z-index: 3;
-      }
-      
-      @mixin carousel($items, $animation: 'default') {
-        .carousel {
-            position: relative;
-            width: 900px; /* Фиксированная ширина */
-            height: 560px; /* Фиксированная высота */
-            overflow: hidden; /* Скрываем всё, что выходит за границы */
-            margin: 0 auto;
-      
-          > input[type="radio"] {
-            position: absolute;
-            left: 0;
+  %animation-default {
+    opacity: 1 !important;
+    z-index: 3;
+  }
+
+  @mixin carousel($items, $animation: "default") {
+    .carousel {
+      position: relative;
+      width: 900px; /* Фиксированная ширина */
+      height: 560px; /* Фиксированная высота */
+      overflow: hidden; /* Скрываем всё, что выходит за границы */
+      margin: 0 auto;
+
+      > input[type="radio"] {
+        position: absolute;
+        left: 0;
+        opacity: 0;
+        top: 0;
+
+        &:checked {
+          ~ .carousel__items .carousel__item,
+          ~ .carousel__prev > label,
+          ~ .carousel__next > label {
             opacity: 0;
-            top: 0;
-      
+          }
+        }
+
+        @for $i from 1 through $items {
+          &:nth-child(#{$i}) {
             &:checked {
-              ~ .carousel__items .carousel__item,
-              ~ .carousel__prev > label,
-              ~ .carousel__next > label {
-                opacity: 0;
+              ~ .carousel__items .carousel__item {
+                @if $animation == "default" {
+                  &:nth-child(#{$i}) {
+                    opacity: 1;
+                  }
+                }
               }
-            }
-      
-            @for $i from 1 through $items {
-              &:nth-child(#{$i}) {
-                &:checked {
-                  ~ .carousel__items .carousel__item {
-                    @if $animation == 'default' {
-                      &:nth-child(#{$i}) {
-                        opacity: 1;
-                      }
+
+              ~ .carousel__prev {
+                > label {
+                  @if $i == 1 {
+                    &:nth-child(#{$items}) {
+                      @extend %animation-default;
+                    }
+                  } @else if $i == $items {
+                    &:nth-child(#{$items - 1}) {
+                      @extend %animation-default;
+                    }
+                  } @else {
+                    &:nth-child(#{$i - 1}) {
+                      @extend %animation-default;
                     }
                   }
-      
-                  ~ .carousel__prev {
-                    > label {
-                      @if $i == 1 {
-                        &:nth-child(#{$items}) {
-                          @extend %animation-default;
-                        }
-                      } @else if $i == $items {
-                        &:nth-child(#{$items - 1}) {
-                          @extend %animation-default;
-                        }
-                      } @else {
-                        &:nth-child(#{$i - 1}) {
-                          @extend %animation-default;
-                        }
-                      }
+                }
+              }
+
+              ~ .carousel__next {
+                > label {
+                  @if $i == $items {
+                    &:nth-child(1) {
+                      @extend %animation-default;
+                    }
+                  } @else {
+                    &:nth-child(#{$i + 1}) {
+                      @extend %animation-default;
                     }
                   }
-      
-                  ~ .carousel__next {
-                    > label {
-                      @if $i == $items {
-                        &:nth-child(1) {
-                          @extend %animation-default;
-                        }
-                      } @else {
-                        &:nth-child(#{$i + 1}) {
-                          @extend %animation-default;
-                        }
-                      }
-                    }
-                  }
-      
-                  ~ .carousel__nav {
-                    > label {
-                      &:nth-child(#{$i}) {
-                        background: #821212;
-                        cursor: default;
-                        pointer-events: none;
-                      }
-                    }
+                }
+              }
+
+              ~ .carousel__nav {
+                > label {
+                  &:nth-child(#{$i}) {
+                    background: #821212;
+                    cursor: default;
+                    pointer-events: none;
                   }
                 }
               }
             }
           }
-      
-          &__items {
-            list-style-type: none;
-            padding: 0;
-            margin: 0;
-            width: 100%; /* Подстраиваем под ширину карусели */
-            height: 100%; /* Подстраиваем под высоту карусели */
-            display: flex; /* Упрощённое позиционирование для карусели */
-            position: relative;
+        }
+      }
+
+      &__items {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        width: 100%; /* Подстраиваем под ширину карусели */
+        height: 100%; /* Подстраиваем под высоту карусели */
+        display: flex; /* Упрощённое позиционирование для карусели */
+        position: relative;
+      }
+
+      &__item {
+        flex: 0 0 100%; /* Каждый элемент занимает 100% ширины карусели */
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        transition: opacity 2s; /* Плавное появление */
+        opacity: 0; /* Скрываем по умолчанию */
+        z-index: 1;
+
+        img {
+          width: 100%; /* Ширина под контейнер */
+          height: 100%; /* Высота под контейнер */
+          object-fit: contain; /* Вписываем фото без обрезки */
+          display: block;
+        }
+      }
+
+      &__prev,
+      &__next {
+        > label {
+          border-radius: 50%;
+          cursor: pointer;
+          display: block;
+          width: 40px;
+          height: 40px;
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          -webkit-transform: translateY(-50%);
+          transition: all 0.3s ease;
+          -webkit-transition: all 0.3s ease;
+          opacity: 0;
+          z-index: 2;
+
+          &:hover,
+          &:focus {
+            opacity: 0.5 !important;
           }
-      
-          &__item {
-            flex: 0 0 100%; /* Каждый элемент занимает 100% ширины карусели */
+
+          &:before,
+          &:after {
+            content: "";
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            transition: opacity 2s; /* Плавное появление */
-            opacity: 0; /* Скрываем по умолчанию */
-            z-index: 1;
-      
-            img {
-                width: 100%; /* Ширина под контейнер */
-                height: 100%; /* Высота под контейнер */
-                object-fit: contain; /* Вписываем фото без обрезки */
-                display: block;
-            }
+            width: inherit;
+            height: inherit;
           }
-      
-          &__prev,
-          &__next {
-            > label {
-              border-radius: 50%;
-              cursor: pointer;
-              display: block;
-              width: 40px;
-              height: 40px;
-              position: absolute;
-              top: 50%;
-              transform: translateY(-50%);
-              -webkit-transform: translateY(-50%);
-              transition: all .3s ease;
-              -webkit-transition: all .3s ease;
-              opacity: 0;
-              z-index: 2;
-      
-              &:hover,
-              &:focus {
-                opacity: .5 !important;
-              }
-      
-              &:before,
-              &:after {
-                content: "";
-                position: absolute;
-                width: inherit;
-                height: inherit;
-              }
-      
-              &:before {
-                background: linear-gradient(to top, #821212 0%, #821212 10%, rgba(51, 51, 51, 0) 10%),
-                            linear-gradient(to left, #821212 0%, #821212 10%, rgba(51, 51, 51, 0) 10%);
-                width: 60%;
-                height: 60%;
-                top: 20%;
-              }
-            }
-          }
-      
-          &__prev {
-            > label {
-              left: 2%;
-      
-              &:before {
-                left: 35%;
-                top: 20%;
-                transform: rotate(135deg);
-                -webkit-transform: rotate(135deg);
-              }
-            }
-          }
-      
-          &__next {
-            > label {
-              right: 2%;
-      
-              &:before {
-                left: 10%;
-                transform: rotate(315deg);
-                -webkit-transform: rotate(315deg);
-              }
-            }
-          }
-      
-          &__nav {
-            position: absolute;
-            bottom: 3%;
-            left: 0;
-            text-align: center;
-            width: 100%;
-            z-index: 3;
-      
-            > label {
-              border: 1px solid #666;
-              display: inline-block;
-              border-radius: 50%;
-              cursor: pointer;
-              margin: 0 .125%;
-              width: 20px;
-              height: 20px;
-            }
+
+          &:before {
+            background: linear-gradient(
+                to top,
+                #821212 0%,
+                #821212 10%,
+                rgba(51, 51, 51, 0) 10%
+              ),
+              linear-gradient(
+                to left,
+                #821212 0%,
+                #821212 10%,
+                rgba(51, 51, 51, 0) 10%
+              );
+            width: 60%;
+            height: 60%;
+            top: 20%;
           }
         }
       }
-      
-      *,
-      *:before,
-      *:after {
-        box-sizing: border-box;
-        -webkit-box-sizing: border-box;
-        -moz-box-sizing: border-box;
+
+      &__prev {
+        > label {
+          left: 2%;
+
+          &:before {
+            left: 35%;
+            top: 20%;
+            transform: rotate(135deg);
+            -webkit-transform: rotate(135deg);
+          }
+        }
       }
-      
-      body {
-        background: #fcfcfc;
-        margin: 0;
+
+      &__next {
+        > label {
+          right: 2%;
+
+          &:before {
+            left: 10%;
+            transform: rotate(315deg);
+            -webkit-transform: rotate(315deg);
+          }
+        }
       }
-      
-      .container {
-        width: 900px;
-        min-width: 900px;
-        margin: 50px auto;
+
+      &__nav {
+        position: absolute;
+        bottom: 3%;
+        left: 0;
+        text-align: center;
+        width: 100%;
+        z-index: 3;
+
+        > label {
+          border: 1px solid #666;
+          display: inline-block;
+          border-radius: 50%;
+          cursor: pointer;
+          margin: 0 0.125%;
+          width: 20px;
+          height: 20px;
+        }
       }
-      
-      @include carousel(5);
+    }
+  }
+
+  *,
+  *:before,
+  *:after {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+  }
+
+  body {
+    background: #fcfcfc;
+    margin: 0;
+  }
+
+  .container {
+    width: 900px;
+    min-width: 900px;
+    margin: 50px auto;
+  }
+
+  @include carousel(5);
 }
 
 footer {
-    background-color: $color-default;
-    height: 560px;
-    text-align: center;
+  background-color: $color-default;
+  height: 560px;
+  text-align: center;
 
-    .footerText {
-        padding-top: 90px;
+  .footerText {
+    padding-top: 90px;
 
-        h3 {
-            font-weight: 600;
-            font-size: 36px;
-            color: white;
-    
-        }
+    h3 {
+      font-weight: 600;
+      font-size: 36px;
+      color: white;
     }
+  }
 
-    .footerDivider {
+  .footerDivider {
+    background-color: white;
+    max-width: 100px;
+    width: 100%;
+    height: 1px;
+    margin-top: 45px;
+  }
+
+  .margin-auto {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .footerContact {
+    padding-top: 85px;
+    p {
+      color: white;
+    }
+  }
+
+  .footerSocial {
+    padding-top: 70px;
+    ul {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 15px;
+
+      img {
+        width: 22px;
+      }
+
+      li {
+        width: 30px;
+        height: 30px;
         background-color: white;
-        max-width: 100px;
-        width: 100%;
-        height: 1px;
-        margin-top: 45px;
-    }
+        border-radius: 50%; /* Делает элемент круглым */
+        display: flex;
+        align-items: center; /* Центровка содержимого по вертикали */
+        justify-content: center; /* Центровка содержимого по горизонтали */
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      }
 
-    .margin-auto {
-        margin-left: auto;
-        margin-right: auto;
-    }
+      a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%; /* Растягиваем <a> на весь размер родителя */
+        height: 100%; /* Аналогично с высотой */
+        border-radius: 50%; /* Подстраиваем под форму круга */
+        text-decoration: none; /* Убираем стандартное подчеркивание ссылок */
+      }
 
-    .footerContact {
-        padding-top: 85px;
-        p {
-            color: white;
-        }
+      img {
+        max-width: 100%; /* Масштабируем картинку */
+        max-height: 100%;
+        border-radius: 50%; /* Убедитесь, что картинка тоже круглая */
+      }
     }
-
-    .footerSocial {
-        padding-top: 70px;
-        ul {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 15px;
-          
-            li {
-              width: 30px;
-              height: 30px;
-              background-color: white;
-              border-radius: 50%; /* Делает элемент круглым */
-              display: flex;
-              align-items: center; /* Центровка содержимого по вертикали */
-              justify-content: center; /* Центровка содержимого по горизонтали */
-              box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-            }
-          
-            a {
-              display: flex;
-              justify-content: center;
-              align-items: center;
-              width: 100%; /* Растягиваем <a> на весь размер родителя */
-              height: 100%; /* Аналогично с высотой */
-              border-radius: 50%; /* Подстраиваем под форму круга */
-              text-decoration: none; /* Убираем стандартное подчеркивание ссылок */
-            }
-          
-            img {
-              max-width: 100%; /* Масштабируем картинку */
-              max-height: 100%;
-              border-radius: 50%; /* Убедитесь, что картинка тоже круглая */
-            }
-          }
-    }
+  }
 }
 
+@media (max-width: 1130px) {
 
-@media (max-width: 1110px) {
+    .pictures {
+        margin-top: 20px;
+        .picturesPhoto {
+          .imgPictures {
+            width: 300px;
+            height: 300px;
+          }
+        }
+      }
+
   .christmasMarathon {
     &_title {
+      max-width: 640px;
+      margin: 0 auto;
       margin-bottom: 0px;
-      grid-template-columns: 1fr;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
 
       h1 {
-        text-align: center;
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        text-align: left;
       }
 
       p {
@@ -642,16 +717,48 @@ footer {
       }
     }
   }
+
+  .prices {
+    &_cards {
+      .card {
+        width: 250px;
+      }
+    }
+}
 }
 
-@media (max-width: 360px) {
-  .pictures {
-    margin-top: 20px;
-    .picturesPhoto {
-      .imgPictures {
-        width: 300px;
-        height: 300px;
+@media (max-width: 940px) {
+  header {
+    .navigation {
+      padding-top: 20px;
+      padding-bottom: 20px;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding-right: 0;
+
+      ul {
+        flex-direction: column;
+        gap: 20px;
       }
     }
   }
+
+  .pictures {
+    &Photo {
+      flex-direction: column;
+    }
+  }
+
+  .prices {
+    &_cards {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
+}
+
+@media (max-width: 500px) {
+
 }
