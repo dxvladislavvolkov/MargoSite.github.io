@@ -2,6 +2,11 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
@@ -12,6 +17,7 @@ body {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
+  padding: 0 1rem;
 }
 
 a {
@@ -21,6 +27,31 @@ a {
 
 header {
   min-height: 380px;
+}
+header .navigation {
+  min-height: 80px;
+  background-color: #821212;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 40px;
+}
+header .navigation ul {
+  display: flex;
+  gap: 40px;
+  list-style: none; /* Убираем маркеры списка */
+  margin: 0;
+  padding: 0;
+}
+header .navigation ul li {
+  list-style-type: none;
+}
+header .navigation ul li a {
+  text-transform: uppercase;
+  color: white;
+  font-weight: 600;
+  font-size: 14px;
+  text-decoration: none;
 }
 header .mainInfo {
   min-height: 150px;
@@ -47,23 +78,27 @@ header .mainInfo .mainDesription {
 header .mainInfo .socialMedia {
   height: 36px;
 }
-header ul {
+header .ul {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 15px;
+  padding-bottom: 90px;
 }
-header ul li {
+header .ul .img {
+  width: 18px;
+}
+header .ul .li {
   width: 30px;
   height: 30px;
   background-color: #821212;
-  border-radius: 50%; /* Делает элемент круглым */
+  border-radius: 50%;
   display: flex;
-  align-items: center; /* Центровка содержимого по вертикали */
-  justify-content: center; /* Центровка содержимого по горизонтали */
+  align-items: center;
+  justify-content: center;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
-header ul a {
+header .ul .a {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -72,7 +107,7 @@ header ul a {
   border-radius: 50%; /* Подстраиваем под форму круга */
   text-decoration: none; /* Убираем стандартное подчеркивание ссылок */
 }
-header ul img {
+header .ul .img {
   max-width: 100%; /* Масштабируем картинку */
   max-height: 100%;
   border-radius: 50%; /* Убедитесь, что картинка тоже круглая */
@@ -111,6 +146,12 @@ header ul img {
   justify-content: center;
   margin-bottom: 105px;
 }
+.christmasMarathon_title .christmasMarathon_title_L {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 .christmasMarathon_title .christmasMarathon_title_L h1 {
   font-weight: 600;
   font-size: clamp(24px, 15vw, 74px);
@@ -122,10 +163,11 @@ header ul img {
 .christmasMarathon_title .christmasMarathon_title_L p {
   text-align: left;
   font-family: "Montserrat", sans-serif;
-  font-size: clamp(10px, 3vw, 14px);
+  font-size: clamp(10px, 3vw, 18px);
   font-weight: bold;
   line-height: 1.35;
   color: #666;
+  padding-top: 30px;
 }
 .christmasMarathon_title .christmasMarathon_title_R p {
   text-align: left;
@@ -159,8 +201,8 @@ header ul img {
   color: white;
   text-transform: uppercase;
   font-family: "Montserrat", sans-serif;
-  font-size: 52px;
   font-weight: 600;
+  font-size: clamp(30px, 4vw, 52px);
 }
 
 .prices_cards {
@@ -191,6 +233,7 @@ header ul img {
   margin-top: 12px;
   margin-bottom: 25px;
   color: #821212;
+  white-space: nowrap;
 }
 .prices_cards .card p {
   font-family: "Montserrat", sans-serif;
@@ -252,7 +295,7 @@ header ul img {
   font-size: 16px;
   line-height: 1.9;
   width: 50%;
-  min-width: 460px;
+  min-width: 390px;
   max-width: 600px;
   padding-bottom: 20px;
 }
@@ -265,9 +308,10 @@ header ul img {
 }
 .aboutMe .aboutMeFull .aboutMePhoto {
   display: flex;
+  flex: 1 1 45%;
   justify-content: center;
   align-items: center;
-  width: 50%;
+  max-width: 600px;
 }
 .aboutMe .aboutMeFull .aboutMePhoto img {
   width: 100%;
@@ -490,6 +534,9 @@ footer .footerSocial ul {
   align-items: center;
   gap: 15px;
 }
+footer .footerSocial ul img {
+  width: 22px;
+}
 footer .footerSocial ul li {
   width: 30px;
   height: 30px;
@@ -515,25 +562,56 @@ footer .footerSocial ul img {
   border-radius: 50%; /* Убедитесь, что картинка тоже круглая */
 }
 
-@media (max-width: 1110px) {
-  .christmasMarathon_title {
-    margin-bottom: 0px;
-    grid-template-columns: 1fr;
-  }
-  .christmasMarathon_title h1 {
-    text-align: center;
-  }
-  .christmasMarathon_title p {
-    text-align: center;
-    padding: 30px;
-  }
-}
-@media (max-width: 360px) {
+@media (max-width: 1130px) {
   .pictures {
     margin-top: 20px;
   }
   .pictures .picturesPhoto .imgPictures {
     width: 300px;
     height: 300px;
+  }
+  .christmasMarathon_title {
+    max-width: 640px;
+    margin: 0 auto;
+    margin-bottom: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .christmasMarathon_title h1 {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    text-align: left;
+  }
+  .christmasMarathon_title p {
+    text-align: center;
+    padding: 30px;
+  }
+  .prices_cards .card {
+    width: 250px;
+  }
+}
+@media (max-width: 940px) {
+  header .navigation {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-right: 0;
+  }
+  header .navigation ul {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .picturesPhoto {
+    flex-direction: column;
+  }
+  .prices_cards {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 }/*# sourceMappingURL=style.css.map */
