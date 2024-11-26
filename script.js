@@ -87,3 +87,35 @@ window.addEventListener('resize', updateCarousel);
 
 
 
+
+// Найти элементы для управления
+const laptop = document.querySelector('.laptop');
+const laptopBlock = document.querySelector('.laptop-block');
+
+// Настройки Intersection Observer
+const observerOptions = {
+  root: null, // Используем окно браузера
+  rootMargin: '-40% 0px', // Смещаем точку срабатывания на середину экрана
+  threshold: 0, // Реагируем, когда хотя бы минимальная часть блока видна
+};
+
+// Функция, которая будет вызвана, когда элемент пересечет порог
+const observerCallback = (entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      laptop.classList.remove('laptop--closed'); // Убрать закрытое состояние
+      laptopBlock.style.transform = 'scale(0)'; // Открыть верхнюю часть
+    } else {
+      laptop.classList.add('laptop--closed'); // Вернуть в закрытое состояние
+      laptopBlock.style.transform = 'scale(1)'; // Закрыть верхнюю часть
+    }
+  });
+};
+
+// Создаем наблюдатель
+const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+// Наблюдаем за контейнером
+observer.observe(document.querySelector('.containers'));
+
+
