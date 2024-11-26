@@ -251,6 +251,30 @@ header {
   }
 }
 
+.tooltip-horizontal-scroll-icon {
+    width: 30px;
+    height: 30px;
+    display: block;
+    animation: tooltip-horizontal-scroll-icon_anim-scroll-hand 2s infinite;
+  }
+  
+  .tooltip-horizontal-scroll-icon_hand {
+    fill: rgb(255, 255, 255);
+  }
+  
+  @keyframes tooltip-horizontal-scroll-icon_anim-scroll-hand {
+    0% {
+      transform: translateX(0);
+    }
+    50% {
+      transform: translateX(10px); /* Пример сдвига */
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+  
+
 .pictures {
     display: flex;
     justify-content: center;
@@ -350,6 +374,7 @@ header {
   
     &__prev,
     &__next {
+    display: none;
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
@@ -1008,7 +1033,16 @@ footer {
     }
 
     .secondCarousel {
-        display: block;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+
+        svg {
+            position: absolute; /* Фиксируем SVG внутри контейнера */
+            top: 0; /* Размещаем по верхнему краю контейнера */
+            right: 10px; /* Прижимаем к правому краю контейнера */
+            z-index: 1;
+        }
 
         img {
             max-width: 500px;
