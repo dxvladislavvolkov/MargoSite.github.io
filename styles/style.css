@@ -219,9 +219,109 @@ header .ul .img {
 }
 
 .pictures {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   min-height: 633px;
   height: auto;
   background-color: #821212;
+}
+.pictures .carousel {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.pictures .carousel__wrapper {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  will-change: transform;
+}
+.pictures .carousel__slide {
+  display: flex;
+  justify-content: space-around;
+  flex-shrink: 0;
+  width: 100%;
+  padding: 0 10px; /* Отступы между изображениями */
+}
+.pictures .carousel__slide img {
+  flex: 1;
+  margin: 0 10px;
+  border-radius: 10px;
+  max-width: 360px;
+  max-height: 360px;
+  object-fit: cover;
+  margin-bottom: 20px;
+}
+.pictures .carousel__prev, .pictures .carousel__next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  z-index: 2;
+}
+.pictures .carousel__prev:hover, .pictures .carousel__next:hover {
+  background: rgba(0, 0, 0, 0.7);
+}
+.pictures .carousel__prev {
+  left: 10px;
+}
+.pictures .carousel__next {
+  right: 10px;
+}
+.pictures .secondCarousel {
+  display: none;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.pictures .secondCarousel__wrapper {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  will-change: transform;
+}
+.pictures .secondCarousel__slide {
+  display: flex;
+  justify-content: space-around;
+  flex-shrink: 0;
+  width: 100%;
+  padding: 0 10px; /* Отступы между изображениями */
+}
+.pictures .secondCarousel__slide img {
+  flex: 1;
+  margin: 0 10px;
+  border-radius: 10px;
+  max-width: 360px;
+  max-height: 360px;
+  object-fit: cover;
+  margin-bottom: 20px;
+}
+.pictures .secondCarousel__prev, .pictures .secondCarousel__next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  z-index: 2;
+}
+.pictures .secondCarousel__prev:hover, .pictures .secondCarousel__next:hover {
+  background: rgba(0, 0, 0, 0.7);
+}
+.pictures .secondCarousel__prev {
+  left: 10px;
+}
+.pictures .secondCarousel__next {
+  right: 10px;
 }
 .pictures .picturesPhoto {
   display: flex;
@@ -245,7 +345,7 @@ header .ul .img {
 }
 .christmasMarathon_title {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(545px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(470px, 1fr));
   text-align: center;
   align-content: center;
   justify-content: center;
@@ -669,13 +769,38 @@ footer .footerSocial ul img {
   border-radius: 50%; /* Убедитесь, что картинка тоже круглая */
 }
 
-@media (max-width: 1130px) {
+@media (max-width: 1160px) {
+  .pictures .carousel__slide img {
+    max-width: 300px;
+    max-height: 300px;
+  }
   .pictures {
     margin-top: 20px;
   }
   .pictures .picturesPhoto .imgPictures {
     width: 300px;
     height: 300px;
+  }
+  .prices_cards .card {
+    width: 250px;
+  }
+}
+@media (max-width: 980px) {
+  header .navbar {
+    display: block;
+  }
+  header .navigation {
+    display: none;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-right: 0;
+  }
+  header .navigation ul {
+    flex-direction: column;
+    gap: 20px;
   }
   .christmasMarathon_title {
     max-width: 640px;
@@ -696,26 +821,15 @@ footer .footerSocial ul img {
     text-align: center;
     padding: 30px;
   }
-  .prices_cards .card {
-    width: 250px;
+  .pictures .carousel {
+    display: none;
   }
-}
-@media (max-width: 940px) {
-  header .navbar {
+  .pictures .secondCarousel {
     display: block;
   }
-  header .navigation {
-    display: none;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding-right: 0;
-  }
-  header .navigation ul {
-    flex-direction: column;
-    gap: 20px;
+  .pictures .secondCarousel img {
+    max-width: 500px;
+    max-height: 500px;
   }
   .picturesPhoto {
     flex-direction: column;
