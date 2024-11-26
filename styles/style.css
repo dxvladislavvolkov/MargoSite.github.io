@@ -845,6 +845,10 @@ footer .footerSocial ul img {
     padding-top: 150px;
     height: 520px;
   }
+  .pictures .secondCarousel img {
+    max-width: 300px;
+    max-height: 300px;
+  }
   .aboutMe .backPrices {
     margin-bottom: 45px;
   }
