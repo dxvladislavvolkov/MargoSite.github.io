@@ -28,6 +28,111 @@ a {
 header {
   min-height: 380px;
 }
+header .navbar {
+  display: none;
+  background-color: #fff;
+  width: 100%;
+  box-shadow: 0 1px 4px rgba(146, 161, 176, 0.15);
+}
+header .navbar .nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 62px;
+}
+header .navbar .nav-container li {
+  list-style: none;
+}
+header .navbar .nav-container a {
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: 500;
+  font-size: 1.2rem;
+  padding: 0.7rem;
+}
+header .navbar .menu-items {
+  display: flex;
+}
+header .navbar .nav-container {
+  display: block;
+  position: relative;
+  height: 60px;
+}
+header .navbar .nav-container .checkbox {
+  position: absolute;
+  display: block;
+  height: 32px;
+  width: 32px;
+  top: 20px;
+  left: 20px;
+  z-index: 5;
+  opacity: 0;
+  cursor: pointer;
+}
+header .navbar .nav-container .hamburger-lines {
+  display: block;
+  height: 26px;
+  width: 32px;
+  position: absolute;
+  top: 17px;
+  left: 20px;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+header .navbar .nav-container .hamburger-lines .line {
+  display: block;
+  height: 4px;
+  width: 100%;
+  border-radius: 10px;
+  background: #0e2431;
+}
+header .nav-container .hamburger-lines .line1 {
+  transform-origin: 0% 0%;
+  transition: transform 0.4s ease-in-out;
+}
+header .nav-container .hamburger-lines .line2 {
+  transition: transform 0.2s ease-in-out;
+}
+header .nav-container .hamburger-lines .line3 {
+  transform-origin: 0% 100%;
+  transition: transform 0.4s ease-in-out;
+}
+header .navbar .menu-items {
+  padding-top: 120px;
+  background-color: #821212;
+  height: 447px;
+  transform: translate(-150%);
+  display: flex;
+  flex-direction: column;
+  margin-left: -40px;
+  padding-left: 50px;
+  transition: transform 0.5s ease-in-out;
+  text-align: center;
+}
+header .navbar .menu-items li {
+  margin-bottom: 1.2rem;
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+header .nav-container input[type=checkbox]:checked ~ .menu-items {
+  transform: translateX(0);
+}
+header .nav-container input[type=checkbox]:checked ~ .hamburger-lines .line1 {
+  transform: rotate(45deg);
+  background: white;
+}
+header .nav-container input[type=checkbox]:checked ~ .hamburger-lines .line2 {
+  transform: scaleY(0);
+}
+header .nav-container input[type=checkbox]:checked ~ .hamburger-lines .line3 {
+  transform: rotate(-45deg);
+  background: white;
+}
+header .nav-container input[type=checkbox]:checked ~ .logo {
+  display: none;
+}
 header .navigation {
   min-height: 80px;
   background-color: #821212;
@@ -168,6 +273,7 @@ header .ul .img {
   line-height: 1.35;
   color: #666;
   padding-top: 30px;
+  white-space: nowrap;
 }
 .christmasMarathon_title .christmasMarathon_title_R p {
   text-align: left;
@@ -202,7 +308,7 @@ header .ul .img {
   text-transform: uppercase;
   font-family: "Montserrat", sans-serif;
   font-weight: 600;
-  font-size: clamp(30px, 4vw, 52px);
+  font-size: clamp(25px, 4vw, 52px);
 }
 
 .prices_cards {
@@ -292,10 +398,10 @@ header .ul .img {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 16px;
+  font-size: clamp(14px, 4vw, 16px);
   line-height: 1.9;
   width: 50%;
-  min-width: 390px;
+  min-width: 370px;
   max-width: 600px;
   padding-bottom: 20px;
 }
@@ -342,13 +448,12 @@ header .ul .img {
   margin: 0;
 }
 .myEducation .container {
-  width: 900px;
-  min-width: 900px;
+  max-width: 900px;
   margin: 50px auto;
 }
 .myEducation .carousel {
   position: relative;
-  width: 900px; /* Фиксированная ширина */
+  width: 100%; /* Фиксированная ширина */
   height: 560px; /* Фиксированная высота */
   overflow: hidden; /* Скрываем всё, что выходит за границы */
   margin: 0 auto;
@@ -415,6 +520,7 @@ header .ul .img {
 }
 .myEducation .carousel__item {
   flex: 0 0 100%; /* Каждый элемент занимает 100% ширины карусели */
+  height: auto;
   position: absolute;
   top: 0;
   left: 0;
@@ -432,6 +538,7 @@ header .ul .img {
 }
 .myEducation .carousel__prev > label, .myEducation .carousel__next > label {
   border-radius: 50%;
+  top: 50%;
   cursor: pointer;
   display: block;
   width: 40px;
@@ -594,7 +701,11 @@ footer .footerSocial ul img {
   }
 }
 @media (max-width: 940px) {
+  header .navbar {
+    display: block;
+  }
   header .navigation {
+    display: none;
     padding-top: 20px;
     padding-bottom: 20px;
     justify-content: center;
@@ -613,5 +724,18 @@ footer .footerSocial ul img {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+  }
+}
+@media (max-width: 615px) {
+  .navbar .nav-container .menu-items {
+    padding-top: 150px;
+    height: 520px;
+  }
+  .aboutMe .backPrices {
+    margin-bottom: 45px;
+  }
+  .myEducation .backPrices {
+    margin-bottom: 45px;
+    margin-top: 45px;
   }
 }/*# sourceMappingURL=style.css.map */
