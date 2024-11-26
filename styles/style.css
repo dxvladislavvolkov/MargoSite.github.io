@@ -280,7 +280,7 @@ header .ul .img {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.8);
   color: white;
   border: none;
   padding: 10px 15px;
@@ -288,7 +288,7 @@ header .ul .img {
   z-index: 2;
 }
 .pictures .carousel__prev:hover, .pictures .carousel__next:hover {
-  background: rgba(0, 0, 0, 0.7);
+  background: rgb(0, 0, 0);
 }
 .pictures .carousel__prev {
   left: 10px;
