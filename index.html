@@ -75,11 +75,53 @@
     </header>
     <main>
       <div class="pictures">
-        <div class="picturesPhoto container">
+        <div class="carousel">
+          <div class="carousel__wrapper">
+            <div class="carousel__slide">
+              <img src="img/firstMain.jpg" alt="Photo 1">
+              <img src="img/secondMain.jpg" alt="Photo 2">
+              <img src="img/thirdMain.jpeg" alt="Photo 3">
+            </div>
+            <div class="carousel__slide">
+              <img src="img/fourthMain.jpg" alt="Photo 4">
+              <img src="img/fivethMain.jpg" alt="Photo 5">
+              <img src="img/sixthMain.jpg" alt="Photo 6">
+            </div>
+          </div>
+          <button class="carousel__prev">‹</button>
+          <button class="carousel__next">›</button>
+        </div>
+
+        <div class="secondCarousel">
+          <div class="secondCarousel__wrapper">
+            <div class="secondCarousel__slide">
+              <img src="img/firstMain.jpg" alt="Photo 1">
+            </div>
+            <div class="secondCarousel__slide">
+              <img src="img/secondMain.jpg" alt="Photo 4">
+            </div>
+            <div class="secondCarousel__slide">
+              <img src="img/thirdMain.jpeg" alt="Photo 4">
+            </div>
+            <div class="secondCarousel__slide">
+              <img src="img/fourthMain.jpg" alt="Photo 4">
+            </div>
+            <div class="secondCarousel__slide">
+              <img src="img/fivethMain.jpg" alt="Photo 4">
+            </div>
+            <div class="secondCarousel__slide">
+              <img src="img/sixthMain.jpg" alt="Photo 4">
+            </div>
+          </div>
+          <button class="secondCarousel__prev">‹</button>
+          <button class="secondCarousel__next">›</button>
+        </div>
+
+<!--         <div class="picturesPhoto container">
           <img class="imgPictures" src="img/firstMain.jpg" alt="" />
           <img class="imgPictures" src="img/secondMain.jpg" alt="" />
           <img class="imgPictures" src="img/thirdMain.jpeg" alt="" />
-        </div>
+        </div> -->
       </div>
       <div class="christmasMarathon container" id="marathon">
         <div class="christmasMarathon_title">
@@ -293,5 +335,6 @@
         </ul>
       </div>
     </footer>
+    <script src="script.js"></script>
   </body>
 </html>
