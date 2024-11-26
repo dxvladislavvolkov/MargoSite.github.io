@@ -1040,6 +1040,15 @@ footer {
     }
   }
 
+  .pictures {
+    .secondCarousel {
+        img {
+            max-width: 300px;
+            max-height: 300px;
+        }
+    }
+}
+
   .aboutMe {
     .backPrices {
       margin-bottom: 45px;
