@@ -25,6 +25,10 @@ a {
   text-decoration: none;
 }
 
+.no-wrap {
+  white-space: nowrap;
+}
+
 header {
   min-height: 380px;
 }
@@ -71,21 +75,13 @@ header .navbar .menu-items li a {
   font-size: 1.5rem;
   padding: 0.7rem;
 }
-header .navbar .menu-items .buttonContainer .button {
+header .navbar .menu-items .buttonContainer button {
   width: 270px;
   height: 60px;
   background-color: #821212;
   border: 3px solid white;
   border-radius: 30px;
   font-size: 16px;
-}
-header .navbar .menu-items .buttonContainer .button a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-  text-decoration: none;
   color: white;
   text-transform: uppercase;
   font-family: "Montserrat", sans-serif;
@@ -683,32 +679,80 @@ header .ul .img {
   /* Закрывающая кнопка */
   /* Стили для элементов формы */
 }
-.prices .buttonContainer .button {
-  width: 270px;
+.prices .buttonContainer #error-message {
+  color: red;
+  font-size: 14px;
+  margin-top: 10px;
+}
+.prices .buttonContainer .spanCheckbox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.prices .buttonContainer .modal .form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Если нужно, чтобы элементы не слипались */
+  height: auto; /* Убедитесь, что контейнер будет расширяться по содержимому */
+}
+.prices .buttonContainer .tariffsWrapper {
+  display: flex; /* Используем Flexbox */
+  justify-content: center; /* Разделяет блоки по краям */
+  align-items: center; /* Растягивает блоки по высоте */
+  width: 100%; /* Занимает всю доступную ширину */
+  flex-wrap: wrap;
+}
+.prices .buttonContainer .tariffsWrapper .tariffs_L, .prices .buttonContainer .tariffsWrapper .tariffs_R {
+  display: flex;
+  flex-direction: column; /* Используем Flexbox */
+  justify-content: center; /* Разделяет блоки по краям */
+  align-items: center; /* Растягивает блоки по высоте */
+  flex: 1; /* Оба блока занимают равную ширину */
+  padding: 15px; /* Отступы для удобства */
+  box-sizing: border-box; /* Учитываем отступы при расчете размеров */
+}
+.prices .buttonContainer .tariffsWrapper .tariffs_L {
+  margin-right: 10px;
+}
+.prices .buttonContainer .tariffsWrapper .tariffs_R {
+  margin-left: 10px;
+}
+.prices .buttonContainer .tariff-options {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  margin-bottom: 10px;
+}
+.prices .buttonContainer .tariff-options label {
+  display: flex;
+  margin-bottom: 8px;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+.prices .buttonContainer .tariff-options label input[type=checkbox] {
+  margin-right: 10px;
+  width: auto;
+}
+.prices .buttonContainer .tariff-options label input[type=number] {
+  margin-left: 10px;
+  width: 50px;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+.prices .buttonContainer .open-form {
+  min-width: 270px;
   height: 60px;
   background-color: #821212;
   border-radius: 30px;
   font-size: 16px;
-}
-.prices .buttonContainer .button a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-  text-decoration: none;
+  cursor: pointer;
   color: white;
   text-transform: uppercase;
   font-family: "Montserrat", sans-serif;
   font-weight: bold;
-}
-.prices .buttonContainer .open-form {
-  padding: 10px 20px;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
 }
 .prices .buttonContainer .open-form:hover {
   background-color: #0056b3;
@@ -729,7 +773,7 @@ header .ul .img {
   background-color: white;
   padding: 20px;
   border-radius: 10px;
-  width: 400px;
+  min-width: 400px;
   max-width: 90%;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   position: relative;
@@ -747,6 +791,18 @@ header .ul .img {
 }
 .prices .buttonContainer .close-button:hover {
   color: red;
+}
+.prices .buttonContainer form {
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.prices .buttonContainer label {
+  font-size: 1rem;
+  margin-bottom: 5px;
+  display: block;
 }
 .prices .buttonContainer input, .prices .buttonContainer textarea {
   width: 100%;
@@ -766,6 +822,10 @@ header .ul .img {
 }
 .prices .buttonContainer button[type=submit]:hover {
   background-color: #218838;
+}
+.prices .buttonContainer button[type=submit]:disabled {
+  background-color: #ccc; /* Цвет фона для заблокированной кнопки */
+  cursor: not-allowed; /* Указываем, что кнопка не кликабельна */
 }
 
 .aboutMe .backPrices {
