@@ -18,17 +18,24 @@
       <nav>
         <div class="navbar">
           <div class="nav-container">
-              <input class="checkbox" type="checkbox" name="" id="" />
-              <div class="hamburger-lines">
-                <span class="line line1"></span>
-                <span class="line line2"></span>
-                <span class="line line3"></span>
-              </div>  
+            <input class="checkbox" type="checkbox" name="" id="" />
+            <div class="hamburger-lines">
+              <span class="line line1"></span>
+              <span class="line line2"></span>
+              <span class="line line3"></span>
+            </div>
             <div class="menu-items">
-              <li><a href="#marathon">Рождественский марафон</a></li>
-              <li><a href="#prices">Тарифы</a></li>
-              <li><a href="#aboutMe">Обо мне</a></li>
-              <li><a href="#contacts">Контакты</a></li>
+              <div class="menu-items_top">
+                <li><a href="#marathon">Рождественский марафон</a></li>
+                <li><a href="#prices">Тарифы</a></li>
+                <li><a href="#aboutMe">Обо мне</a></li>
+                <li><a href="#contacts">Контакты</a></li>
+              </div>
+              <div class="buttonContainer">
+                <div class="button">
+                  <a href="#">Оставить заявку</a>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -74,18 +81,18 @@
       </div>
     </header>
     <main>
-      <div class="pictures">        
+      <div class="pictures">
         <div class="carousel">
           <div class="carousel__wrapper">
             <div class="carousel__slide">
-              <img src="img/firstMain.jpg" alt="Photo 1">
-              <img src="img/secondMain.jpg" alt="Photo 2">
-              <img src="img/thirdMain.jpeg" alt="Photo 3">
+              <img src="img/firstMain.jpg" alt="Photo 1" />
+              <img src="img/secondMain.jpg" alt="Photo 2" />
+              <img src="img/thirdMain.jpeg" alt="Photo 3" />
             </div>
             <div class="carousel__slide">
-              <img src="img/fourthMain.jpg" alt="Photo 4">
-              <img src="img/fivethMain.jpg" alt="Photo 5">
-              <img src="img/sixthMain.jpg" alt="Photo 6">
+              <img src="img/fourthMain.jpg" alt="Photo 4" />
+              <img src="img/fivethMain.jpg" alt="Photo 5" />
+              <img src="img/sixthMain.jpg" alt="Photo 6" />
             </div>
           </div>
           <button class="carousel__prev">‹</button>
@@ -93,26 +100,59 @@
         </div>
 
         <div class="secondCarousel">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 300" height="42" width="42"> 
+          <svg
+            class="svg"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 320 300"
+            height="42"
+            width="42"
+          >
             <!-- Прямоугольники -->
-            <rect class="tooltip-horizontal-scroll-icon_card" x="480" width="200" height="200" rx="5" fill="rgba(255,255,255,0.2)"></rect> 
-            <rect class="tooltip-horizontal-scroll-icon_card" y="0" width="200" height="200" rx="5" fill="rgba(255,255,255,0.2)"></rect> 
-            <rect class="tooltip-horizontal-scroll-icon_card" x="240" width="200" height="200" rx="5" fill="rgba(255,255,255,0.2)"></rect> 
-          
+            <rect
+              class="tooltip-horizontal-scroll-icon_card"
+              x="480"
+              width="200"
+              height="200"
+              rx="5"
+              fill="rgba(255,255,255,0.2)"
+            ></rect>
+            <rect
+              class="tooltip-horizontal-scroll-icon_card"
+              y="0"
+              width="200"
+              height="200"
+              rx="5"
+              fill="rgba(255,255,255,0.2)"
+            ></rect>
+            <rect
+              class="tooltip-horizontal-scroll-icon_card"
+              x="240"
+              width="200"
+              height="200"
+              rx="5"
+              fill="rgba(255,255,255,0.2)"
+            ></rect>
+
             <!-- Путь с анимацией -->
-            <path class="tooltip-horizontal-scroll-icon_hand" d="M78.9579 285.7C78.9579 285.7 37.8579 212.5 20.5579 180.8C-2.44209 138.6 -6.2422 120.8 9.6579 112C19.5579 106.5 33.2579 108.8 41.6579 123.4L61.2579 154.6V32.3C61.2579 32.3 60.0579 0 83.0579 0C107.558 0 105.458 32.3 105.458 32.3V91.7C105.458 91.7 118.358 82.4 133.458 86.6C141.158 88.7 150.158 92.4 154.958 104.6C154.958 104.6 185.658 89.7 200.958 121.4C200.958 121.4 236.358 114.4 236.358 151.1C236.358 187.8 192.158 285.7 192.158 285.7H78.9579Z" fill="rgba(255,255,255,1)"></path> 
-            
+            <path
+              class="tooltip-horizontal-scroll-icon_hand"
+              d="M78.9579 285.7C78.9579 285.7 37.8579 212.5 20.5579 180.8C-2.44209 138.6 -6.2422 120.8 9.6579 112C19.5579 106.5 33.2579 108.8 41.6579 123.4L61.2579 154.6V32.3C61.2579 32.3 60.0579 0 83.0579 0C107.558 0 105.458 32.3 105.458 32.3V91.7C105.458 91.7 118.358 82.4 133.458 86.6C141.158 88.7 150.158 92.4 154.958 104.6C154.958 104.6 185.658 89.7 200.958 121.4C200.958 121.4 236.358 114.4 236.358 151.1C236.358 187.8 192.158 285.7 192.158 285.7H78.9579Z"
+              fill="rgba(255,255,255,1)"
+            ></path>
+
             <style>
               /* Анимация для руки (path) */
               .tooltip-horizontal-scroll-icon_hand {
-                animation: tooltip-horizontal-scroll-icon_anim-scroll-hand 2s infinite;
+                animation: tooltip-horizontal-scroll-icon_anim-scroll-hand 2s
+                  infinite;
               }
-              
+
               /* Анимация для карточек (rect) */
               .tooltip-horizontal-scroll-icon_card {
-                animation: tooltip-horizontal-scroll-icon_anim-scroll-card 2s infinite;
+                animation: tooltip-horizontal-scroll-icon_anim-scroll-card 2s
+                  infinite;
               }
-          
+
               /* Анимация для руки - движение по горизонтали с уменьшением масштаба */
               @keyframes tooltip-horizontal-scroll-icon_anim-scroll-hand {
                 0% {
@@ -123,7 +163,8 @@
                   transform: translateX(80px) scale(1);
                   opacity: 1;
                 }
-                20%, 60% {
+                20%,
+                60% {
                   transform: translateX(175px) scale(0.6);
                   opacity: 1;
                 }
@@ -136,13 +177,15 @@
                   opacity: 0;
                 }
               }
-          
+
               /* Анимация для карточек - движение по горизонтали */
               @keyframes tooltip-horizontal-scroll-icon_anim-scroll-card {
-                0%, 60% {
+                0%,
+                60% {
                   transform: translateX(0);
                 }
-                80%, 100% {
+                80%,
+                100% {
                   transform: translateX(-240px);
                 }
               }
@@ -150,22 +193,22 @@
           </svg>
           <div class="secondCarousel__wrapper">
             <div class="secondCarousel__slide">
-              <img src="img/firstMain.jpg" alt="Photo 1">
+              <img src="img/firstMain.jpg" alt="Photo 1" />
             </div>
             <div class="secondCarousel__slide">
-              <img src="img/secondMain.jpg" alt="Photo 4">
+              <img src="img/secondMain.jpg" alt="Photo 4" />
             </div>
             <div class="secondCarousel__slide">
-              <img src="img/thirdMain.jpeg" alt="Photo 4">
+              <img src="img/thirdMain.jpeg" alt="Photo 4" />
             </div>
             <div class="secondCarousel__slide">
-              <img src="img/fourthMain.jpg" alt="Photo 4">
+              <img src="img/fourthMain.jpg" alt="Photo 4" />
             </div>
             <div class="secondCarousel__slide">
-              <img src="img/fivethMain.jpg" alt="Photo 4">
+              <img src="img/fivethMain.jpg" alt="Photo 4" />
             </div>
             <div class="secondCarousel__slide">
-              <img src="img/sixthMain.jpg" alt="Photo 4">
+              <img src="img/sixthMain.jpg" alt="Photo 4" />
             </div>
           </div>
           <button class="secondCarousel__prev">‹</button>
@@ -202,25 +245,25 @@
       </div>
 
       <div class="containers">
-          <div class="laptop">
-            <div class="laptop-block"></div>
-            <div class="laptop-top">
-              <div></div>
-              <div><img src="img/screen.png"></div>
-            </div>
-            <div class="laptop-bottom">
+        <div class="laptop">
+          <div class="laptop-block"></div>
+          <div class="laptop-top">
+            <div></div>
+            <div><img src="img/screen.png" /></div>
+          </div>
+          <div class="laptop-bottom">
+            <div>
               <div>
-                <div>
-                  <div></div>
-                  <div></div>
-                  <div></div>
-                </div>
+                <div></div>
+                <div></div>
                 <div></div>
               </div>
               <div></div>
             </div>
+            <div></div>
           </div>
         </div>
+      </div>
 
       <div class="prices" id="prices">
         <div class="backPrices">
@@ -294,8 +337,38 @@
           </div>
         </div>
         <div class="buttonContainer">
-          <div class="button">
-            <a href="#">Оставить заявку</a>
+          <!--           <div class="button">
+            <a class="open-form" href="#">Оставить заявку</a>
+          </div> -->
+          <!-- Кнопка для открытия формы -->
+          <button class="open-form">Оставить заявку</button>
+
+          <!-- Форма заявки -->
+          <div class="form-popup" id="popupForm">
+            <div class="form-container">
+              <span class="close-button">&times;</span>
+              <h2>Оставьте заявку</h2>
+              <form id="applicationForm">
+                <label for="name">Имя:</label>
+                <input type="text" id="name" name="name" required />
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required />
+
+                <label for="phone">Телефон:</label>
+                <input type="tel" id="phone" name="phone" required />
+
+                <label for="message">Сообщение:</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="4"
+                  required
+                ></textarea>
+
+                <button type="submit">Отправить</button>
+              </form>
+            </div>
           </div>
         </div>
       </div>
@@ -319,7 +392,9 @@
               метод обучения. Занятия проходят на интерактивной платформе
               ProgressMe или в Zoom с доской Miro.<br /><br />
 
-              <span class="mission">Также я консультирую коллег по таким вопросам</span>, как:<br />
+              <span class="mission"
+                >Также я консультирую коллег по таким вопросам</span
+              >, как:<br />
               -преподавание дошкольников<br />
               -как подготовить детей к YL exams<br />
               -как обучать онлайн (группа/индивид)<br />
@@ -407,5 +482,11 @@
       </div>
     </footer>
     <script src="script.js"></script>
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script>
+  // Инициализация EmailJS с вашим публичным ключом
+  emailjs.init('B9zMyupnCHE8Qs3DQ');
+</script>
+
   </body>
 </html>

@@ -119,3 +119,55 @@ const observer = new IntersectionObserver(observerCallback, observerOptions);
 observer.observe(document.querySelector('.containers'));
 
 
+
+
+
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    const openFormButton = document.querySelector('.open-form');
+    const formPopup = document.getElementById('popupForm');
+    const closeButton = document.querySelector('.close-button');
+    const form = document.getElementById('applicationForm');
+  
+    // Открытие формы
+    openFormButton.addEventListener('click', () => {
+      formPopup.style.display = 'flex'; // Показываем форму
+    });
+  
+    // Закрытие формы
+    closeButton.addEventListener('click', () => {
+      formPopup.style.display = 'none'; // Скрываем форму
+    });
+  
+    // Закрытие по клику вне формы
+    window.addEventListener('click', (event) => {
+      if (event.target === formPopup) {
+        formPopup.style.display = 'none';
+      }
+    });
+  
+    // Отправка формы
+    form.addEventListener('submit', (event) => {
+      event.preventDefault(); // Останавливаем стандартное поведение формы
+  
+      const formData = {
+        name: form.name.value,
+        email: form.email.value,
+        phone: form.phone.value,
+        message: form.message.value,
+      };
+  
+      emailjs.send('service_v6ppbhz', 'template_3cp8efa', formData)
+        .then(() => {
+          alert('Заявка успешно отправлена!');
+          formPopup.style.display = 'none'; // Закрываем форму после отправки
+          form.reset(); // Сбрасываем форму
+        })
+        .catch((error) => {
+          console.error('Ошибка отправки:', error);
+          alert('Не удалось отправить заявку. Попробуйте позже.');
+        });
+    });
+  });
+  
