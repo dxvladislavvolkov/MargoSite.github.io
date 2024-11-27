@@ -701,6 +701,7 @@ header .ul .img {
   align-items: center; /* Растягивает блоки по высоте */
   width: 100%; /* Занимает всю доступную ширину */
   flex-wrap: wrap;
+  align-items: stretch;
 }
 .prices .buttonContainer .tariffsWrapper .tariffs_L, .prices .buttonContainer .tariffsWrapper .tariffs_R {
   display: flex;
@@ -720,7 +721,6 @@ header .ul .img {
 .prices .buttonContainer .tariff-options {
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
   margin-bottom: 10px;
 }
 .prices .buttonContainer .tariff-options label {
