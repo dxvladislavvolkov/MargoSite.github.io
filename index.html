@@ -32,9 +32,9 @@
                 <li><a href="#contacts">Контакты</a></li>
               </div>
               <div class="buttonContainer">
-                <div class="button">
-                  <a href="#">Оставить заявку</a>
-                </div>
+                <button id="openFormMenu" class="open-form">
+                  Оставить заявку
+                </button>
               </div>
             </div>
           </div>
@@ -337,36 +337,73 @@
           </div>
         </div>
         <div class="buttonContainer">
-          <!--           <div class="button">
-            <a class="open-form" href="#">Оставить заявку</a>
-          </div> -->
-          <!-- Кнопка для открытия формы -->
-          <button class="open-form">Оставить заявку</button>
+          <button id="openFormBottom" class="open-form">Оставить заявку</button>
 
           <!-- Форма заявки -->
-          <div class="form-popup" id="popupForm">
+          <div id="modal" class="form-popup">
             <div class="form-container">
-              <span class="close-button">&times;</span>
+              <span id="closeForm" class="close-button">&times;</span>
               <h2>Оставьте заявку</h2>
-              <form id="applicationForm">
-                <label for="name">Имя:</label>
+              <form id="contactForm">
+                <label for="name">Фамилия Имя:</label>
                 <input type="text" id="name" name="name" required />
 
-                <label for="email">Email:</label>
+                <label for="email">Ваша действующая почта :</label>
                 <input type="email" id="email" name="email" required />
 
-                <label for="phone">Телефон:</label>
+                <label for="phone"
+                  >Как с вами связаться помимо почты? (Telegram, WhatsApp)
+                  :</label
+                >
                 <input type="tel" id="phone" name="phone" required />
 
-                <label for="message">Сообщение:</label>
-                <textarea
-                  id="message"
-                  name="message"
-                  rows="4"
-                  required
-                ></textarea>
 
-                <button type="submit">Отправить</button>
+                <div class="tariffsWrapper">
+                  <div class="tariffs_L"><label for="childTariffs"><span class="no-wrap">Выберите детские тарифы:</span></label>
+                    <div id="childTariffs" class="tariff-options">
+                      <label>  
+                        <input type="checkbox" name="childTariff" value="СНЕЖНЫЙ КВЕСТ" /> <span class="no-wrap">СНЕЖНЫЙ КВЕСТ</span>
+                        <input type="number" name="childTariffCount_SnowQuest" value="1" min="1" style="display: none;" class="childCount" disabled />
+                      </label>
+                      <label> 
+                        <input type="checkbox" name="childTariff" value="ПОД КРЫЛОМ САНТЫ" /> <span class="no-wrap">ПОД КРЫЛОМ САНТЫ</span>
+                        <input type="number" name="childTariffCount_Santa" value="1" min="1" style="display: none;" class="childCount" disabled />
+                      </label>
+                      <label> 
+                        <input type="checkbox" name="childTariff" value="ПРЕПОДАВАТЕЛЬ" /> <span class="no-wrap">ПРЕПОДАВАТЕЛЬ</span>
+                        <input type="number" name="childTariffCount_Teacher" value="1" min="1" style="display: none;" class="childCount" disabled />
+                      </label>
+                    </div></div>
+                  <div class="tariffs_R">
+                    <!-- Выбор тарифов (Взрослые тарифы) -->
+                <label for="adultTariffs"><span class="no-wrap">Выберите взрослые тарифы:</span></label>
+                <div id="adultTariffs" class="tariff-options">
+                  <label> 
+                    <input type="checkbox" name="adultTariff" value="САМ СЕБЕ СНЕГОВИК" /> <span class="no-wrap">САМ СЕБЕ СНЕГОВИК</span>
+                    <input type="number" name="adultTariffCount_Snowman" value="1" min="1" style="display: none;" class="adultCount" disabled />
+                  </label>
+                  <label> 
+                    <input type="checkbox" name="adultTariff" value="ВМЕСТЕ С ЭЛЬФАМИ" /> <span class="no-wrap">ВМЕСТЕ С ЭЛЬФАМИ</span>
+                    <input type="number" name="adultTariffCount_Elves" value="1" min="1" style="display: none;" class="adultCount" disabled />
+                  </label>
+                  <label> 
+                    <input type="checkbox" name="adultTariff" value="ПРЕПОДАВАТЕЛЬ" /> <span class="no-wrap">ПРЕПОДАВАТЕЛЬ<br>3990р</span>
+                    <input type="number" name="adultTariffCount_Teacher" value="1" min="1" style="display: none;" class="adultCount" disabled />
+                  </label>
+                </div>
+                  </div>
+                </div>
+
+                <label>
+                  <input type="checkbox" id="consentCheckbox" /> 
+                  <span class="spanCheckbox">Даю согласие на обработку данных</span>
+                </label>
+
+                <button type="submit" id="submitButton">Отправить</button>
+
+                <div id="error-message" style="color: red; display: none;">
+                  Пожалуйста, выберите хотя бы один тариф.
+                </div>
               </form>
             </div>
           </div>
@@ -481,12 +518,10 @@
         </ul>
       </div>
     </footer>
-    <script src="script.js"></script>
-    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
-<script>
-  // Инициализация EmailJS с вашим публичным ключом
-  emailjs.init('B9zMyupnCHE8Qs3DQ');
-</script>
-
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+    ></script>
+    <script src="script.js" defer></script>
   </body>
 </html>

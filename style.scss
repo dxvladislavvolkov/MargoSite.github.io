@@ -27,6 +27,10 @@ a {
   text-decoration: none;
 }
 
+.no-wrap {
+    white-space: nowrap;
+}
+
 header {
   min-height: 380px;
 
@@ -77,26 +81,17 @@ header {
       }
 
       .buttonContainer {
-        .button {
+        button {
           width: 270px;
           height: 60px;
           background-color: $color-default;
           border: 3px solid white;
           border-radius: 30px;
           font-size: 16px;
-    
-          a {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 100%;
-            height: 100%;
-            text-decoration: none;
-            color: white;
-            text-transform: uppercase;
-            font-family: $font-default;
-            font-weight: bold;
-          }
+          color: white;
+          text-transform: uppercase;
+          font-family: $font-default;
+          font-weight: bold;
         }
       }
     }
@@ -765,34 +760,92 @@ header {
     margin-top: 75px;
     margin-bottom: 90px;
 
-    .button {
-      width: 270px;
-      height: 60px;
-      background-color: $color-default;
-      border-radius: 30px;
-      font-size: 16px;
+    #error-message {
+        color: red;
+        font-size: 14px;
+        margin-top: 10px;
+      }
+      
 
-      a {
+    .spanCheckbox {
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 100%;
-        height: 100%;
-        text-decoration: none;
+    }
+
+    .modal .form-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between; /* Если нужно, чтобы элементы не слипались */
+        height: auto; /* Убедитесь, что контейнер будет расширяться по содержимому */
+      }
+
+    .tariffsWrapper {
+        display: flex; /* Используем Flexbox */
+        justify-content: center; /* Разделяет блоки по краям */
+        align-items: center; /* Растягивает блоки по высоте */
+        width: 100%; /* Занимает всю доступную ширину */
+        flex-wrap: wrap;
+
+        .tariffs_L, .tariffs_R {
+            display: flex;
+            flex-direction: column; /* Используем Flexbox */
+            justify-content: center; /* Разделяет блоки по краям */
+            align-items: center; /* Растягивает блоки по высоте */
+            flex: 1; /* Оба блока занимают равную ширину */
+            padding: 15px; /* Отступы для удобства */
+            box-sizing: border-box; /* Учитываем отступы при расчете размеров */
+          }
+
+        .tariffs_L {
+            margin-right: 10px;
+        }
+
+        .tariffs_R {
+            margin-left: 10px;
+          }
+    }
+
+    .tariff-options {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        margin-bottom: 10px;
+      
+        label {
+            display: flex;
+          margin-bottom: 8px;
+          font-size: 1rem;
+          display: flex;
+          align-items: center;
+          text-align: center;
+      
+          input[type="checkbox"] {
+            margin-right: 10px;
+            width: auto;
+          }
+      
+          input[type="number"] {
+            margin-left: 10px;
+            width: 50px;
+            padding: 5px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+          }
+        }
+      }
+
+    .open-form {
+        min-width: 270px;
+        height: 60px;
+        background-color: $color-default;
+        border-radius: 30px;
+        font-size: 16px;
+        cursor: pointer;
         color: white;
         text-transform: uppercase;
         font-family: $font-default;
         font-weight: bold;
-      }
-    }
-
-    .open-form {
-        padding: 10px 20px;
-        background-color: #007bff;
-        color: white;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
       }
       
       .open-form:hover {
@@ -818,7 +871,7 @@ header {
         background-color: white;
         padding: 20px;
         border-radius: 10px;
-        width: 400px;
+        min-width: 400px;
         max-width: 90%;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         position: relative;
@@ -843,6 +896,20 @@ header {
       }
       
       /* Стили для элементов формы */
+      form {
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #f9f9f9;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      label {
+        font-size: 1rem;
+        margin-bottom: 5px;
+        display: block;
+      }
+
       input, textarea {
         width: 100%;
         padding: 10px;
@@ -863,6 +930,11 @@ header {
       
       button[type="submit"]:hover {
         background-color: #218838;
+      }
+
+      button[type="submit"]:disabled {
+        background-color: #ccc;  /* Цвет фона для заблокированной кнопки */
+        cursor: not-allowed;     /* Указываем, что кнопка не кликабельна */
       }
   }
 }
