@@ -108,17 +108,13 @@ const observerCallback = (entries) => {
   });
 };
 
-// Создаем наблюдатель
-const observer = new IntersectionObserver(observerCallback, observerOptions);
 
-// Наблюдаем за контейнером
-observer.observe(document.querySelector(".containers"));
 
 
 
 
 // Инициализация EmailJS с публичным ключом
-emailjs.init("B9zMyupnCHE8Qs3DQ"); // Вставьте ваш публичный ключ
+emailjs.init("B9zMyupnCHE8Qs3DQ");
 
 // Открытие и закрытие модального окна
 const openFormMenu = document.getElementById("openFormMenu");
@@ -126,107 +122,136 @@ const openFormBottom = document.getElementById("openFormBottom");
 const closeForm = document.getElementById("closeForm");
 const modal = document.getElementById("modal");
 
-// Обработчик для кнопки в меню
-openFormMenu.addEventListener("click", () => {
-  modal.style.display = "flex"; // Показываем модальное окно
+openFormMenu?.addEventListener("click", () => {
+  modal.style.display = "flex";
 });
 
-// Обработчик для кнопки внизу страницы
-openFormBottom.addEventListener("click", () => {
-  modal.style.display = "flex"; // Показываем модальное окно
+openFormBottom?.addEventListener("click", () => {
+  modal.style.display = "flex";
 });
 
-closeForm.addEventListener("click", () => {
-  modal.style.display = "none"; // Скрываем модальное окно
+closeForm?.addEventListener("click", () => {
+  modal.style.display = "none";
 });
 
-// Закрытие модального окна при клике вне его
 window.addEventListener("click", (e) => {
   if (e.target === modal) {
     modal.style.display = "none";
   }
 });
 
-// Функция для отображения поля ввода количества
-function toggleCountField(checkbox, countField) {
-  if (checkbox.checked) {
-    countField.style.display = "inline-block"; // Показываем поле ввода
-    countField.disabled = false; // Разрешаем ввод
-  } else {
-    countField.style.display = "none"; // Скрываем поле ввода
-    countField.disabled = true; // Блокируем ввод
-    countField.value = 0; // Сбрасываем значение
-  }
-}
-
-// Добавляем обработчики событий для чекбоксов
-document.querySelectorAll('input[type="checkbox"][name="childTariff"]').forEach((checkbox) => {
-  const countField = checkbox.parentElement.querySelector(".childCount");
-  checkbox.addEventListener("change", () => toggleCountField(checkbox, countField));
-});
-
-document.querySelectorAll('input[type="checkbox"][name="adultTariff"]').forEach((checkbox) => {
-  const countField = checkbox.parentElement.querySelector(".adultCount");
-  checkbox.addEventListener("change", () => toggleCountField(checkbox, countField));
-});
-
-// Функция для нормализации имени тарифа
+// Нормализация имени тарифа (опционально)
 function normalizeTariffName(tariffName) {
   return tariffName
     .toLowerCase()
-    .replace(/(?:^\w|[A-Z]|\b\w|\s+|\_|\-|\—)/g, (match, index) => index === 0 ? match.toLowerCase() : match.toUpperCase())
-    .replace(/\s+/g, '')
+    .replace(/\s+/g, "")
     .replace(/[А-ЯЁ]/g, (char) => char.toLowerCase());
 }
 
-// Функция для получения выбранных тарифов
+// Получение выбранных тарифов
 function getSelectedTariffs(tariffType) {
   const selectedTariffs = [];
   const tariffs = document.querySelectorAll(`input[name="${tariffType}"]:checked`);
 
   tariffs.forEach((tariff) => {
-    const tariffName = normalizeTariffName(tariff.value);
-    const countField = document.querySelector(`input[name="${tariffType}Count_${tariffName}"]`);
+    const countInput = tariff.parentElement.querySelector('input[type="number"]');
+    const count = countInput ? parseInt(countInput.value, 10) : 1;
+    const price = tariff.dataset.price ? parseFloat(tariff.dataset.price) : 0;
+    const totalPrice = price * count;
 
-    if (countField && countField.value > 0) {
-      selectedTariffs.push(`${tariff.value} (x${countField.value})`);
+    selectedTariffs.push({
+      name: tariff.value,
+      count,
+      price,
+      totalPrice,
+    });
+  });
+
+  return selectedTariffs;
+}
+
+// Обновление итоговой цены
+function updateTotalPrice() {
+  const tariffCheckboxes = document.querySelectorAll('.tariff-options input[type="checkbox"]');
+  let totalPrice = 0;
+
+  tariffCheckboxes.forEach((checkbox) => {
+    if (checkbox.checked) {
+      const countInput = checkbox.parentElement.querySelector('input[type="number"]');
+      const count = countInput ? parseInt(countInput.value, 10) : 1;
+      const price = checkbox.dataset.price ? parseFloat(checkbox.dataset.price) : 0;
+      totalPrice += price * count;
     }
   });
 
-  return selectedTariffs.length > 0 ? selectedTariffs.join(", ") : "Не выбраны";
+  const totalPriceElement = document.getElementById("totalPrice");
+  if (totalPriceElement) {
+    totalPriceElement.textContent = `Итого цена: ${totalPrice} р`;
+  }
+
+  return totalPrice;
 }
 
-// Обработчик отправки формы
+document.addEventListener("DOMContentLoaded", () => {
+  const tariffCheckboxes = document.querySelectorAll('.tariff-options input[type="checkbox"]');
+
+  tariffCheckboxes.forEach((checkbox) => {
+    const countInput = checkbox.parentElement.querySelector('input[type="number"]');
+
+    // При изменении состояния чекбокса
+    checkbox.addEventListener("change", () => {
+      if (checkbox.checked) {
+        countInput.disabled = false;
+        countInput.style.display = "inline-block";
+      } else {
+        countInput.disabled = true;
+        countInput.style.display = "none";
+        countInput.value = 1; // Сброс значения
+      }
+      updateTotalPrice();
+    });
+
+    // При изменении количества
+    if (countInput) {
+      countInput.addEventListener("input", updateTotalPrice);
+    }
+  });
+});
+
+// Обработка формы
 const form = document.getElementById("contactForm");
-form.addEventListener("submit", function (event) {
+form?.addEventListener("submit", function (event) {
   event.preventDefault();
 
-  // Собираем все данные из формы
+  // Собираем данные
+  const childTariffs = getSelectedTariffs("childTariff");
+  const adultTariffs = getSelectedTariffs("adultTariff");
+  const totalPrice = updateTotalPrice();
+
   const formData = {
     name: form.name.value,
     email: form.email.value,
     phone: form.phone.value,
-    childTariffs: getSelectedTariffs("childTariff"),
-    adultTariffs: getSelectedTariffs("adultTariff"),
-    consent: document.getElementById("consentCheckbox").checked,
+    childTariffs: childTariffs.map((t) => `${t.name} (x${t.count}) - ${t.totalPrice}р`).join(", "),
+    adultTariffs: adultTariffs.map((t) => `${t.name} (x${t.count}) - ${t.totalPrice}р`).join(", "),
+    totalPrice: totalPrice,
   };
 
-  // Отправка данных на EmailJS
-  emailjs.send("service_v6ppbhz", "template_3cp8efa", formData)  // Убедитесь, что заменили на ваш сервис и шаблон
+  // Отправка через EmailJS
+  emailjs
+    .send("service_v6ppbhz", "template_3cp8efa", formData)
     .then((response) => {
       console.log("Success", response);
-      modal.style.display = "none"; // Закрыть форму
+      modal.style.display = "none"; // Закрыть модальное окно
+      alert("Заявка успешно отправлена!");
     })
     .catch((error) => {
       console.error("Error", error);
+      alert("Произошла ошибка при отправке. Попробуйте еще раз.");
     });
 });
 
-
-
-
-
-
-
-
-
+  
+  
+  
+  

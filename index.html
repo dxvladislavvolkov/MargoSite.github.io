@@ -336,6 +336,7 @@
             <p class="price">Стоимость: 3990₽</p>
           </div>
         </div>
+
         <div class="buttonContainer">
           <button id="openFormBottom" class="open-form">Оставить заявку</button>
 
@@ -357,58 +358,151 @@
                 >
                 <input type="tel" id="phone" name="phone" required />
 
-
                 <div class="tariffsWrapper">
-                  <div class="tariffs_L"><label for="childTariffs"><span class="no-wrap">Выберите детские тарифы:</span></label>
+                  <div class="tariffs_L">
+                    <label for="childTariffs"
+                      ><span class="no-wrap"
+                        >Выберите детские тарифы:</span
+                      ></label
+                    >
                     <div id="childTariffs" class="tariff-options">
-                      <label>  
-                        <input type="checkbox" name="childTariff" value="СНЕЖНЫЙ КВЕСТ" /> <span class="no-wrap">СНЕЖНЫЙ КВЕСТ</span>
-                        <input type="number" name="childTariffCount_SnowQuest" value="1" min="1" style="display: none;" class="childCount" disabled />
+                      <label>
+                        <input
+                          type="checkbox"
+                          name="childTariff"
+                          value="СНЕЖНЫЙ КВЕСТ"
+                          data-price="1990"
+                        />
+                        <span class="no-wrap">СНЕЖНЫЙ КВЕСТ<br>1990р</span>
+                        <input
+                          type="number"
+                          name="childTariffCount_SnowQuest"
+                          value="1"
+                          min="1"
+                          style="display: none"
+                          class="childCount"
+                          disabled
+                        />
                       </label>
-                      <label> 
-                        <input type="checkbox" name="childTariff" value="ПОД КРЫЛОМ САНТЫ" /> <span class="no-wrap">ПОД КРЫЛОМ САНТЫ</span>
-                        <input type="number" name="childTariffCount_Santa" value="1" min="1" style="display: none;" class="childCount" disabled />
+                      <label>
+                        <input
+                          type="checkbox"
+                          name="childTariff"
+                          value="ПОД КРЫЛОМ САНТЫ"
+                          data-price="2990"
+                        />
+                        <span class="no-wrap">ПОД КРЫЛОМ САНТЫ<br>2990р</span>
+                        <input
+                          type="number"
+                          name="childTariffCount_Santa"
+                          value="1"
+                          min="1"
+                          style="display: none"
+                          class="childCount"
+                          disabled
+                        />
                       </label>
-                      <label> 
-                        <input type="checkbox" name="childTariff" value="ПРЕПОДАВАТЕЛЬ" /> <span class="no-wrap">ПРЕПОДАВАТЕЛЬ</span>
-                        <input type="number" name="childTariffCount_Teacher" value="1" min="1" style="display: none;" class="childCount" disabled />
+                      <label>
+                        <input
+                          type="checkbox"
+                          name="childTariff"
+                          value="ПРЕПОДАВАТЕЛЬ"
+                          data-price="3990"
+                        />
+                        <span class="no-wrap">ПРЕПОДАВАТЕЛЬ<br>3990р</span>
+                        <input
+                          type="number"
+                          name="childTariffCount_Teacher"
+                          value="1"
+                          min="1"
+                          style="display: none"
+                          class="childCount"
+                          disabled
+                        />
                       </label>
-                    </div></div>
+                    </div>
+                  </div>
                   <div class="tariffs_R">
                     <!-- Выбор тарифов (Взрослые тарифы) -->
-                <label for="adultTariffs"><span class="no-wrap">Выберите взрослые тарифы:</span></label>
-                <div id="adultTariffs" class="tariff-options">
-                  <label> 
-                    <input type="checkbox" name="adultTariff" value="САМ СЕБЕ СНЕГОВИК" /> <span class="no-wrap">САМ СЕБЕ СНЕГОВИК</span>
-                    <input type="number" name="adultTariffCount_Snowman" value="1" min="1" style="display: none;" class="adultCount" disabled />
-                  </label>
-                  <label> 
-                    <input type="checkbox" name="adultTariff" value="ВМЕСТЕ С ЭЛЬФАМИ" /> <span class="no-wrap">ВМЕСТЕ С ЭЛЬФАМИ</span>
-                    <input type="number" name="adultTariffCount_Elves" value="1" min="1" style="display: none;" class="adultCount" disabled />
-                  </label>
-                  <label> 
-                    <input type="checkbox" name="adultTariff" value="ПРЕПОДАВАТЕЛЬ" /> <span class="no-wrap">ПРЕПОДАВАТЕЛЬ<br>3990р</span>
-                    <input type="number" name="adultTariffCount_Teacher" value="1" min="1" style="display: none;" class="adultCount" disabled />
-                  </label>
-                </div>
+                    <label for="adultTariffs"
+                      ><span class="no-wrap"
+                        >Выберите взрослые тарифы:</span
+                      ></label
+                    >
+                    <div id="adultTariffs" class="tariff-options">
+                      <label>
+                        <input
+                          type="checkbox"
+                          name="adultTariff"
+                          value="САМ СЕБЕ СНЕГОВИК"
+                          data-price="1990"
+                        />
+                        <span class="no-wrap">САМ СЕБЕ СНЕГОВИК<br>1990р</span>
+                        <input
+                          type="number"
+                          name="adultTariffCount_Snowman"
+                          value="1"
+                          min="1"
+                          style="display: none"
+                          class="adultCount"
+                          disabled
+                        />
+                      </label>
+                      <label>
+                        <input
+                          type="checkbox"
+                          name="adultTariff"
+                          value="ВМЕСТЕ С ЭЛЬФАМИ"
+                          data-price="2990"
+                        />
+                        <span class="no-wrap">ВМЕСТЕ С ЭЛЬФАМИ<br>2990р</span>
+                        <input
+                          type="number"
+                          name="adultTariffCount_Elves"
+                          value="1"
+                          min="1"
+                          style="display: none"
+                          class="adultCount"
+                          disabled
+                        />
+                      </label>
+                      <label>
+                        <input
+                          type="checkbox"
+                          name="adultTariff"
+                          value="ПРЕПОДАВАТЕЛЬ"
+                          data-price="3990"
+                        />
+                        <span class="no-wrap">ПРЕПОДАВАТЕЛЬ<br />3990р</span>
+                        <input
+                          type="number"
+                          name="adultTariffCount_Teacher"
+                          value="1"
+                          min="1"
+                          style="display: none"
+                          class="adultCount"
+                          disabled
+                        />
+                      </label>
+                    </div>
                   </div>
                 </div>
 
-                <label>
-                  <input type="checkbox" id="consentCheckbox" /> 
-                  <span class="spanCheckbox">Даю согласие на обработку данных</span>
-                </label>
-
                 <button type="submit" id="submitButton">Отправить</button>
 
-                <div id="error-message" style="color: red; display: none;">
+                <div id="totalPrice" style="margin-top: 15px; font-size: 16px; font-weight: bold;">
+                  Итого цена: 0 р
+                </div>
+                
+
+                <div id="error-message" style="color: red; display: none">
                   Пожалуйста, выберите хотя бы один тариф.
                 </div>
               </form>
             </div>
           </div>
         </div>
-      </div>
+
       <div class="aboutMe" id="aboutMe">
         <div class="backPrices">
           <h1>Обо мне</h1>
