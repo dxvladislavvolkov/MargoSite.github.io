@@ -180,49 +180,45 @@ function getSelectedTariffs(tariffType) {
 function updateTotalPrice() {
   const tariffCheckboxes = document.querySelectorAll('.tariff-options input[type="checkbox"]');
   let totalPrice = 0;
+  let totalPriceWithoutDiscount = 0;
 
   tariffCheckboxes.forEach((checkbox) => {
     if (checkbox.checked) {
       const countInput = checkbox.parentElement.querySelector('input[type="number"]');
       const count = countInput ? parseInt(countInput.value, 10) : 1;
       const price = checkbox.dataset.price ? parseFloat(checkbox.dataset.price) : 0;
+      totalPriceWithoutDiscount += price * count;
       totalPrice += price * count;
     }
   });
 
+  // Если оба тарифа выбраны, применяем скидку 10%
+  const hasDiscount = document.querySelectorAll('input[name="childTariff"]:checked').length > 0 && document.querySelectorAll('input[name="adultTariff"]:checked').length > 0;
+  if (hasDiscount) {
+    totalPrice *= 0.9; // 10% скидка
+  }
+
+  // Показ итоговой цены
   const totalPriceElement = document.getElementById("totalPrice");
   if (totalPriceElement) {
     totalPriceElement.textContent = `Итого цена: ${totalPrice} р`;
   }
 
-  return totalPrice;
-}
-
-document.addEventListener("DOMContentLoaded", () => {
-  const tariffCheckboxes = document.querySelectorAll('.tariff-options input[type="checkbox"]');
-
-  tariffCheckboxes.forEach((checkbox) => {
-    const countInput = checkbox.parentElement.querySelector('input[type="number"]');
-
-    // При изменении состояния чекбокса
-    checkbox.addEventListener("change", () => {
-      if (checkbox.checked) {
-        countInput.disabled = false;
-        countInput.style.display = "inline-block";
-      } else {
-        countInput.disabled = true;
-        countInput.style.display = "none";
-        countInput.value = 1; // Сброс значения
-      }
-      updateTotalPrice();
-    });
-
-    // При изменении количества
-    if (countInput) {
-      countInput.addEventListener("input", updateTotalPrice);
+  const totalPriceWithoutDiscountElement = document.getElementById("totalPriceWithoutDiscount");
+  if (totalPriceWithoutDiscountElement) {
+    if (hasDiscount) {
+      totalPriceWithoutDiscountElement.innerHTML = `Цена без скидки: <span style="text-decoration: line-through;">${totalPriceWithoutDiscount} р</span>`;
+    } else {
+      totalPriceWithoutDiscountElement.innerHTML = "";
     }
-  });
-});
+  }
+
+  return {
+    totalPrice,
+    totalPriceWithoutDiscount,
+    hasDiscount
+  };
+}
 
 // Обработка формы
 const form = document.getElementById("contactForm");
@@ -232,7 +228,7 @@ form?.addEventListener("submit", function (event) {
   // Собираем данные
   const childTariffs = getSelectedTariffs("childTariff");
   const adultTariffs = getSelectedTariffs("adultTariff");
-  const totalPrice = updateTotalPrice();
+  const { totalPrice, totalPriceWithoutDiscount, hasDiscount } = updateTotalPrice();
 
   const formData = {
     name: form.name.value,
@@ -241,6 +237,8 @@ form?.addEventListener("submit", function (event) {
     childTariffs: childTariffs.map((t) => `${t.name} (x${t.count}) - ${t.totalPrice}р`).join(", "),
     adultTariffs: adultTariffs.map((t) => `${t.name} (x${t.count}) - ${t.totalPrice}р`).join(", "),
     totalPrice: totalPrice,
+    totalPriceWithoutDiscount: totalPriceWithoutDiscount,
+    hasDiscount: hasDiscount
   };
 
   // Отправка через EmailJS
@@ -257,3 +255,28 @@ form?.addEventListener("submit", function (event) {
     });
 });
 
+// Остановка выбора нескольких тарифов в каждой категории
+const childTariffs = document.querySelectorAll('input[name="childTariff"]');
+const adultTariffs = document.querySelectorAll('input[name="adultTariff"]');
+
+childTariffs.forEach((checkbox) => {
+  checkbox.addEventListener('change', () => {
+    childTariffs.forEach((otherCheckbox) => {
+      if (otherCheckbox !== checkbox) {
+        otherCheckbox.checked = false;
+      }
+    });
+    updateTotalPrice();
+  });
+});
+
+adultTariffs.forEach((checkbox) => {
+  checkbox.addEventListener('change', () => {
+    adultTariffs.forEach((otherCheckbox) => {
+      if (otherCheckbox !== checkbox) {
+        otherCheckbox.checked = false;
+      }
+    });
+    updateTotalPrice();
+  });
+});

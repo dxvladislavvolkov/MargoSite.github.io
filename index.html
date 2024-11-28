@@ -370,15 +370,6 @@
                           data-price="1990"
                         />
                         <span class="no-wrap">СНЕЖНЫЙ КВЕСТ<br>1990р</span>
-                        <input
-                          type="number"
-                          name="childTariffCount_SnowQuest"
-                          value="1"
-                          min="1"
-                          style="display: none"
-                          class="childCount"
-                          disabled
-                        />
                       </label>
                       <label>
                         <input
@@ -388,15 +379,6 @@
                           data-price="2990"
                         />
                         <span class="no-wrap">ПОД КРЫЛОМ САНТЫ<br>2990р</span>
-                        <input
-                          type="number"
-                          name="childTariffCount_Santa"
-                          value="1"
-                          min="1"
-                          style="display: none"
-                          class="childCount"
-                          disabled
-                        />
                       </label>
                       <label>
                         <input
@@ -406,15 +388,6 @@
                           data-price="3990"
                         />
                         <span class="no-wrap">ПРЕПОДАВАТЕЛЬ<br>3990р</span>
-                        <input
-                          type="number"
-                          name="childTariffCount_Teacher"
-                          value="1"
-                          min="1"
-                          style="display: none"
-                          class="childCount"
-                          disabled
-                        />
                       </label>
                     </div>
                   </div>
@@ -434,15 +407,6 @@
                           data-price="1990"
                         />
                         <span class="no-wrap">САМ СЕБЕ СНЕГОВИК<br>1990р</span>
-                        <input
-                          type="number"
-                          name="adultTariffCount_Snowman"
-                          value="1"
-                          min="1"
-                          style="display: none"
-                          class="adultCount"
-                          disabled
-                        />
                       </label>
                       <label>
                         <input
@@ -452,15 +416,6 @@
                           data-price="2990"
                         />
                         <span class="no-wrap">ВМЕСТЕ С ЭЛЬФАМИ<br>2990р</span>
-                        <input
-                          type="number"
-                          name="adultTariffCount_Elves"
-                          value="1"
-                          min="1"
-                          style="display: none"
-                          class="adultCount"
-                          disabled
-                        />
                       </label>
                       <label>
                         <input
@@ -470,15 +425,6 @@
                           data-price="3990"
                         />
                         <span class="no-wrap">ПРЕПОДАВАТЕЛЬ<br />3990р</span>
-                        <input
-                          type="number"
-                          name="adultTariffCount_Teacher"
-                          value="1"
-                          min="1"
-                          style="display: none"
-                          class="adultCount"
-                          disabled
-                        />
                       </label>
                     </div>
                   </div>
@@ -486,9 +432,8 @@
 
                 <button type="submit" id="submitButton">Отправить</button>
 
-                <div id="totalPrice" style="margin-top: 15px; font-size: 16px; font-weight: bold;">
-                  Итого цена: 0 р
-                </div>
+                <div id="totalPriceWithoutDiscount" style="color: red; font-size: 16px;"></div>
+                <div id="totalPrice" style="font-size: 20px; font-weight: bold;"></div>
                 
 
                 <div id="error-message" style="color: red; display: none">
