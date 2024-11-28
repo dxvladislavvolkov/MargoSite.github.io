@@ -108,6 +108,12 @@ const observerCallback = (entries) => {
   });
 };
 
+// Создаем наблюдатель
+const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+// Наблюдаем за контейнером
+observer.observe(document.querySelector(".containers"));
+
 
 
 
@@ -251,7 +257,3 @@ form?.addEventListener("submit", function (event) {
     });
 });
 
-  
-  
-  
-  

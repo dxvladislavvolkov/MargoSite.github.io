@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {
     "liveSassCompile.settings.formats": [
         {
@@ -14,3 +15,21 @@
     "/.vscode"
 ]
 }
+=======
+{
+    "liveSassCompile.settings.formats": [
+        {
+            "format": "expanded",
+            "extensionName": ".css",
+            "savePath": "/styles",
+            "generateMap": true
+        }
+    ],
+
+    "liveSassCompile.settings.autoprefix": false,
+
+    "liveSassCompile.settings.excludeList": [
+    "/.vscode"
+]
+}
+>>>>>>> 41c7d9b869f2b924cd191c93b266017121da1ef1

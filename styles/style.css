@@ -484,7 +484,7 @@ header .ul .img {
   width: 85%;
   margin-left: auto;
   margin-right: auto;
-  height: calc(100% - 32px);
+  height: calc(100% - 24px);
   border-radius: 16px;
   background-color: rgb(190, 186, 186);
   box-sizing: border-box;
@@ -519,12 +519,9 @@ header .ul .img {
 }
 .laptop-top div:last-child {
   background-color: rgb(190, 186, 186);
-  top: 24px;
-  left: 24px;
-  width: calc(100% - 50px);
-  height: calc(100% - 40px);
   border-radius: 4px 4px 0 0;
   overflow: hidden;
+  padding: 10px;
 }
 .laptop-top div:last-child img {
   width: 100%;
@@ -535,11 +532,11 @@ header .ul .img {
 }
 .laptop-bottom > div:first-child {
   position: relative;
-  height: 32px;
+  height: 22px;
 }
 @media screen and (max-width: 1000px) {
   .laptop-bottom > div:first-child {
-    height: 24px;
+    height: 14px;
   }
 }
 .laptop-bottom > div:first-child > div {
@@ -594,12 +591,13 @@ header .ul .img {
   bottom: 0;
   left: 0;
   height: 100%;
-  background-color: rgb(141, 138, 138);
-  border-radius: 38px;
+  background-color: rgb(190, 186, 186);
+  border-radius: 0 0 16px 16px;
+  border: 1px solid rgb(255, 255, 255);
 }
 
 .laptop--closed .laptop-block {
-  top: calc(100% - 50px);
+  top: calc(100% - 40px);
   transform: scale(1);
 }
 .laptop--closed .laptop-top {
@@ -1193,6 +1191,12 @@ footer .footerSocial ul img {
   }
 }
 @media (max-width: 615px) {
+  .laptop-top {
+    height: calc(100% - 34px);
+  }
+  .laptop--closed .laptop-block {
+    top: calc(100% - 50px);
+  }
   .pictures .secondCarousel img {
     max-width: 300px;
     max-height: 300px;
