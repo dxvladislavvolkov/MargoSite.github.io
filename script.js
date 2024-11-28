@@ -1,19 +1,36 @@
 const checkbox = document.querySelector('.checkbox');
 const body = document.body;
+const menuLinks = document.querySelectorAll('.menu-items a'); // Все ссылки меню
+const menuButton = document.querySelector('.buttonContainer button'); // Кнопка в меню
 
+// Функция закрытия меню
+const closeMenu = () => {
+  checkbox.checked = false; // Снимаем галочку
+  body.classList.remove('no-scroll'); // Возвращаем прокрутку
+  document.removeEventListener('touchmove', preventScroll); // Разрешаем свайпы
+};
+
+// Запрещаем прокрутку при открытом меню
 checkbox.addEventListener('change', () => {
   if (checkbox.checked) {
     body.classList.add('no-scroll');
     document.addEventListener('touchmove', preventScroll, { passive: false });
   } else {
-    body.classList.remove('no-scroll');
-    document.removeEventListener('touchmove', preventScroll);
+    closeMenu();
   }
 });
+
+// Разрешаем прокрутку при клике на любой пункт меню или кнопку
+menuLinks.forEach((link) => {
+  link.addEventListener('click', closeMenu);
+});
+
+menuButton.addEventListener('click', closeMenu); // Для кнопки
 
 function preventScroll(event) {
   event.preventDefault(); // Останавливает любые действия по свайпу
 }
+
 
 
 
