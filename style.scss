@@ -1258,9 +1258,18 @@ footer {
 
   .footerContact {
     padding-top: 85px;
-    p {
+    a, p {
       color: white;
     }
+
+    a {
+        text-decoration: underline;
+    }
+
+    a:hover {
+        color: #9b9595; /* изменяет фон при наведении */
+    }
+    
   }
 
   .footerSocial {

@@ -120,7 +120,7 @@ observer.observe(document.querySelector(".containers"));
 
 
 // Инициализация EmailJS с публичным ключом
-emailjs.init("B9zMyupnCHE8Qs3DQ");
+emailjs.init("zq7v07VJEBawgYzDZ");
 
 // Открытие и закрытие модального окна
 const openFormMenu = document.getElementById("openFormMenu");
@@ -243,7 +243,7 @@ form?.addEventListener("submit", function (event) {
 
   // Отправка через EmailJS
   emailjs
-    .send("service_v6ppbhz", "template_3cp8efa", formData)
+    .send("service_cs9p1tr", "template_z0w7jzg", formData)
     .then((response) => {
       console.log("Success", response);
       modal.style.display = "none"; // Закрыть модальное окно

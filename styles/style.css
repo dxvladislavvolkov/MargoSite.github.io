@@ -1071,8 +1071,14 @@ footer .margin-auto {
 footer .footerContact {
   padding-top: 85px;
 }
-footer .footerContact p {
+footer .footerContact a, footer .footerContact p {
   color: white;
+}
+footer .footerContact a {
+  text-decoration: underline;
+}
+footer .footerContact a:hover {
+  color: #9b9595; /* изменяет фон при наведении */
 }
 footer .footerSocial {
   padding-top: 70px;
