@@ -417,26 +417,11 @@ header .ul .img {
 .christmasMarathon_title .christmasMarathon_title_L p {
   text-align: left;
   font-family: "Montserrat", sans-serif;
-  font-size: clamp(10px, 3vw, 13px);
+  font-size: clamp(10px, 3vw, 16px);
   font-weight: bold;
   line-height: 1.35;
   color: #666;
   padding-top: 30px;
-}
-.christmasMarathon_title .christmasMarathon_title_L p .center {
-  display: flex;
-  justify-content: center;
-  text-align: center;
-  white-space: nowrap;
-}
-.christmasMarathon_title .christmasMarathon_title_L p .sale {
-  display: flex;
-  justify-content: center;
-  text-align: center;
-  font-size: clamp(14px, 4vw, 20px);
-  color: #821212;
-  white-space: nowrap;
-  text-transform: uppercase;
 }
 .christmasMarathon_title .christmasMarathon_title_R {
   display: flex;

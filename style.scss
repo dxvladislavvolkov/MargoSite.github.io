@@ -477,28 +477,11 @@ header {
       p {
         text-align: left;
         font-family: $font-default;
-        font-size: clamp(10px, 3vw, 13px);
+        font-size: clamp(10px, 3vw, 16px);
         font-weight: bold;
         line-height: 1.35;
         color: #666;
         padding-top: 30px;
-
-        .center {
-            display: flex;
-            justify-content: center;
-            text-align: center;
-            white-space: nowrap;
-        }
-
-        .sale {
-            display: flex;
-            justify-content: center;
-            text-align: center;
-            font-size: clamp(14px, 4vw, 20px);
-            color: $color-default;
-            white-space: nowrap;
-            text-transform: uppercase;
-        }
       }
     }
 
