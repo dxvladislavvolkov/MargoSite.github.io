@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Персональная страница преподавателя</title>
+    <link rel="stylesheet" href="styles/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap&subset=cyrillic"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <header>
+      <nav>
+        <div class="navbar">
+          <div class="nav-container">
+            <input class="checkbox" type="checkbox" name="" id="" />
+            <div class="hamburger-lines">
+              <span class="line line1"></span>
+              <span class="line line2"></span>
+              <span class="line line3"></span>
+            </div>
+            <div class="menu-items">
+              <div class="menu-items_top">
+                <li><a href="#marathon">Рождественский марафон</a></li>
+                <li><a href="#prices">Тарифы</a></li>
+                <li><a href="#aboutMe">Обо мне</a></li>
+                <li><a href="#contacts">Контакты</a></li>
+              </div>
+              <div class="buttonContainer">
+                <button id="openFormMenu" class="open-form">
+                  Оставить заявку
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <nav class="navigation">
+        <ul class="menu">
+          <li><a href="#marathon">Рождественский марафон</a></li>
+          <li><a href="#prices">Тарифы</a></li>
+          <li><a href="#aboutMe">Обо мне</a></li>
+          <li><a href="#contacts">Контакты</a></li>
+        </ul>
+      </nav>
+      <div class="container">
+        <div class="mainInfo">
+          <h1 class="mainName">Margarita Volkova</h1>
+          <p class="mainDesription">
+            Преподаватель английского языка<br />@maggvlk |
+            mvikhareva@icloud.com
+          </p>
+        </div>
+        <div class="socialMedia">
+          <ul class="ul">
+            <li class="li">
+              <a class="a" href="https://t.me/maggvlk" target="_blank"
+                ><img class="img" src="img/telegram.svg" alt=""
+              /></a>
+            </li>
+            <li class="li">
+              <a class="a" href="https://wa.me/79537444988" target="_blank"
+                ><img class="img" src="img/whatsapp.svg" alt=""
+              /></a>
+            </li>
+            <li class="li">
+              <a
+                class="a"
+                href="https://www.instagram.com/maggvlk/"
+                target="_blank"
+                ><img class="img" src="img/insta.svg" alt=""
+              /></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="pictures">
+        <div class="carousel">
+          <div class="carousel__wrapper">
+            <div class="carousel__slide">
+              <img src="img/firstMain.jpg" alt="Photo 1" />
+              <img src="img/secondMain.jpg" alt="Photo 2" />
+              <img src="img/thirdMain.jpeg" alt="Photo 3" />
+            </div>
+            <div class="carousel__slide">
+              <img src="img/fourthMain.jpg" alt="Photo 4" />
+              <img src="img/fivethMain.jpg" alt="Photo 5" />
+              <img src="img/sixthMain.jpg" alt="Photo 6" />
+            </div>
+          </div>
+          <button class="carousel__prev">‹</button>
+          <button class="carousel__next">›</button>
+        </div>
+
+        <div class="secondCarousel">
+          <svg
+            class="svg"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 320 300"
+            height="42"
+            width="42"
+          >
+            <!-- Прямоугольники -->
+            <rect
+              class="tooltip-horizontal-scroll-icon_card"
+              x="480"
+              width="200"
+              height="200"
+              rx="5"
+              fill="rgba(255,255,255,0.2)"
+            ></rect>
+            <rect
+              class="tooltip-horizontal-scroll-icon_card"
+              y="0"
+              width="200"
+              height="200"
+              rx="5"
+              fill="rgba(255,255,255,0.2)"
+            ></rect>
+            <rect
+              class="tooltip-horizontal-scroll-icon_card"
+              x="240"
+              width="200"
+              height="200"
+              rx="5"
+              fill="rgba(255,255,255,0.2)"
+            ></rect>
+
+            <!-- Путь с анимацией -->
+            <path
+              class="tooltip-horizontal-scroll-icon_hand"
+              d="M78.9579 285.7C78.9579 285.7 37.8579 212.5 20.5579 180.8C-2.44209 138.6 -6.2422 120.8 9.6579 112C19.5579 106.5 33.2579 108.8 41.6579 123.4L61.2579 154.6V32.3C61.2579 32.3 60.0579 0 83.0579 0C107.558 0 105.458 32.3 105.458 32.3V91.7C105.458 91.7 118.358 82.4 133.458 86.6C141.158 88.7 150.158 92.4 154.958 104.6C154.958 104.6 185.658 89.7 200.958 121.4C200.958 121.4 236.358 114.4 236.358 151.1C236.358 187.8 192.158 285.7 192.158 285.7H78.9579Z"
+              fill="rgba(255,255,255,1)"
+            ></path>
+
+            <style>
+              /* Анимация для руки (path) */
+              .tooltip-horizontal-scroll-icon_hand {
+                animation: tooltip-horizontal-scroll-icon_anim-scroll-hand 2s
+                  infinite;
+              }
+
+              /* Анимация для карточек (rect) */
+              .tooltip-horizontal-scroll-icon_card {
+                animation: tooltip-horizontal-scroll-icon_anim-scroll-card 2s
+                  infinite;
+              }
+
+              /* Анимация для руки - движение по горизонтали с уменьшением масштаба */
+              @keyframes tooltip-horizontal-scroll-icon_anim-scroll-hand {
+                0% {
+                  transform: translateX(80px) scale(1);
+                  opacity: 0;
+                }
+                10% {
+                  transform: translateX(80px) scale(1);
+                  opacity: 1;
+                }
+                20%,
+                60% {
+                  transform: translateX(175px) scale(0.6);
+                  opacity: 1;
+                }
+                80% {
+                  transform: translateX(5px) scale(0.6);
+                  opacity: 1;
+                }
+                100% {
+                  transform: translateX(5px) scale(0.6);
+                  opacity: 0;
+                }
+              }
+
+              /* Анимация для карточек - движение по горизонтали */
+              @keyframes tooltip-horizontal-scroll-icon_anim-scroll-card {
+                0%,
+                60% {
+                  transform: translateX(0);
+                }
+                80%,
+                100% {
+                  transform: translateX(-240px);
+                }
+              }
+            </style>
+          </svg>
+          <div class="secondCarousel__wrapper">
+            <div class="secondCarousel__slide">
+              <img src="img/firstMain.jpg" alt="Photo 1" />
+            </div>
+            <div class="secondCarousel__slide">
+              <img src="img/secondMain.jpg" alt="Photo 4" />
+            </div>
+            <div class="secondCarousel__slide">
+              <img src="img/thirdMain.jpeg" alt="Photo 4" />
+            </div>
+            <div class="secondCarousel__slide">
+              <img src="img/fourthMain.jpg" alt="Photo 4" />
+            </div>
+            <div class="secondCarousel__slide">
+              <img src="img/fivethMain.jpg" alt="Photo 4" />
+            </div>
+            <div class="secondCarousel__slide">
+              <img src="img/sixthMain.jpg" alt="Photo 4" />
+            </div>
+          </div>
+          <button class="secondCarousel__prev">‹</button>
+          <button class="secondCarousel__next">›</button>
+        </div>
+      </div>
+      <div class="christmasMarathon container" id="marathon">
+        <div class="christmasMarathon_title">
+          <div class="christmasMarathon_title_L">
+            <h1>Christmas<br />Marathon</h1>
+            <p>🎁 Скидка 10% при покупке 2 и более тарифов!</p>
+          </div>
+          <div class="christmasMarathon_title_R">
+            <p>
+              Читай <span class="textItalic">The Christmas Pig</span> Дж. К.
+              Роулинг в оригинале, слушай культовые рождественские песни и
+              смотри самые любимые фильмы и сериалы на английском! <br />
+              <br />
+              <span class="textBold">Для детей и взрослых:</span>
+              🦌 Взрослые:
+              <span class="textItalic"
+                >Love Actually, Friends, Last Christmas.</span
+              >
+              <br />
+              🦌 Дети: <span class="textItalic">Home Alone</span>,
+              рождественский мультфильм,
+              <span class="textItalic">Jingle Bells</span>. <br />
+              <br />
+              Выбирай свой формат: с поддержкой наставника или самостоятельно.
+              Окунитесь в атмосферу праздника, улучшая свой английский.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="containers">
+        <div class="laptop">
+          <div class="laptop-block"></div>
+          <div class="laptop-top">
+            <div></div>
+            <div><img src="img/screen.png" /></div>
+          </div>
+          <div class="laptop-bottom">
+            <div>
+              <div>
+                <div></div>
+                <div></div>
+                <div></div>
+              </div>
+              <div></div>
+            </div>
+            <div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="prices" id="prices">
+        <div class="backPrices">
+          <h1>Тарифы для взрослых</h1>
+        </div>
+        <div class="prices_cards container">
+          <div class="card">
+            <img src="img/1сard.png" alt="" />
+            <h2>САМ СЕБЕ СНЕГОВИК</h2>
+            <p class="pTextDescription">
+              Самостоятельное прохождение марафона на платформе ProgressMe
+              <span class="textBold">БЕЗ</span> проверки. Минимальный уровень
+              языка, при котором будет комфортно проходить марафон - A2
+            </p>
+            <p class="price">Стоимость: 1990₽</p>
+          </div>
+          <div class="card">
+            <img src="img/2card.png" alt="" />
+            <h2>ВМЕСТЕ С ЭЛЬФАМИ</h2>
+            <p class="pTextDescription">
+              Самостоятельное прохождение марафона на платформе ProgressMe
+              <span class="textBold">С</span> проверкой от меня. Минимальный
+              уровень языка, при котором будет комфортно проходить марафон - A2
+            </p>
+            <p class="price">Стоимость: 2990₽</p>
+          </div>
+          <div class="card">
+            <img src="img/3card.png" alt="" />
+            <h2>ПРЕПОДАВАТЕЛЬ</h2>
+            <p class="pTextDescription">
+              Предоставляется доступ к материалам на платформе ProgressMe. Вы
+              добавляете их к себе и можете задавать своим студентам
+              неограниченное количество раз.
+            </p>
+            <p class="price">Стоимость: 3990₽</p>
+          </div>
+        </div>
+        <div class="backPrices">
+          <h1>Тарифы для детей</h1>
+        </div>
+        <div class="prices_cards container">
+          <div class="card">
+            <img src="img/4card.png" alt="" />
+            <h2>СНЕЖНЫЙ КВЕСТ</h2>
+            <p class="pTextDescription">
+              Самостоятельное прохождение марафона на платформе ProgressMe
+              <span class="textBold">БЕЗ</span> проверки. Минимальный уровень
+              языка, при котором будет комфортно проходить марафон - A2
+            </p>
+            <p class="price">Стоимость: 1990₽</p>
+          </div>
+          <div class="card">
+            <img src="img/5card.png" alt="" />
+            <h2>ПОД КРЫЛОМ САНТЫ</h2>
+            <p class="pTextDescription">
+              Самостоятельное прохождение марафона на платформе ProgressMe
+              <span class="textBold">С</span> проверкой от меня. Минимальный
+              уровень языка, при котором будет комфортно проходить марафон - A2
+            </p>
+            <p class="price">Стоимость: 2990₽</p>
+          </div>
+          <div class="card">
+            <img src="img/6card.png" alt="" />
+            <h2>ПРЕПОДАВАТЕЛЬ</h2>
+            <p class="pTextDescription">
+              Предоставляется доступ к материалам на платформе ProgressMe. Вы
+              добавляете их к себе и можете задавать своим студентам
+              неограниченное количество раз.
+            </p>
+            <p class="price">Стоимость: 3990₽</p>
+          </div>
+        </div>
+
+        <div class="buttonContainer">
+          <button id="openFormBottom" class="open-form">Оставить заявку</button>
+
+          <!-- Форма заявки -->
+          <div id="modal" class="form-popup">
+            <div class="form-container">
+              <span id="closeForm" class="close-button">&times;</span>
+              <h2>Оставьте заявку</h2>
+              <form id="contactForm">
+                <label for="name">Фамилия Имя:</label>
+                <input type="text" id="name" name="name" required />
+
+                <label for="email">Ваша действующая почта :</label>
+                <input type="email" id="email" name="email" required />
+
+                <label for="phone"
+                  >Как с вами связаться помимо почты? (Telegram, WhatsApp)
+                  :</label
+                >
+                <input type="tel" id="phone" name="phone" required />
+
+                <div class="tariffsWrapper">
+                  <div class="tariffs_L">
+                    <label for="childTariffs"
+                      ><span class="no-wrap"
+                        >Выберите детские тарифы:</span
+                      ></label
+                    >
+                    <div id="childTariffs" class="tariff-options">
+                      <label>
+                        <input
+                          type="checkbox"
+                          name="childTariff"
+                          value="СНЕЖНЫЙ КВЕСТ"
+                          data-price="1990"
+                        />
+                        <span class="no-wrap">СНЕЖНЫЙ КВЕСТ<br>1990р</span>
+                        <input
+                          type="number"
+                          name="childTariffCount_SnowQuest"
+                          value="1"
+                          min="1"
+                          style="display: none"
+                          class="childCount"
+                          disabled
+                        />
+                      </label>
+                      <label>
+                        <input
+                          type="checkbox"
+                          name="childTariff"
+                          value="ПОД КРЫЛОМ САНТЫ"
+                          data-price="2990"
+                        />
+                        <span class="no-wrap">ПОД КРЫЛОМ САНТЫ<br>2990р</span>
+                        <input
+                          type="number"
+                          name="childTariffCount_Santa"
+                          value="1"
+                          min="1"
+                          style="display: none"
+                          class="childCount"
+                          disabled
+                        />
+                      </label>
+                      <label>
+                        <input
+                          type="checkbox"
+                          name="childTariff"
+                          value="ПРЕПОДАВАТЕЛЬ"
+                          data-price="3990"
+                        />
+                        <span class="no-wrap">ПРЕПОДАВАТЕЛЬ<br>3990р</span>
+                        <input
+                          type="number"
+                          name="childTariffCount_Teacher"
+                          value="1"
+                          min="1"
+                          style="display: none"
+                          class="childCount"
+                          disabled
+                        />
+                      </label>
+                    </div>
+                  </div>
+                  <div class="tariffs_R">
+                    <!-- Выбор тарифов (Взрослые тарифы) -->
+                    <label for="adultTariffs"
+                      ><span class="no-wrap"
+                        >Выберите взрослые тарифы:</span
+                      ></label
+                    >
+                    <div id="adultTariffs" class="tariff-options">
+                      <label>
+                        <input
+                          type="checkbox"
+                          name="adultTariff"
+                          value="САМ СЕБЕ СНЕГОВИК"
+                          data-price="1990"
+                        />
+                        <span class="no-wrap">САМ СЕБЕ СНЕГОВИК<br>1990р</span>
+                        <input
+                          type="number"
+                          name="adultTariffCount_Snowman"
+                          value="1"
+                          min="1"
+                          style="display: none"
+                          class="adultCount"
+                          disabled
+                        />
+                      </label>
+                      <label>
+                        <input
+                          type="checkbox"
+                          name="adultTariff"
+                          value="ВМЕСТЕ С ЭЛЬФАМИ"
+                          data-price="2990"
+                        />
+                        <span class="no-wrap">ВМЕСТЕ С ЭЛЬФАМИ<br>2990р</span>
+                        <input
+                          type="number"
+                          name="adultTariffCount_Elves"
+                          value="1"
+                          min="1"
+                          style="display: none"
+                          class="adultCount"
+                          disabled
+                        />
+                      </label>
+                      <label>
+                        <input
+                          type="checkbox"
+                          name="adultTariff"
+                          value="ПРЕПОДАВАТЕЛЬ"
+                          data-price="3990"
+                        />
+                        <span class="no-wrap">ПРЕПОДАВАТЕЛЬ<br />3990р</span>
+                        <input
+                          type="number"
+                          name="adultTariffCount_Teacher"
+                          value="1"
+                          min="1"
+                          style="display: none"
+                          class="adultCount"
+                          disabled
+                        />
+                      </label>
+                    </div>
+                  </div>
+                </div>
+
+                <button type="submit" id="submitButton">Отправить</button>
+
+                <div id="totalPrice" style="margin-top: 15px; font-size: 16px; font-weight: bold;">
+                  Итого цена: 0 р
+                </div>
+                
+
+                <div id="error-message" style="color: red; display: none">
+                  Пожалуйста, выберите хотя бы один тариф.
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+
+      <div class="aboutMe" id="aboutMe">
+        <div class="backPrices">
+          <h1>Обо мне</h1>
+        </div>
+        <div class="aboutMeFull container">
+          <div class="aboutMeDescription">
+            <p>
+              Преподаю английский студентам от 5 лет. Готовлю к кембриджским
+              экзаменам (YL exams, KET, PET, FCE), к ЕГЭ/ОГЭ и преподаю General
+              English, провожу разговорные клубы и марафоны. На данный момент
+              веду уроки только онлайн. <br /><br />
+
+              <span class="mission">Моя миссия</span> — сделать английский
+              частью жизни моих студентов.<br /><br />
+
+              В своей работе я использую несколько подходов в зависимости от
+              цели студента, а именно: коммуникативный, лексический или задачный
+              метод обучения. Занятия проходят на интерактивной платформе
+              ProgressMe или в Zoom с доской Miro.<br /><br />
+
+              <span class="mission"
+                >Также я консультирую коллег по таким вопросам</span
+              >, как:<br />
+              -преподавание дошкольников<br />
+              -как подготовить детей к YL exams<br />
+              -как обучать онлайн (группа/индивид)<br />
+              -как обучать студентов с SEN<br />
+              ‌- организация внеучебных мероприятий<br />
+            </p>
+          </div>
+          <div class="aboutMePhoto">
+            <img src="img/Margo.jpg" alt="" />
+          </div>
+        </div>
+      </div>
+      <div class="myEducation">
+        <div class="backPrices">
+          <h1>Моё образование</h1>
+        </div>
+        <div class="container">
+          <div class="carousel">
+            <input type="radio" id="carousel-1" name="carousel[]" checked />
+            <input type="radio" id="carousel-2" name="carousel[]" />
+            <input type="radio" id="carousel-3" name="carousel[]" />
+            <input type="radio" id="carousel-4" name="carousel[]" />
+            <input type="radio" id="carousel-5" name="carousel[]" />
+            <ul class="carousel__items">
+              <li class="carousel__item"><img src="img/edu1.jpg" alt="" /></li>
+              <li class="carousel__item"><img src="img/edu2.jpg" alt="" /></li>
+              <li class="carousel__item"><img src="img/edu3.jpeg" alt="" /></li>
+              <li class="carousel__item"><img src="img/edu4.jpeg" alt="" /></li>
+              <li class="carousel__item"><img src="img/edu5.jpg" alt="" /></li>
+            </ul>
+            <div class="carousel__prev">
+              <label for="carousel-1"></label>
+              <label for="carousel-2"></label>
+              <label for="carousel-3"></label>
+              <label for="carousel-4"></label>
+              <label for="carousel-5"></label>
+            </div>
+            <div class="carousel__next">
+              <label for="carousel-1"></label>
+              <label for="carousel-2"></label>
+              <label for="carousel-3"></label>
+              <label for="carousel-4"></label>
+              <label for="carousel-5"></label>
+            </div>
+            <div class="carousel__nav">
+              <label for="carousel-1"></label>
+              <label for="carousel-2"></label>
+              <label for="carousel-3"></label>
+              <label for="carousel-4"></label>
+              <label for="carousel-5"></label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <div class="footerText" id="contacts">
+        <h3>
+          По всем вопросам<br />
+          сотрудничества
+        </h3>
+      </div>
+      <div class="footerDivider margin-auto"></div>
+      <div class="footerContact">
+        <p>E-mail: mvikhareva@icloud.com</p>
+      </div>
+      <div class="footerSocial">
+        <ul>
+          <li>
+            <a href="https://t.me/maggvlk" target="_blank"
+              ><img src="img/telegram_red.svg" alt=""
+            /></a>
+          </li>
+          <li>
+            <a href="https://wa.me/79537444988" target="_blank"
+              ><img src="img/whatsapp_red.svg" alt=""
+            /></a>
+          </li>
+          <li>
+            <a href="https://www.instagram.com/maggvlk/" target="_blank"
+              ><img src="img/instagram_red.svg" alt=""
+            /></a>
+          </li>
+        </ul>
+      </div>
+    </footer>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+    ></script>
+    <script src="script.js" defer></script>
+  </body>
+</html>
