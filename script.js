@@ -1,3 +1,54 @@
+const checkbox = document.querySelector('.checkbox');
+const body = document.body;
+
+checkbox.addEventListener('change', () => {
+  if (checkbox.checked) {
+    body.classList.add('no-scroll');
+  } else {
+    body.classList.remove('no-scroll');
+  }
+});
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    const imageContainer = document.getElementById("imageContainer");
+    const images = imageContainer.querySelectorAll("img");
+    let currentIndex = 0;
+    let timer;
+  
+    // Функция для переключения изображения
+    const switchImage = (index) => {
+      images.forEach((img, i) => {
+        img.classList.toggle("active", i === index);
+      });
+    };
+  
+    // Автоматическая смена изображения
+    const nextImage = () => {
+      currentIndex = (currentIndex + 1) % images.length;
+      switchImage(currentIndex);
+    };
+  
+    // Сброс таймера
+    const resetTimer = () => {
+      clearInterval(timer);
+      timer = setInterval(nextImage, 5000); // Интервал в 5 секунд
+    };
+  
+    // Инициализация
+    switchImage(currentIndex);
+    resetTimer();
+  
+    // Обработка кликов по imageContainer
+    imageContainer.addEventListener("click", () => {
+      nextImage(); // Переключить на следующее изображение
+      resetTimer(); // Перезапустить таймер
+    });
+  });
+  
+
+
+
 document.addEventListener("DOMContentLoaded", () => {
   const wrapper = document.querySelector(".carousel__wrapper");
   const slides = document.querySelectorAll(".carousel__slide");

@@ -13,6 +13,11 @@ body {
   font-family: "Montserrat", Arial, sans-serif;
 }
 
+body.no-scroll {
+    overflow: hidden;
+  }
+  
+
 $font-default: "Montserrat", sans-serif;
 $color-default: #821212;
 
@@ -449,8 +454,10 @@ header {
     align-content: center;
     justify-content: center;
     margin-bottom: 105px;
+    gap: 10px;
 
     .christmasMarathon_title_L {
+        max-width: 500px;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -468,16 +475,35 @@ header {
       p {
         text-align: left;
         font-family: $font-default;
-        font-size: clamp(10px, 3vw, 18px);
+        font-size: clamp(10px, 3vw, 13px);
         font-weight: bold;
         line-height: 1.35;
         color: #666;
         padding-top: 30px;
-        white-space: nowrap;
+
+        .center {
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            white-space: nowrap;
+        }
+
+        .sale {
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            font-size: clamp(14px, 4vw, 20px);
+            color: $color-default;
+            white-space: nowrap;
+            text-transform: uppercase;
+        }
       }
     }
 
     .christmasMarathon_title_R {
+        display: flex;
+        justify-content: center;
+        align-items: center;
       p {
         text-align: left;
         font-family: $font-default;
@@ -514,6 +540,30 @@ header {
   align-items: center;
   justify-content: center;
 }
+
+#imageContainer {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+  
+  #imageContainer img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+  }
+  
+  #imageContainer img.active {
+    opacity: 1;
+  }
+  
 
 .laptop {
   width: 790px;
