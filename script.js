@@ -4,10 +4,17 @@ const body = document.body;
 checkbox.addEventListener('change', () => {
   if (checkbox.checked) {
     body.classList.add('no-scroll');
+    document.addEventListener('touchmove', preventScroll, { passive: false });
   } else {
     body.classList.remove('no-scroll');
+    document.removeEventListener('touchmove', preventScroll);
   }
 });
+
+function preventScroll(event) {
+  event.preventDefault(); // Останавливает любые действия по свайпу
+}
+
 
 
 document.addEventListener("DOMContentLoaded", () => {

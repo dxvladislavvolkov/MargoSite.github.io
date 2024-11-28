@@ -14,7 +14,8 @@ body {
 }
 
 body.no-scroll {
-  overflow: hidden;
+  overflow: hidden; /* Блокирует прокрутку */
+  touch-action: none; /* Блокирует сенсорные жесты */
 }
 
 .container {
@@ -445,7 +446,7 @@ header .ul .img {
 .christmasMarathon_title .christmasMarathon_title_R p {
   text-align: left;
   font-family: "Montserrat", sans-serif;
-  font-size: clamp(14px, 3vw, 18px);
+  font-size: clamp(14px, 3vw, 17px);
   font-weight: 300;
   line-height: 1.5;
 }
