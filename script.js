@@ -203,6 +203,10 @@ const openFormBottom = document.getElementById("openFormBottom");
 const closeForm = document.getElementById("closeForm");
 const modal = document.getElementById("modal");
 
+// Модальные уведомления для успеха и ошибки
+const successNotification = document.getElementById("successNotification");
+const errorNotification = document.getElementById("errorNotification");
+
 openFormMenu?.addEventListener("click", () => {
   modal.style.display = "flex";
 });
@@ -322,13 +326,23 @@ form?.addEventListener("submit", function (event) {
     .then((response) => {
       console.log("Success", response);
       modal.style.display = "none"; // Закрыть модальное окно
-      alert("Заявка успешно отправлена!");
+      showNotification(successNotification, "Заявка успешно отправлена!");
     })
     .catch((error) => {
       console.error("Error", error);
-      alert("Произошла ошибка при отправке. Попробуйте еще раз.");
+      showNotification(errorNotification, "Произошла ошибка при отправке. Попробуйте еще раз.");
     });
 });
+
+// Показ уведомления
+function showNotification(notificationElement, message) {
+  notificationElement.textContent = message;
+  notificationElement.style.display = "block";
+  
+  setTimeout(() => {
+    notificationElement.style.display = "none";
+  }, 3000); // Скрытие уведомления через 3 секунды
+}
 
 // Остановка выбора нескольких тарифов в каждой категории
 const childTariffs = document.querySelectorAll('input[name="childTariff"]');
@@ -355,3 +369,7 @@ adultTariffs.forEach((checkbox) => {
     updateTotalPrice();
   });
 });
+
+
+/* emailjs.init("zq7v07VJEBawgYzDZ");
+.send("service_cs9p1tr", "template_z0w7jzg", formData) */
