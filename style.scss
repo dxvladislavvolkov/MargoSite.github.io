@@ -1336,7 +1336,7 @@ header {
     margin: 50px auto;
   }
 
-  @include carousel(5);
+  @include carousel(8);
 }
 
 footer {
@@ -1457,6 +1457,10 @@ footer {
 }
 
 @media (max-width: 980px) {
+    .floating-button {
+        display: none;
+    }
+
   header {
     .navbar {
       display: block;
