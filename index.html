@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -83,7 +82,7 @@
     </header>
     <main>
       <div class="floating-button" id="openFormButton">
-        <img src="img/christmastree.png" class="icon">
+        <img src="img/christmastree.png" class="icon" />
         <span class="text">Оставить заявку</span>
       </div>
       <div class="pictures">
@@ -235,7 +234,8 @@
               <span class="textBold">Для детей и взрослых:</span>
               🦌 Взрослые:
               <span class="textItalic"
-                >Love Actually, Friends, <span class="no-wrap">Last Christmas.</span></span
+                >Love Actually, Friends,
+                <span class="no-wrap">Last Christmas.</span></span
               >
               <br />
               🦌 Дети: <span class="textItalic">Home Alone</span>,
@@ -268,7 +268,6 @@
           </div>
         </div>
       </div>
-      
 
       <div class="prices" id="prices">
         <div class="backPrices">
@@ -350,99 +349,140 @@
             <div class="form-container">
               <span id="closeForm" class="close-button">&times;</span>
               <h2>Оставьте заявку</h2>
-              <form id="contactForm">
+              <form id="contactForm" class="contactForm">
                 <label for="name">Фамилия Имя:</label>
-                <input type="text" id="name" name="name" required />
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  placeholder="Enter your name and surname"
+                  required
+                />
 
                 <label for="email">Ваша действующая почта :</label>
-                <input type="email" id="email" name="email" required />
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="Enter your email"
+                  required
+                />
 
                 <label for="phone"
-                  >Как с вами связаться помимо почты? (Telegram, WhatsApp)
-                  :</label
+                  >Ваш номер телефона
+                  <span class="no-wrap">(Telegram, WhatsApp) :</span></label
                 >
-                <input type="tel" id="phone" name="phone" required />
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  placeholder="Enter your phone number"
+                  required
+                />
+
+                <div class="chooseTariff">
+                  <h3>Выберите тариф</h3>
+                  <p>*Детский тариф + Взрослый тариф = 10% скидка</p>
+                </div>
 
                 <div class="tariffsWrapper">
                   <div class="tariffs_L">
-                    <label for="childTariffs"
-                      ><span class="no-wrap"
-                        >Выберите детские тарифы:</span
-                      ></label
-                    >
+                    <h4>Детские тарифы</h4>
                     <div id="childTariffs" class="tariff-options">
-                      <label>
+                      <label class="custom-checkbox">
                         <input
                           type="checkbox"
                           name="childTariff"
                           value="СНЕЖНЫЙ КВЕСТ"
                           data-price="1990"
                         />
-                        <span class="no-wrap">СНЕЖНЫЙ КВЕСТ<br>1990р</span>
+                        <span class="checkmark"></span>
+                        <span class="no-wrap">Снежный квест</span>
                       </label>
-                      <label>
+                      <label class="custom-checkbox">
                         <input
                           type="checkbox"
                           name="childTariff"
                           value="ПОД КРЫЛОМ САНТЫ"
                           data-price="2990"
                         />
-                        <span class="no-wrap">ПОД КРЫЛОМ САНТЫ<br>2990р</span>
+                        <span class="checkmark"></span>
+                        <span class="no-wrap">Под крылом Санты</span>
                       </label>
-                      <label>
+                      <label class="custom-checkbox">
                         <input
                           type="checkbox"
                           name="childTariff"
                           value="ПРЕПОДАВАТЕЛЬ"
                           data-price="3990"
                         />
-                        <span class="no-wrap">ПРЕПОДАВАТЕЛЬ<br>3990р</span>
+                        <span class="checkmark"></span>
+                        <span class="no-wrap">Преподаватель</span>
                       </label>
                     </div>
                   </div>
                   <div class="tariffs_R">
                     <!-- Выбор тарифов (Взрослые тарифы) -->
-                    <label for="adultTariffs"
-                      ><span class="no-wrap"
-                        >Выберите взрослые тарифы:</span
-                      ></label
-                    >
+                    <h4>Взрослые тарифы</h4>
                     <div id="adultTariffs" class="tariff-options">
-                      <label>
+                      <label class="custom-checkbox">
                         <input
                           type="checkbox"
                           name="adultTariff"
                           value="САМ СЕБЕ СНЕГОВИК"
                           data-price="1990"
                         />
-                        <span class="no-wrap">САМ СЕБЕ СНЕГОВИК<br>1990р</span>
+                        <span class="checkmark"></span>
+                        <span class="no-wrap">Сам себе снеговик</span>
                       </label>
-                      <label>
+                      <label class="custom-checkbox">
                         <input
                           type="checkbox"
                           name="adultTariff"
                           value="ВМЕСТЕ С ЭЛЬФАМИ"
                           data-price="2990"
                         />
-                        <span class="no-wrap">ВМЕСТЕ С ЭЛЬФАМИ<br>2990р</span>
+                        <span class="checkmark"></span>
+                        <span class="no-wrap">Вместе с эльфами</span>
                       </label>
-                      <label>
+                      <label class="custom-checkbox">
                         <input
                           type="checkbox"
                           name="adultTariff"
                           value="ПРЕПОДАВАТЕЛЬ"
                           data-price="3990"
                         />
-                        <span class="no-wrap">ПРЕПОДАВАТЕЛЬ<br />3990р</span>
+                        <span class="checkmark"></span>
+                        <span class="no-wrap">Преподаватель</span>
                       </label>
                     </div>
                   </div>
                 </div>
 
-                <button type="submit" id="submitButton">Отправить</button>
-
-                <div id="totalPriceWithoutDiscount" style="color: red; font-size: 16px;"></div>
-                <div id="totalPrice" style="font-size: 20px; font-weight: bold;"></div>
+                <div
+                  class="totalPrice"
+                  id="totalPrice"
+                  style="font-size: 20px; font-weight: bold"
+                >
+                  Итого:&nbsp;<span id="totalPriceValue">0</span>₽
+                </div>
+                <div class="saleWrap">
+                  <div
+                    class="totalPriceWithoutDiscount"
+                    id="totalPriceWithoutDiscount"
+                    style="color: black; font-size: 16px"
+                  ></div>
+                  <div
+                    class="saleBackground"
+                    id="saleBackground"
+                    style="display: none"
+                  >
+                    <span>-10%</span>
+                  </div>
+                </div>
+                <div class="buttonCenter">
+                  <button type="submit" id="submitButton">Отправить</button>
+                </div>
                 
 
                 <div id="error-message" style="color: red; display: none">
@@ -451,105 +491,148 @@
               </form>
             </div>
           </div>
-          <div id="successNotification" style="display:none; background-color: green; color: white; padding: 10px 20px; position: fixed; top: 10px; left: 50%; transform: translateX(-50%); border-radius: 5px; z-index: 9999;">
+          <div
+            id="successNotification"
+            style="
+              display: none;
+              background-color: green;
+              color: white;
+              padding: 10px 20px;
+              position: fixed;
+              top: 10px;
+              left: 50%;
+              transform: translateX(-50%);
+              border-radius: 5px;
+              z-index: 9999;
+            "
+          >
             Заявка успешно отправлена!
           </div>
-          
-          <div id="errorNotification" style="display:none; background-color: red; color: white; padding: 10px 20px; position: fixed; top: 10px; left: 50%; transform: translateX(-50%); border-radius: 5px; z-index: 9999;">
+
+          <div
+            id="errorNotification"
+            style="
+              display: none;
+              background-color: red;
+              color: white;
+              padding: 10px 20px;
+              position: fixed;
+              top: 10px;
+              left: 50%;
+              transform: translateX(-50%);
+              border-radius: 5px;
+              z-index: 9999;
+            "
+          >
             Произошла ошибка при отправке. Попробуйте еще раз.
           </div>
-          
-          
         </div>
 
-      <div class="aboutMe" id="aboutMe">
-        <div class="backPrices">
-          <h1>Обо мне</h1>
-        </div>
-        <div class="aboutMeFull container">
-          <div class="aboutMeDescription">
-            <p>
-              Преподаю английский студентам от 5 лет. Готовлю к кембриджским
-              экзаменам (YL exams, KET, PET, FCE), к ЕГЭ/ОГЭ и преподаю General
-              English, провожу разговорные клубы и марафоны. На данный момент
-              веду уроки только онлайн. <br /><br />
-
-              <span class="mission">Моя миссия</span> — сделать английский
-              частью жизни моих студентов.<br /><br />
-
-              В своей работе я использую несколько подходов в зависимости от
-              цели студента, а именно: коммуникативный, лексический или задачный
-              метод обучения. Занятия проходят на интерактивной платформе
-              ProgressMe или в Zoom с доской Miro.<br /><br />
-
-              <span class="mission"
-                >Также я консультирую коллег по таким вопросам</span
-              >, как:<br />
-              -преподавание дошкольников<br />
-              -как подготовить детей к YL exams<br />
-              -как обучать онлайн (группа/индивид)<br />
-              -как обучать студентов с SEN<br />
-              ‌- организация внеучебных мероприятий<br />
-            </p>
+        <div class="aboutMe" id="aboutMe">
+          <div class="backPrices">
+            <h1>Обо мне</h1>
           </div>
-          <div class="aboutMePhoto">
-            <img src="img/Margo.jpg" alt="" />
+          <div class="aboutMeFull container">
+            <div class="aboutMeDescription">
+              <p>
+                Преподаю английский студентам от 5 лет. Готовлю к кембриджским
+                экзаменам (YL exams, KET, PET, FCE), к ЕГЭ/ОГЭ и преподаю
+                General English, провожу разговорные клубы и марафоны. На данный
+                момент веду уроки только онлайн. <br /><br />
+
+                <span class="mission">Моя миссия</span> — сделать английский
+                частью жизни моих студентов.<br /><br />
+
+                В своей работе я использую несколько подходов в зависимости от
+                цели студента, а именно: коммуникативный, лексический или
+                задачный метод обучения. Занятия проходят на интерактивной
+                платформе ProgressMe или в Zoom с доской Miro.<br /><br />
+
+                <span class="mission"
+                  >Также я консультирую коллег по таким вопросам</span
+                >, как:<br />
+                -преподавание дошкольников<br />
+                -как подготовить детей к YL exams<br />
+                -как обучать онлайн (группа/индивид)<br />
+                -как обучать студентов с SEN<br />
+                ‌- организация внеучебных мероприятий<br />
+              </p>
+            </div>
+            <div class="aboutMePhoto">
+              <img src="img/Margo.jpg" alt="" />
+            </div>
           </div>
         </div>
-      </div>
-      <div class="myEducation">
-        <div class="backPrices">
-          <h1>Моё образование</h1>
-        </div>
-        <div class="container">
-          <div class="carousel">
-            <input type="radio" id="carousel-1" name="carousel[]" checked />
-            <input type="radio" id="carousel-2" name="carousel[]" />
-            <input type="radio" id="carousel-3" name="carousel[]" />
-            <input type="radio" id="carousel-4" name="carousel[]" />
-            <input type="radio" id="carousel-5" name="carousel[]" />
-            <input type="radio" id="carousel-6" name="carousel[]" />
-            <input type="radio" id="carousel-7" name="carousel[]" />
-            <input type="radio" id="carousel-8" name="carousel[]" />
-            <ul class="carousel__items">
-              <li class="carousel__item"><img src="img/edu1.jpg" alt="" /></li>
-              <li class="carousel__item"><img src="img/edu2.jpg" alt="" /></li>
-              <li class="carousel__item"><img src="img/edu3.jpeg" alt="" /></li>
-              <li class="carousel__item"><img src="img/edu4.jpeg" alt="" /></li>
-              <li class="carousel__item"><img src="img/edu5.jpg" alt="" /></li>
-              <li class="carousel__item"><img src="img/edu6.jpg" alt="" /></li>
-              <li class="carousel__item"><img src="img/edu7.jpeg" alt="" /></li>
-              <li class="carousel__item"><img src="img/edu8.jpg" alt="" /></li>
-            </ul>
-            <div class="carousel__prev">
-              <label for="carousel-1"></label>
-              <label for="carousel-2"></label>
-              <label for="carousel-3"></label>
-              <label for="carousel-4"></label>
-              <label for="carousel-5"></label>
-              <label for="carousel-6"></label>
-              <label for="carousel-7"></label>
-              <label for="carousel-8"></label>
-            </div>
-            <div class="carousel__next">
-              <label for="carousel-1"></label>
-              <label for="carousel-2"></label>
-              <label for="carousel-3"></label>
-              <label for="carousel-4"></label>
-              <label for="carousel-5"></label>
-              <label for="carousel-6"></label>
-              <label for="carousel-7"></label>
-              <label for="carousel-8"></label>
-            </div>
-            <div class="carousel__nav">
-              <label for="carousel-1"></label>
-              <label for="carousel-2"></label>
-              <label for="carousel-3"></label>
-              <label for="carousel-4"></label>
-              <label for="carousel-5"></label>
-              <label for="carousel-6"></label>
-              <label for="carousel-7"></label>
-              <label for="carousel-8"></label>
+        <div class="myEducation">
+          <div class="backPrices">
+            <h1>Моё образование</h1>
+          </div>
+          <div class="container">
+            <div class="carousel">
+              <input type="radio" id="carousel-1" name="carousel[]" checked />
+              <input type="radio" id="carousel-2" name="carousel[]" />
+              <input type="radio" id="carousel-3" name="carousel[]" />
+              <input type="radio" id="carousel-4" name="carousel[]" />
+              <input type="radio" id="carousel-5" name="carousel[]" />
+              <input type="radio" id="carousel-6" name="carousel[]" />
+              <input type="radio" id="carousel-7" name="carousel[]" />
+              <input type="radio" id="carousel-8" name="carousel[]" />
+              <ul class="carousel__items">
+                <li class="carousel__item">
+                  <img src="img/edu1.jpg" alt="" />
+                </li>
+                <li class="carousel__item">
+                  <img src="img/edu2.jpg" alt="" />
+                </li>
+                <li class="carousel__item">
+                  <img src="img/edu3.jpeg" alt="" />
+                </li>
+                <li class="carousel__item">
+                  <img src="img/edu4.jpeg" alt="" />
+                </li>
+                <li class="carousel__item">
+                  <img src="img/edu5.jpg" alt="" />
+                </li>
+                <li class="carousel__item">
+                  <img src="img/edu6.jpg" alt="" />
+                </li>
+                <li class="carousel__item">
+                  <img src="img/edu7.jpeg" alt="" />
+                </li>
+                <li class="carousel__item">
+                  <img src="img/edu8.jpg" alt="" />
+                </li>
+              </ul>
+              <div class="carousel__prev">
+                <label for="carousel-1"></label>
+                <label for="carousel-2"></label>
+                <label for="carousel-3"></label>
+                <label for="carousel-4"></label>
+                <label for="carousel-5"></label>
+                <label for="carousel-6"></label>
+                <label for="carousel-7"></label>
+                <label for="carousel-8"></label>
+              </div>
+              <div class="carousel__next">
+                <label for="carousel-1"></label>
+                <label for="carousel-2"></label>
+                <label for="carousel-3"></label>
+                <label for="carousel-4"></label>
+                <label for="carousel-5"></label>
+                <label for="carousel-6"></label>
+                <label for="carousel-7"></label>
+                <label for="carousel-8"></label>
+              </div>
+              <div class="carousel__nav">
+                <label for="carousel-1"></label>
+                <label for="carousel-2"></label>
+                <label for="carousel-3"></label>
+                <label for="carousel-4"></label>
+                <label for="carousel-5"></label>
+                <label for="carousel-6"></label>
+                <label for="carousel-7"></label>
+                <label for="carousel-8"></label>
+              </div>
             </div>
           </div>
         </div>
@@ -564,8 +647,10 @@
       </div>
       <div class="footerDivider margin-auto"></div>
       <div class="footerContact">
-        
-        <p>E-mail: <a href="mailto:mvikhareva@icloud.com">mvikhareva@icloud.com</a></p>
+        <p>
+          E-mail:
+          <a href="mailto:mvikhareva@icloud.com">mvikhareva@icloud.com</a>
+        </p>
       </div>
       <div class="footerSocial">
         <ul>
@@ -594,4 +679,3 @@
     <script src="script.js" defer></script>
   </body>
 </html>
-

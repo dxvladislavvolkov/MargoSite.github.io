@@ -283,24 +283,31 @@ function updateTotalPrice() {
   }
 
   // Показ итоговой цены
-  const totalPriceElement = document.getElementById("totalPrice");
+  const totalPriceElement = document.getElementById("totalPriceValue");
   if (totalPriceElement) {
-    totalPriceElement.textContent = `Итого цена: ${totalPrice} р`;
+    totalPriceElement.textContent = totalPrice; // Обновляем только значение цены
   }
 
   const totalPriceWithoutDiscountElement = document.getElementById("totalPriceWithoutDiscount");
+  const saleBackgroundElement = document.getElementById("saleBackground");
+
+  // Логика управления видимостью цены без скидки и скидки
   if (totalPriceWithoutDiscountElement) {
     if (hasDiscount) {
-      totalPriceWithoutDiscountElement.innerHTML = `Цена без скидки: <span style="text-decoration: line-through;">${totalPriceWithoutDiscount} р</span>`;
+      // Показать цену без скидки и скидку
+      totalPriceWithoutDiscountElement.innerHTML = `<span style="text-decoration: line-through;">${totalPriceWithoutDiscount}₽</span>`;
+      saleBackgroundElement.style.display = "block";
     } else {
+      // Скрыть цену без скидки и скидку
       totalPriceWithoutDiscountElement.innerHTML = "";
+      saleBackgroundElement.style.display = "none";
     }
   }
 
   return {
     totalPrice,
     totalPriceWithoutDiscount,
-    hasDiscount
+    hasDiscount,
   };
 }
 
@@ -374,6 +381,7 @@ adultTariffs.forEach((checkbox) => {
     updateTotalPrice();
   });
 });
+
 
 
 /* emailjs.init("zq7v07VJEBawgYzDZ");
