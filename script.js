@@ -1,3 +1,10 @@
+const phoneInput = document.getElementById("phone");
+
+phoneInput.addEventListener("input", (event) => {
+  phoneInput.value = phoneInput.value.replace(/\D/g, ""); // Удаляем все, что не цифры
+});
+
+
 const checkbox = document.querySelector('.checkbox');
 const body = document.body;
 const menuLinks = document.querySelectorAll('.menu-items a'); // Все ссылки меню
