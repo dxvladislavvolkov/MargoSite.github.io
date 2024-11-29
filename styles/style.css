@@ -262,6 +262,52 @@ header .ul .img {
     transform: translateX(0);
   }
 }
+.floating-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #550b0b;
+  color: white;
+  font-size: 16px;
+  border: 2px solid rgb(158, 156, 156);
+  border-radius: 50%;
+  width: 80px; /* Начальная ширина */
+  height: 80px; /* Фиксированная высота */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  padding: 0 15px;
+  white-space: nowrap;
+  z-index: 10;
+}
+
+.floating-button .text {
+  display: none;
+  transition: opacity 0.3s ease;
+}
+
+.floating-button .icon {
+  transition: opacity 0.3s ease;
+  width: 80%;
+  height: 80%;
+}
+
+.floating-button:hover {
+  border-radius: 25px; /* Увеличивается радиус, но только в ширину */
+  width: 200px; /* Расширение кнопки */
+}
+
+.floating-button:hover .icon {
+  display: none;
+}
+
+.floating-button:hover .text {
+  display: block;
+}
+
 .pictures {
   display: flex;
   justify-content: center;

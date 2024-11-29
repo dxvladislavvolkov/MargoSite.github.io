@@ -199,6 +199,7 @@ emailjs.init("zq7v07VJEBawgYzDZ");
 
 // Открытие и закрытие модального окна
 const openFormMenu = document.getElementById("openFormMenu");
+const openFormButton = document.getElementById("openFormButton");
 const openFormBottom = document.getElementById("openFormBottom");
 const closeForm = document.getElementById("closeForm");
 const modal = document.getElementById("modal");
@@ -208,6 +209,10 @@ const successNotification = document.getElementById("successNotification");
 const errorNotification = document.getElementById("errorNotification");
 
 openFormMenu?.addEventListener("click", () => {
+  modal.style.display = "flex";
+});
+
+openFormButton?.addEventListener("click", () => {
   modal.style.display = "flex";
 });
 
