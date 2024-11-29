@@ -910,6 +910,7 @@ header .ul .img {
   align-items: center;
   max-width: 900px;
   width: 90%;
+  max-height: 100vh; /* Ограничиваем максимальную высоту */
   overflow-y: auto;
   background-color: white;
   position: relative;
@@ -979,7 +980,7 @@ header .ul .img {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-bottom: 40px;
+  padding-bottom: 30px;
 }
 .prices .buttonContainer button[type=submit] {
   display: flex;

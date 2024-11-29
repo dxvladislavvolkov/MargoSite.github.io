@@ -1029,6 +1029,7 @@ header {
         align-items: center;
         max-width: 900px;
         width: 90%;
+        max-height: 100vh; /* Ограничиваем максимальную высоту */
         overflow-y: auto;
         background-color: white;
         position: relative;
@@ -1113,7 +1114,7 @@ header {
         display: flex;
         justify-content: center;
         align-items: center;
-        padding-bottom: 40px;
+        padding-bottom: 30px;
       }
       
       button[type="submit"] {
