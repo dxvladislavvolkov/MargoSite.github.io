@@ -916,7 +916,7 @@ header .ul .img {
   position: relative;
 }
 .prices .buttonContainer .form-container h2 {
-  margin-top: 25px;
+  margin-top: 15px;
   font-size: clamp(25px, 4vw, 40px);
   margin-bottom: 30px;
   text-transform: uppercase;
@@ -997,7 +997,7 @@ header .ul .img {
   text-transform: uppercase;
 }
 .prices .buttonContainer button[type=submit]:hover {
-  background-color: #218838;
+  background-color: #5f0b0b;
 }
 .prices .buttonContainer button[type=submit]:disabled {
   background-color: #ccc; /* Цвет фона для заблокированной кнопки */
