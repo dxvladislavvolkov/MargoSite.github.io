@@ -17,6 +17,10 @@ body.no-scroll {
     overflow: hidden; /* Блокирует прокрутку */
     touch-action: none; /* Блокирует сенсорные жесты */
   }
+ 
+  body.modal-open {
+    overflow: hidden;
+  }  
   
   
 
@@ -848,6 +852,7 @@ header {
     margin-bottom: 45px;
     
 
+
     .notification {
         position: fixed;
         top: 20px;
@@ -1024,6 +1029,8 @@ header {
         align-items: center;
         max-width: 900px;
         width: 90%;
+        max-height: 90vh; /* Ограничиваем максимальную высоту */
+        overflow-y: auto;
         background-color: white;
         position: relative;
       }

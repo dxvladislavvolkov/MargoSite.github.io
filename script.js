@@ -208,25 +208,27 @@ const modal = document.getElementById("modal");
 const successNotification = document.getElementById("successNotification");
 const errorNotification = document.getElementById("errorNotification");
 
-openFormMenu?.addEventListener("click", () => {
+// Открытие формы
+function openForm() {
   modal.style.display = "flex";
-});
+  document.body.classList.add("modal-open"); // Блокировка прокрутки страницы
+}
 
-openFormButton?.addEventListener("click", () => {
-  modal.style.display = "flex";
-});
-
-openFormBottom?.addEventListener("click", () => {
-  modal.style.display = "flex";
-});
-
-closeForm?.addEventListener("click", () => {
+// Закрытие формы
+function closeFormHandler() {
   modal.style.display = "none";
-});
+  document.body.classList.remove("modal-open"); // Восстановление прокрутки страницы
+}
+
+openFormMenu?.addEventListener("click", openForm);
+openFormButton?.addEventListener("click", openForm);
+openFormBottom?.addEventListener("click", openForm);
+
+closeForm?.addEventListener("click", closeFormHandler);
 
 window.addEventListener("click", (e) => {
   if (e.target === modal) {
-    modal.style.display = "none";
+    closeFormHandler();
   }
 });
 
@@ -381,6 +383,7 @@ adultTariffs.forEach((checkbox) => {
     updateTotalPrice();
   });
 });
+
 
 
 

@@ -18,6 +18,10 @@ body.no-scroll {
   touch-action: none; /* Блокирует сенсорные жесты */
 }
 
+body.modal-open {
+  overflow: hidden;
+}
+
 .container {
   width: 100%;
   max-width: 1200px;
@@ -906,6 +910,8 @@ header .ul .img {
   align-items: center;
   max-width: 900px;
   width: 90%;
+  max-height: 90vh; /* Ограничиваем максимальную высоту */
+  overflow-y: auto;
   background-color: white;
   position: relative;
 }
