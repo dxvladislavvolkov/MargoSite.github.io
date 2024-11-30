@@ -769,6 +769,27 @@ header .ul .img {
   /* Закрывающая кнопка */
   /* Стили для элементов формы */
 }
+.prices .buttonContainer .tariff-select {
+  width: 100%;
+}
+.prices .buttonContainer .checkboxChild {
+  display: flex;
+  flex-direction: column;
+}
+.prices .buttonContainer .selectChild {
+  display: none; /* Скрываем селект по умолчанию */
+  width: 100%;
+  font-size: 16px;
+}
+.prices .buttonContainer .checkboxAdult {
+  display: flex;
+  flex-direction: column;
+}
+.prices .buttonContainer .selectAdult {
+  display: none; /* Скрываем селект по умолчанию */
+  width: 100%;
+  font-size: 16px;
+}
 .prices .buttonContainer .notification {
   position: fixed;
   top: 20px;
@@ -832,47 +853,6 @@ header .ul .img {
 .prices .buttonContainer .tariff-options {
   display: flex;
   flex-direction: column;
-  /* Внутренний квадрат с отступами */
-  /* Эффект при наведении */
-  /* Состояние "чекнутый" с отступами */
-}
-.prices .buttonContainer .tariff-options .custom-checkbox input[type=checkbox] {
-  display: none;
-}
-.prices .buttonContainer .tariff-options .custom-checkbox {
-  display: inline-flex;
-  align-items: center;
-  cursor: pointer;
-  font-size: 16px;
-  gap: 10px; /* Расстояние между чекбоксом и текстом */
-  padding-bottom: 10px;
-}
-.prices .buttonContainer .tariff-options .custom-checkbox .checkmark {
-  width: 20px;
-  height: 20px;
-  background-color: #f0f0f0;
-  border: 2px solid #821212;
-  border-radius: 4px; /* Скругление углов */
-  position: relative;
-  transition: all 0.3s ease;
-}
-.prices .buttonContainer .tariff-options .custom-checkbox .checkmark::before {
-  content: "";
-  position: absolute;
-  top: 2px; /* Отступ сверху */
-  left: 2px; /* Отступ слева */
-  right: 2px; /* Отступ справа */
-  bottom: 2px; /* Отступ снизу */
-  background-color: transparent; /* По умолчанию прозрачный */
-  border-radius: 2px; /* Скругление углов внутреннего квадрата */
-  transition: background-color 0.3s ease;
-}
-.prices .buttonContainer .tariff-options .custom-checkbox:hover .checkmark {
-  border-color: #821212;
-  background-color: #e6f7ff;
-}
-.prices .buttonContainer .tariff-options .custom-checkbox input[type=checkbox]:checked + .checkmark::before {
-  background-color: #821212; /* Цвет закрашивания */
 }
 .prices .buttonContainer .tariff-options label {
   font-size: 1rem;
@@ -917,15 +897,69 @@ header .ul .img {
   align-items: center;
   max-width: 900px;
   width: 90%;
-  max-height: 670px; /* Ограничиваем максимальную высоту */
+  max-height: 700; /* Ограничиваем максимальную высоту */
   overflow-y: auto;
   background-color: white;
   position: relative;
+  /* Внутренний квадрат с отступами */
+  /* Эффект при наведении */
+  /* Состояние "чекнутый" с отступами */
+}
+.prices .buttonContainer .form-container .approval {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5px;
+}
+.prices .buttonContainer .form-container .approval .custom-checkbox .checkmark {
+  width: 23px;
+  height: 23px;
+}
+.prices .buttonContainer .form-container .approval .spanApproval {
+  font-size: clamp(12px, 2vw, 18px);
+}
+.prices .buttonContainer .form-container .custom-checkbox input[type=checkbox] {
+  display: none;
+}
+.prices .buttonContainer .form-container .custom-checkbox {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  font-size: 16px;
+  gap: 10px; /* Расстояние между чекбоксом и текстом */
+  padding-bottom: 10px;
+}
+.prices .buttonContainer .form-container .custom-checkbox .checkmark {
+  width: 20px;
+  height: 20px;
+  background-color: #f0f0f0;
+  border: 2px solid #821212;
+  border-radius: 4px; /* Скругление углов */
+  position: relative;
+  transition: all 0.3s ease;
+}
+.prices .buttonContainer .form-container .custom-checkbox .checkmark::before {
+  content: "";
+  position: absolute;
+  top: 2px; /* Отступ сверху */
+  left: 2px; /* Отступ слева */
+  right: 2px; /* Отступ справа */
+  bottom: 2px; /* Отступ снизу */
+  background-color: transparent; /* По умолчанию прозрачный */
+  border-radius: 2px; /* Скругление углов внутреннего квадрата */
+  transition: background-color 0.3s ease;
+}
+.prices .buttonContainer .form-container .custom-checkbox:hover .checkmark {
+  border-color: #821212;
+  background-color: #e6f7ff;
+}
+.prices .buttonContainer .form-container .custom-checkbox input[type=checkbox]:checked + .checkmark::before {
+  background-color: #821212; /* Цвет закрашивания */
 }
 .prices .buttonContainer .form-container h2 {
-  margin-top: 15px;
-  font-size: clamp(25px, 4vw, 40px);
-  margin-bottom: 15px;
+  margin-top: 10px;
+  font-size: clamp(25px, 4vw, 32px);
+  margin-bottom: 10px;
   text-transform: uppercase;
   color: #821212;
   font-weight: 800;
@@ -940,15 +974,16 @@ header .ul .img {
   align-items: center;
 }
 .prices .buttonContainer .chooseTariff h3 {
-  padding-top: 15px;
+  padding-top: 10px;
   font-weight: 800;
-  font-size: clamp(22px, 4vw, 26px);
+  font-size: clamp(18px, 4vw, 22px);
   text-transform: uppercase;
   color: #821212;
 }
 .prices .buttonContainer .chooseTariff p {
   padding-top: 15px;
-  padding-bottom: 30px;
+  padding-bottom: 15px;
+  font-size: clamp(10px, 2.5vw, 16px);
 }
 .prices .buttonContainer .close-button {
   position: absolute;
@@ -1452,12 +1487,36 @@ footer .footerSocial ul img {
     max-width: 300px;
     max-height: 300px;
   }
+  .prices .buttonContainer .checkboxChild {
+    display: none; /* Скрываем чекбоксы */
+  }
+  .prices .buttonContainer .selectChild {
+    display: block; /* Показываем выпадающий список */
+  }
+  .prices .buttonContainer .checkboxAdult {
+    display: none; /* Скрываем чекбоксы */
+  }
+  .prices .buttonContainer .selectAdult {
+    display: block; /* Показываем выпадающий список */
+  }
   .prices .buttonContainer .form-popup .form-popup {
     overflow-y: auto; /* Вертикальная прокрутка внутри формы */
     max-height: 100vh; /* Ограничение высоты формы на высоту экрана */
   }
+  .prices .buttonContainer .tariffsWrapper {
+    flex-direction: column;
+  }
+  .prices .buttonContainer .tariffsWrapper .tariffs_L {
+    padding-right: 0px;
+  }
+  .prices .buttonContainer .tariffsWrapper .tariffs_L h4 {
+    margin-bottom: 0;
+  }
   .prices .buttonContainer .tariffsWrapper .tariffs_R {
     padding-left: 0px;
+  }
+  .prices .buttonContainer .tariffsWrapper .tariffs_R h4 {
+    margin-bottom: 0;
   }
   .aboutMe .backPrices {
     margin-bottom: 45px;

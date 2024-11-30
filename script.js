@@ -391,8 +391,30 @@ adultTariffs.forEach((checkbox) => {
   });
 });
 
+// Элемент кнопки отправки
+const submitButton = document.getElementById("submitButton");
+// Чекбокс для согласия
+const approvalCheckbox = document.querySelector('input[name="approval"]');
+
+// Функция для управления активностью кнопки отправки
+function toggleSubmitButton() {
+  if (approvalCheckbox.checked) {
+    submitButton.removeAttribute("disabled"); // Активировать кнопку
+  } else {
+    submitButton.setAttribute("disabled", "disabled"); // Сделать кнопку неактивной
+  }
+}
+
+// Добавление обработчика событий для изменения состояния чекбокса
+approvalCheckbox.addEventListener("change", toggleSubmitButton);
+
+// Инициализация кнопки при загрузке страницы
+toggleSubmitButton();
 
 
 
-/* emailjs.init("zq7v07VJEBawgYzDZ");
+/* Margo emailjs.init("zq7v07VJEBawgYzDZ");
 .send("service_cs9p1tr", "template_z0w7jzg", formData) */
+
+/* Sergo emailjs.init("B9zMyupnCHE8Qs3DQ");
+.send("service_v6ppbhz", "template_3cp8efa", formData) */

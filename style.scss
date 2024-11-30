@@ -859,7 +859,32 @@ header {
     justify-content: center;
     margin-top: 45px;
     margin-bottom: 45px;
+
+    .tariff-select {
+        width: 100%;
+    }
     
+    .checkboxChild {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .selectChild {
+        display: none; /* Скрываем селект по умолчанию */
+        width: 100%;
+        font-size: 16px;
+      }
+
+    .checkboxAdult {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .selectAdult {
+        display: none; /* Скрываем селект по умолчанию */
+        width: 100%;
+        font-size: 16px;
+      }
 
 
     .notification {
@@ -937,6 +962,80 @@ header {
         display: flex;
         flex-direction: column;
 
+        label {
+          font-size: 1rem;
+          display: flex;
+          align-items: center;
+          text-align: center;
+      
+          input[type="checkbox"] {
+            margin-right: 10px;
+            width: auto;
+          }
+          
+
+        }
+      }
+
+    .open-form {
+        min-width: 270px;
+        height: 60px;
+        background-color: $color-default;
+        border-radius: 30px;
+        font-size: 16px;
+        cursor: pointer;
+        color: white;
+        text-transform: uppercase;
+        font-family: $font-default;
+        font-weight: bold;
+      }
+      
+      .open-form:hover {
+        background-color: #5f0b0b;
+      }
+      
+      /* Стиль для всплывающего окна */
+      .form-popup {
+        display: none; /* По умолчанию скрыто */
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачный фон */
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+      }
+      
+      /* Контейнер формы */
+      .form-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: 900px;
+        width: 90%;
+        max-height: 700; /* Ограничиваем максимальную высоту */
+        overflow-y: auto;
+        background-color: white;
+        position: relative;
+
+        .approval {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 5px;
+
+            .custom-checkbox .checkmark {
+                width: 23px;
+                height: 23px;
+            }
+
+            .spanApproval {
+                font-size: clamp(12px, 2vw, 18px);
+            }
+        }
+
         .custom-checkbox input[type="checkbox"] {
             display: none;
           }
@@ -983,71 +1082,12 @@ header {
           .custom-checkbox input[type="checkbox"]:checked + .checkmark::before {
             background-color: $color-default; /* Цвет закрашивания */
           }
-          
-
-      
-        label {
-          font-size: 1rem;
-          display: flex;
-          align-items: center;
-          text-align: center;
-      
-          input[type="checkbox"] {
-            margin-right: 10px;
-            width: auto;
-          }
-      
-        }
-      }
-
-    .open-form {
-        min-width: 270px;
-        height: 60px;
-        background-color: $color-default;
-        border-radius: 30px;
-        font-size: 16px;
-        cursor: pointer;
-        color: white;
-        text-transform: uppercase;
-        font-family: $font-default;
-        font-weight: bold;
-      }
-      
-      .open-form:hover {
-        background-color: #5f0b0b;
-      }
-      
-      /* Стиль для всплывающего окна */
-      .form-popup {
-        display: none; /* По умолчанию скрыто */
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачный фон */
-        justify-content: center;
-        align-items: center;
-        z-index: 1000;
-      }
-      
-      /* Контейнер формы */
-      .form-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        max-width: 900px;
-        width: 90%;
-        max-height: 670px; /* Ограничиваем максимальную высоту */
-        overflow-y: auto;
-        background-color: white;
-        position: relative;
       }
       
       .form-container h2 {
-        margin-top: 15px;
-        font-size: clamp(25px, 4vw, 40px);
-        margin-bottom: 15px;
+        margin-top: 10px;
+        font-size: clamp(25px, 4vw, 32px);
+        margin-bottom: 10px;
         text-transform: uppercase;
         color: $color-default;
         font-weight: 800;
@@ -1064,16 +1104,17 @@ header {
         align-items: center;
 
         h3 {
-            padding-top: 15px;
+            padding-top: 10px;
             font-weight: 800;
-            font-size: clamp(22px, 4vw, 26px);
+            font-size: clamp(18px, 4vw, 22px);
             text-transform: uppercase;
             color: $color-default;
         }
 
         p {
             padding-top: 15px;
-            padding-bottom: 30px;
+            padding-bottom: 15px;
+            font-size: clamp(10px, 2.5vw, 16px);
         }
       }
 
@@ -1705,6 +1746,22 @@ footer {
   }
   .prices{
     .buttonContainer {
+
+        .checkboxChild {
+            display: none; /* Скрываем чекбоксы */
+          }
+    
+          .selectChild {
+            display: block; /* Показываем выпадающий список */
+          }
+        .checkboxAdult {
+            display: none; /* Скрываем чекбоксы */
+          }
+    
+          .selectAdult {
+            display: block; /* Показываем выпадающий список */
+          }
+
         .form-popup {
             .form-popup {
                 overflow-y: auto; /* Вертикальная прокрутка внутри формы */
@@ -1712,8 +1769,21 @@ footer {
               }
         }
         .tariffsWrapper {
+            flex-direction: column;
+            .tariffs_L {
+                padding-right: 0px;
+
+                h4 {
+                    margin-bottom: 0;
+                }
+              }
+
             .tariffs_R {
                 padding-left: 0px;
+
+                h4 {
+                    margin-bottom: 0;
+                }
               }
             }
     }
