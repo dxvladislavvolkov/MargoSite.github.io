@@ -310,6 +310,7 @@ header {
   }
 }
 
+
 .floating-button {
     position: fixed;
     bottom: 20px;
@@ -334,13 +335,15 @@ header {
   
   .floating-button .text {
     display: none;
+    opacity: 0;
     transition: opacity 0.3s ease;
   }
   
   .floating-button .icon {
-    transition: opacity 0.3s ease;
+    transition: opacity 0.2s ease 0.2s; /* Задержка в 0.3с */
     width: 80%;
     height: 80%;
+    opacity: 1;
   }
   
   .floating-button:hover {
@@ -349,12 +352,18 @@ header {
   }
   
   .floating-button:hover .icon {
-    display: none;
+    opacity: 0; /* Скрытие иконки с анимацией */
+    transition: opacity 0.3s ease; /* Убираем задержку */
+    width: 0;
+    height: 0;
   }
   
   .floating-button:hover .text {
     display: block;
+    opacity: 1; /* Плавное появление текста */
+    transition: opacity 0.1s ease 0.1s; /* Добавляем задержку для плавного перехода */
   }
+  
   
   
   
