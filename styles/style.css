@@ -34,6 +34,21 @@ a {
   text-decoration: none;
 }
 
+.backPrices {
+  height: 135px;
+  background-color: #821212;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.backPrices h1 {
+  color: white;
+  text-transform: uppercase;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: clamp(25px, 4vw, 52px);
+}
+
 .no-wrap {
   white-space: nowrap;
 }
@@ -206,20 +221,20 @@ header .mainInfo .mainDesription {
   font-family: "Montserrat", sans-serif;
   font-weight: 300;
 }
-header .mainInfo .socialMedia {
+header .socialMedia {
   height: 36px;
 }
-header .ul {
+header .socialMedia ul {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 15px;
   padding-bottom: 90px;
 }
-header .ul .img {
+header .socialMedia ul img {
   width: 18px;
 }
-header .ul .li {
+header .socialMedia ul li {
   width: 30px;
   height: 30px;
   background-color: #821212;
@@ -229,10 +244,10 @@ header .ul .li {
   justify-content: center;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
-header .ul .li:hover {
+header .socialMedia ul li:hover {
   scale: 1.1;
 }
-header .ul .a {
+header .socialMedia ul a {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -241,34 +256,12 @@ header .ul .a {
   border-radius: 50%; /* Подстраиваем под форму круга */
   text-decoration: none; /* Убираем стандартное подчеркивание ссылок */
 }
-header .ul .img {
+header .socialMedia ul img {
   max-width: 100%; /* Масштабируем картинку */
   max-height: 100%;
   border-radius: 50%; /* Убедитесь, что картинка тоже круглая */
 }
 
-.tooltip-horizontal-scroll-icon {
-  width: 30px;
-  height: 30px;
-  display: block;
-  animation: tooltip-horizontal-scroll-icon_anim-scroll-hand 2s infinite;
-}
-
-.tooltip-horizontal-scroll-icon_hand {
-  fill: rgb(255, 255, 255);
-}
-
-@keyframes tooltip-horizontal-scroll-icon_anim-scroll-hand {
-  0% {
-    transform: translateX(0);
-  }
-  50% {
-    transform: translateX(10px); /* Пример сдвига */
-  }
-  100% {
-    transform: translateX(0);
-  }
-}
 .floating-button {
   position: fixed;
   bottom: 20px;
@@ -290,18 +283,16 @@ header .ul .img {
   white-space: nowrap;
   z-index: 10;
 }
-
-.floating-button .text {
-  display: none;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.floating-button .icon {
+.floating-button img {
   transition: opacity 0.2s ease 0.2s; /* Задержка в 0.3с */
   width: 80%;
   height: 80%;
   opacity: 1;
+}
+.floating-button span {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
 .floating-button:hover {
@@ -385,6 +376,66 @@ header .ul .img {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
+  /* Анимация для руки (path) */
+  /* Анимация для карточек (rect) */
+  /* Анимация для руки - движение по горизонтали с уменьшением масштаба */
+  /* Анимация для карточек - движение по горизонтали */
+}
+.pictures .secondCarousel .tooltip-horizontal-scroll-icon {
+  width: 30px;
+  height: 30px;
+  display: block;
+  animation: tooltip-horizontal-scroll-icon_anim-scroll-hand 2s infinite;
+}
+.pictures .secondCarousel .tooltip-horizontal-scroll-icon_hand {
+  fill: rgb(255, 255, 255);
+}
+@keyframes tooltip-horizontal-scroll-icon_anim-scroll-hand {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(10px); /* Пример сдвига */
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+.pictures .secondCarousel .tooltip-horizontal-scroll-icon_hand {
+  animation: tooltip-horizontal-scroll-icon_anim-scroll-hand 2s infinite;
+}
+.pictures .secondCarousel .tooltip-horizontal-scroll-icon_card {
+  animation: tooltip-horizontal-scroll-icon_anim-scroll-card 2s infinite;
+}
+@keyframes tooltip-horizontal-scroll-icon_anim-scroll-hand {
+  0% {
+    transform: translateX(80px) scale(1);
+    opacity: 0;
+  }
+  10% {
+    transform: translateX(80px) scale(1);
+    opacity: 1;
+  }
+  20%, 60% {
+    transform: translateX(175px) scale(0.6);
+    opacity: 1;
+  }
+  80% {
+    transform: translateX(5px) scale(0.6);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(5px) scale(0.6);
+    opacity: 0;
+  }
+}
+@keyframes tooltip-horizontal-scroll-icon_anim-scroll-card {
+  0%, 60% {
+    transform: translateX(0);
+  }
+  80%, 100% {
+    transform: translateX(-240px);
+  }
 }
 .pictures .secondCarousel .svg {
   z-index: 0;
@@ -431,20 +482,6 @@ header .ul .img {
 .pictures .secondCarousel__next {
   right: 10px;
 }
-.pictures .picturesPhoto {
-  display: flex;
-  flex-wrap: wrap;
-  padding-top: 105px;
-  padding-bottom: 90px;
-  justify-content: space-around;
-  align-content: center;
-}
-.pictures .picturesPhoto .imgPictures {
-  width: 360px;
-  height: 360px;
-  object-fit: cover;
-  margin-bottom: 20px;
-}
 
 .christmasMarathon {
   padding-top: 105px;
@@ -459,14 +496,14 @@ header .ul .img {
   margin-bottom: 105px;
   gap: 10px;
 }
-.christmasMarathon_title .christmasMarathon_title_L {
+.christmasMarathon_title_L {
   max-width: 500px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
-.christmasMarathon_title .christmasMarathon_title_L h1 {
+.christmasMarathon_title_L h1 {
   font-weight: 600;
   font-size: clamp(24px, 15vw, 74px);
   color: #821212;
@@ -474,7 +511,7 @@ header .ul .img {
   text-transform: uppercase;
   text-align: left;
 }
-.christmasMarathon_title .christmasMarathon_title_L p {
+.christmasMarathon_title_L p {
   text-align: left;
   font-family: "Montserrat", sans-serif;
   font-size: clamp(10px, 3vw, 16px);
@@ -483,22 +520,22 @@ header .ul .img {
   color: #666;
   padding-top: 30px;
 }
-.christmasMarathon_title .christmasMarathon_title_R {
+.christmasMarathon_title_R {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.christmasMarathon_title .christmasMarathon_title_R p {
+.christmasMarathon_title_R p {
   text-align: left;
   font-family: "Montserrat", sans-serif;
   font-size: clamp(14px, 3vw, 17px);
   font-weight: 300;
   line-height: 1.5;
 }
-.christmasMarathon_title .christmasMarathon_title_R p .textItalic {
+.christmasMarathon_title_R p .textItalic {
   font-style: italic;
 }
-.christmasMarathon_title .christmasMarathon_title_R .textBold {
+.christmasMarathon_title_R .textBold {
   font-weight: bold;
   display: flex;
   justify-content: center;
@@ -509,7 +546,7 @@ header .ul .img {
   align-items: center;
 }
 
-.containers {
+.laptopContainer {
   padding-bottom: 90px;
   width: 100%;
   height: 100%;
@@ -517,43 +554,19 @@ header .ul .img {
   align-items: center;
   justify-content: center;
 }
-
-#imageContainer {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-}
-
-#imageContainer img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  padding: 10px;
-  object-fit: cover;
-  opacity: 0;
-  transition: opacity 0.5s ease-in-out;
-}
-
-#imageContainer img.active {
-  opacity: 1;
-}
-
-.laptop {
+.laptopContainer .laptop {
   width: 790px;
   height: 410px;
   perspective: 2400px;
   perspective-origin: 50% 100%;
 }
 @media screen and (max-width: 1000px) {
-  .laptop {
+  .laptopContainer .laptop {
     width: 400px;
     height: 230px;
   }
 }
-.laptop-block {
+.laptopContainer .laptop-block {
   position: absolute;
   z-index: 6;
   top: 0;
@@ -565,7 +578,7 @@ header .ul .img {
   transform: scale(0);
   transition: all ease 0.32s;
 }
-.laptop-block:after {
+.laptopContainer .laptop-block:after {
   content: "";
   background-color: #fff;
   bottom: -3px;
@@ -573,7 +586,7 @@ header .ul .img {
   height: 3px;
   position: absolute;
 }
-.laptop-top {
+.laptopContainer .laptop-top {
   position: relative;
   width: 85%;
   margin-left: auto;
@@ -587,7 +600,7 @@ header .ul .img {
   transform: translate3d(0, 0, 0) rotateX(0deg);
   transition: all ease 0.32s;
 }
-.laptop-top:before {
+.laptopContainer .laptop-top:before {
   position: absolute;
   z-index: 2;
   content: "";
@@ -597,11 +610,11 @@ header .ul .img {
   bottom: 0;
   background-color: inherit;
 }
-.laptop-top div {
+.laptopContainer .laptop-top div {
   position: absolute;
   z-index: 3;
 }
-.laptop-top div:first-child {
+.laptopContainer .laptop-top div:first-child {
   left: 6px;
   top: 4px;
   width: calc(100% - 12px);
@@ -611,32 +624,32 @@ header .ul .img {
   border-radius: 16px 16px 0 0;
   border-bottom: 0;
 }
-.laptop-top div:last-child {
+.laptopContainer .laptop-top div:last-child {
   background-color: rgb(190, 186, 186);
   border-radius: 4px 4px 0 0;
   overflow: hidden;
   padding: 10px;
 }
-.laptop-top div:last-child img {
+.laptopContainer .laptop-top div:last-child img {
   width: 100%;
   height: 100%;
 }
-.laptop-bottom > div {
+.laptopContainer .laptop-bottom > div {
   width: 100%;
 }
-.laptop-bottom > div:first-child {
+.laptopContainer .laptop-bottom > div:first-child {
   position: relative;
   height: 22px;
 }
 @media screen and (max-width: 1000px) {
-  .laptop-bottom > div:first-child {
+  .laptopContainer .laptop-bottom > div:first-child {
     height: 14px;
   }
 }
-.laptop-bottom > div:first-child > div {
+.laptopContainer .laptop-bottom > div:first-child > div {
   width: 100%;
 }
-.laptop-bottom > div:first-child > div:first-child {
+.laptopContainer .laptop-bottom > div:first-child > div:first-child {
   position: relative;
   z-index: 2;
   height: 20px;
@@ -645,11 +658,11 @@ header .ul .img {
   overflow: hidden;
 }
 @media screen and (max-width: 1000px) {
-  .laptop-bottom > div:first-child > div:first-child {
+  .laptopContainer .laptop-bottom > div:first-child > div:first-child {
     height: 12px;
   }
 }
-.laptop-bottom > div:first-child > div:first-child div:first-child {
+.laptopContainer .laptop-bottom > div:first-child > div:first-child div:first-child {
   position: absolute;
   left: 0;
   top: 0;
@@ -658,7 +671,7 @@ header .ul .img {
   background-image: linear-gradient(90deg, rgb(190, 186, 186) 23%, rgb(190, 186, 186) 91%);
   border-radius: 3px;
 }
-.laptop-bottom > div:first-child > div:first-child div:nth-child(2) {
+.laptopContainer .laptop-bottom > div:first-child > div:first-child div:nth-child(2) {
   transform: rotate(-180deg);
   position: absolute;
   right: 0;
@@ -668,7 +681,7 @@ header .ul .img {
   background-image: linear-gradient(90deg, rgb(190, 186, 186) 23%, rgb(190, 186, 186) 50%);
   border-radius: 3px;
 }
-.laptop-bottom > div:first-child > div:first-child div:last-child {
+.laptopContainer .laptop-bottom > div:first-child > div:first-child div:last-child {
   position: absolute;
   width: 30%;
   height: 200%;
@@ -679,7 +692,7 @@ header .ul .img {
   margin-left: -15%;
   box-shadow: inset -5px 0 3px 0 rgb(146, 143, 143), inset 9px 0 5px 0 rgb(146, 143, 143);
 }
-.laptop-bottom > div:first-child > div:last-child {
+.laptopContainer .laptop-bottom > div:first-child > div:last-child {
   position: absolute;
   z-index: 1;
   bottom: 0;
@@ -689,29 +702,33 @@ header .ul .img {
   border-radius: 0 0 16px 16px;
   border: 1px solid rgb(255, 255, 255);
 }
-
-.laptop--closed .laptop-block {
+.laptopContainer #imageContainer {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.laptopContainer #imageContainer img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+.laptopContainer #imageContainer img.active {
+  opacity: 1;
+}
+.laptopContainer .laptop--closed .laptop-block {
   top: calc(100% - 40px);
   transform: scale(1);
 }
-.laptop--closed .laptop-top {
+.laptopContainer .laptop--closed .laptop-top {
   overflow: auto;
   transform: translate3d(0, 0, 0) rotateX(-90deg);
-}
-
-.backPrices {
-  height: 135px;
-  background-color: #821212;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.backPrices h1 {
-  color: white;
-  text-transform: uppercase;
-  font-family: "Montserrat", sans-serif;
-  font-weight: 600;
-  font-size: clamp(25px, 4vw, 52px);
 }
 
 .prices_cards {
@@ -774,7 +791,7 @@ header .ul .img {
   top: 20px;
   left: 50%;
   transform: translateX(-50%);
-  background-color: #4CAF50;
+  background-color: #4caf50;
   color: white;
   padding: 15px;
   border-radius: 5px;
@@ -987,7 +1004,8 @@ header .ul .img {
   font-weight: 400;
   display: block;
 }
-.prices .buttonContainer input, .prices .buttonContainer textarea {
+.prices .buttonContainer input,
+.prices .buttonContainer textarea {
   width: 100%;
   padding: 8px;
   margin: 10px 0;
@@ -995,7 +1013,7 @@ header .ul .img {
   border-radius: 5px;
 }
 .prices .buttonContainer input::placeholder {
-  color: #D9DADB;
+  color: #d9dadb;
   font-weight: 400;
   font-style: 20px;
 }
@@ -1026,37 +1044,37 @@ header .ul .img {
   background-color: #ccc; /* Цвет фона для заблокированной кнопки */
   cursor: not-allowed; /* Указываем, что кнопка не кликабельна */
 }
-.prices .totalPrice {
+.prices .buttonContainer .totalPrice {
   display: flex;
   justify-content: center;
 }
-.prices .saleWrap {
+.prices .buttonContainer .saleWrap {
   max-width: 185px;
   margin: 0 auto;
   display: flex;
   justify-content: end;
   margin-bottom: 15px;
 }
-.prices .saleWrap .totalPriceWithoutDiscount {
+.prices .buttonContainer .saleWrap .totalPriceWithoutDiscount {
   display: flex;
   justify-content: center;
 }
-.prices .saleWrap .saleBackground {
+.prices .buttonContainer .saleWrap .saleBackground {
   position: relative; /* Для правильного позиционирования дочерних элементов */
   width: 100%; /* Ширина контейнера */
   height: 100%; /* Высота контейнера */
 }
-.prices .saleWrap .saleBackground {
+.prices .buttonContainer .saleWrap .saleBackground {
   position: relative; /* Для правильного позиционирования дочерних элементов */
   display: inline-block; /* Чтобы картинка была в строке с текстом */
   width: 30px; /* Устанавливаем ширину картинки */
   height: auto; /* Высота будет пропорциональна ширине */
 }
-.prices .saleWrap .saleBackground img {
+.prices .buttonContainer .saleWrap .saleBackground img {
   width: 100%; /* Картинка будет растягиваться на всю ширину контейнера */
   height: auto; /* Сохраняем пропорции изображения */
 }
-.prices .saleWrap .saleBackground span {
+.prices .buttonContainer .saleWrap .saleBackground span {
   position: absolute; /* Абсолютное позиционирование текста относительно контейнера */
   top: 50%; /* Центрируем по вертикали */
   left: 50%; /* Центрируем по горизонтали */
@@ -1338,7 +1356,8 @@ footer .margin-auto {
 footer .footerContact {
   padding-top: 85px;
 }
-footer .footerContact a, footer .footerContact p {
+footer .footerContact a,
+footer .footerContact p {
   color: white;
 }
 footer .footerContact a {

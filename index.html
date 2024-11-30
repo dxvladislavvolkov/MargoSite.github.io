@@ -57,29 +57,30 @@
           </p>
         </div>
         <div class="socialMedia">
-          <ul class="ul">
-            <li class="li">
-              <a class="a" href="https://t.me/maggvlk" target="_blank"
-                ><img class="img" src="img/telegram.svg" alt=""
+          <ul class="socialMedia_ul">
+            <li>
+              <a class="socialMedia_a" href="https://t.me/maggvlk" target="_blank"
+                ><img src="img/telegram.svg" alt=""
               /></a>
             </li>
-            <li class="li">
-              <a class="a" href="https://wa.me/79537444988" target="_blank"
-                ><img class="img" src="img/whatsapp.svg" alt=""
+            <li>
+              <a class="socialMedia_a" href="https://wa.me/79537444988" target="_blank"
+                ><img src="img/whatsapp.svg" alt=""
               /></a>
             </li>
-            <li class="li">
+            <li>
               <a
-                class="a"
+                class="socialMedia_a"
                 href="https://www.instagram.com/maggvlk/"
                 target="_blank"
-                ><img class="img" src="img/insta.svg" alt=""
+                ><img src="img/insta.svg" alt=""
               /></a>
             </li>
           </ul>
         </div>
       </div>
     </header>
+    
     <main>
       <div class="floating-button" id="openFormButton">
         <img src="img/christmastree.png" class="icon" />
@@ -143,57 +144,6 @@
               d="M78.9579 285.7C78.9579 285.7 37.8579 212.5 20.5579 180.8C-2.44209 138.6 -6.2422 120.8 9.6579 112C19.5579 106.5 33.2579 108.8 41.6579 123.4L61.2579 154.6V32.3C61.2579 32.3 60.0579 0 83.0579 0C107.558 0 105.458 32.3 105.458 32.3V91.7C105.458 91.7 118.358 82.4 133.458 86.6C141.158 88.7 150.158 92.4 154.958 104.6C154.958 104.6 185.658 89.7 200.958 121.4C200.958 121.4 236.358 114.4 236.358 151.1C236.358 187.8 192.158 285.7 192.158 285.7H78.9579Z"
               fill="rgba(255,255,255,1)"
             ></path>
-
-            <style>
-              /* Анимация для руки (path) */
-              .tooltip-horizontal-scroll-icon_hand {
-                animation: tooltip-horizontal-scroll-icon_anim-scroll-hand 2s
-                  infinite;
-              }
-
-              /* Анимация для карточек (rect) */
-              .tooltip-horizontal-scroll-icon_card {
-                animation: tooltip-horizontal-scroll-icon_anim-scroll-card 2s
-                  infinite;
-              }
-
-              /* Анимация для руки - движение по горизонтали с уменьшением масштаба */
-              @keyframes tooltip-horizontal-scroll-icon_anim-scroll-hand {
-                0% {
-                  transform: translateX(80px) scale(1);
-                  opacity: 0;
-                }
-                10% {
-                  transform: translateX(80px) scale(1);
-                  opacity: 1;
-                }
-                20%,
-                60% {
-                  transform: translateX(175px) scale(0.6);
-                  opacity: 1;
-                }
-                80% {
-                  transform: translateX(5px) scale(0.6);
-                  opacity: 1;
-                }
-                100% {
-                  transform: translateX(5px) scale(0.6);
-                  opacity: 0;
-                }
-              }
-
-              /* Анимация для карточек - движение по горизонтали */
-              @keyframes tooltip-horizontal-scroll-icon_anim-scroll-card {
-                0%,
-                60% {
-                  transform: translateX(0);
-                }
-                80%,
-                100% {
-                  transform: translateX(-240px);
-                }
-              }
-            </style>
           </svg>
           <div class="secondCarousel__wrapper">
             <div class="secondCarousel__slide">
@@ -247,29 +197,27 @@
             </p>
           </div>
         </div>
-      </div>
-
-      <div class="containers">
-        <div class="laptop">
-          <div class="laptop-block"></div>
-          <div class="laptop-top">
-            <div></div>
-            <div id="imageContainer">
-              <img src="img/screen.png" class="active" alt="Screen 1" />
-              <img src="img/screen2.png" alt="Screen 2" />
-              <img src="img/screen3.png" alt="Screen 3" />
-              <img src="img/screen4.png" alt="Screen 4" />
+        <div class="laptopContainer">
+          <div class="laptop">
+            <div class="laptop-block"></div>
+            <div class="laptop-top">
+              <div></div>
+              <div id="imageContainer">
+                <img src="img/screen.png" class="active" alt="Screen 1" />
+                <img src="img/screen2.png" alt="Screen 2" />
+                <img src="img/screen3.png" alt="Screen 3" />
+                <img src="img/screen4.png" alt="Screen 4" />
+              </div>
             </div>
-          </div>
-          <div class="laptop-bottom">
-            <div>
+            <div class="laptop-bottom">
+              <div>
+                <div></div>
+              </div>
               <div></div>
             </div>
-            <div></div>
           </div>
         </div>
       </div>
-
       <div class="prices" id="prices">
         <div class="backPrices">
           <h1>Тарифы для взрослых</h1>
@@ -539,117 +487,117 @@
             Произошла ошибка при отправке. Попробуйте еще раз.
           </div>
         </div>
+      </div>
+      <div class="aboutMe" id="aboutMe">
+        <div class="backPrices">
+          <h1>Обо мне</h1>
+        </div>
+        <div class="aboutMeFull container">
+          <div class="aboutMeDescription">
+            <p>
+              Преподаю английский студентам от 5 лет. Готовлю к кембриджским
+              экзаменам (YL exams, KET, PET, FCE), к ЕГЭ/ОГЭ и преподаю
+              General English, провожу разговорные клубы и марафоны. На данный
+              момент веду уроки только онлайн. <br /><br />
 
-        <div class="aboutMe" id="aboutMe">
-          <div class="backPrices">
-            <h1>Обо мне</h1>
+              <span class="mission">Моя миссия</span> — сделать английский
+              частью жизни моих студентов.<br /><br />
+
+              В своей работе я использую несколько подходов в зависимости от
+              цели студента, а именно: коммуникативный, лексический или
+              задачный метод обучения. Занятия проходят на интерактивной
+              платформе ProgressMe или в Zoom с доской Miro.<br /><br />
+
+              <span class="mission"
+                >Также я консультирую коллег по таким вопросам</span
+              >, как:<br />
+              -преподавание дошкольников<br />
+              -как подготовить детей к YL exams<br />
+              -как обучать онлайн (группа/индивид)<br />
+              -как обучать студентов с SEN<br />
+              ‌- организация внеучебных мероприятий<br />
+            </p>
           </div>
-          <div class="aboutMeFull container">
-            <div class="aboutMeDescription">
-              <p>
-                Преподаю английский студентам от 5 лет. Готовлю к кембриджским
-                экзаменам (YL exams, KET, PET, FCE), к ЕГЭ/ОГЭ и преподаю
-                General English, провожу разговорные клубы и марафоны. На данный
-                момент веду уроки только онлайн. <br /><br />
-
-                <span class="mission">Моя миссия</span> — сделать английский
-                частью жизни моих студентов.<br /><br />
-
-                В своей работе я использую несколько подходов в зависимости от
-                цели студента, а именно: коммуникативный, лексический или
-                задачный метод обучения. Занятия проходят на интерактивной
-                платформе ProgressMe или в Zoom с доской Miro.<br /><br />
-
-                <span class="mission"
-                  >Также я консультирую коллег по таким вопросам</span
-                >, как:<br />
-                -преподавание дошкольников<br />
-                -как подготовить детей к YL exams<br />
-                -как обучать онлайн (группа/индивид)<br />
-                -как обучать студентов с SEN<br />
-                ‌- организация внеучебных мероприятий<br />
-              </p>
-            </div>
-            <div class="aboutMePhoto">
-              <img src="img/Margo.jpg" alt="" />
-            </div>
+          <div class="aboutMePhoto">
+            <img src="img/Margo.jpg" alt="" />
           </div>
         </div>
-        <div class="myEducation">
-          <div class="backPrices">
-            <h1>Моё образование</h1>
-          </div>
-          <div class="container">
-            <div class="carousel">
-              <input type="radio" id="carousel-1" name="carousel[]" checked />
-              <input type="radio" id="carousel-2" name="carousel[]" />
-              <input type="radio" id="carousel-3" name="carousel[]" />
-              <input type="radio" id="carousel-4" name="carousel[]" />
-              <input type="radio" id="carousel-5" name="carousel[]" />
-              <input type="radio" id="carousel-6" name="carousel[]" />
-              <input type="radio" id="carousel-7" name="carousel[]" />
-              <input type="radio" id="carousel-8" name="carousel[]" />
-              <ul class="carousel__items">
-                <li class="carousel__item">
-                  <img src="img/edu1.jpg" alt="" />
-                </li>
-                <li class="carousel__item">
-                  <img src="img/edu2.jpg" alt="" />
-                </li>
-                <li class="carousel__item">
-                  <img src="img/edu3.jpeg" alt="" />
-                </li>
-                <li class="carousel__item">
-                  <img src="img/edu4.jpeg" alt="" />
-                </li>
-                <li class="carousel__item">
-                  <img src="img/edu5.jpg" alt="" />
-                </li>
-                <li class="carousel__item">
-                  <img src="img/edu6.jpg" alt="" />
-                </li>
-                <li class="carousel__item">
-                  <img src="img/edu7.jpeg" alt="" />
-                </li>
-                <li class="carousel__item">
-                  <img src="img/edu8.jpg" alt="" />
-                </li>
-              </ul>
-              <div class="carousel__prev">
-                <label for="carousel-1"></label>
-                <label for="carousel-2"></label>
-                <label for="carousel-3"></label>
-                <label for="carousel-4"></label>
-                <label for="carousel-5"></label>
-                <label for="carousel-6"></label>
-                <label for="carousel-7"></label>
-                <label for="carousel-8"></label>
-              </div>
-              <div class="carousel__next">
-                <label for="carousel-1"></label>
-                <label for="carousel-2"></label>
-                <label for="carousel-3"></label>
-                <label for="carousel-4"></label>
-                <label for="carousel-5"></label>
-                <label for="carousel-6"></label>
-                <label for="carousel-7"></label>
-                <label for="carousel-8"></label>
-              </div>
-              <div class="carousel__nav">
-                <label for="carousel-1"></label>
-                <label for="carousel-2"></label>
-                <label for="carousel-3"></label>
-                <label for="carousel-4"></label>
-                <label for="carousel-5"></label>
-                <label for="carousel-6"></label>
-                <label for="carousel-7"></label>
-                <label for="carousel-8"></label>
-              </div>
+      </div>
+      <div class="myEducation">
+        <div class="backPrices">
+          <h1>Моё образование</h1>
+        </div>
+        <div class="container">
+          <div class="carousel">
+            <input type="radio" id="carousel-1" name="carousel[]" checked />
+            <input type="radio" id="carousel-2" name="carousel[]" />
+            <input type="radio" id="carousel-3" name="carousel[]" />
+            <input type="radio" id="carousel-4" name="carousel[]" />
+            <input type="radio" id="carousel-5" name="carousel[]" />
+            <input type="radio" id="carousel-6" name="carousel[]" />
+            <input type="radio" id="carousel-7" name="carousel[]" />
+            <input type="radio" id="carousel-8" name="carousel[]" />
+            <ul class="carousel__items">
+              <li class="carousel__item">
+                <img src="img/edu1.jpg" alt="" />
+              </li>
+              <li class="carousel__item">
+                <img src="img/edu2.jpg" alt="" />
+              </li>
+              <li class="carousel__item">
+                <img src="img/edu3.jpeg" alt="" />
+              </li>
+              <li class="carousel__item">
+                <img src="img/edu4.jpeg" alt="" />
+              </li>
+              <li class="carousel__item">
+                <img src="img/edu5.jpg" alt="" />
+              </li>
+              <li class="carousel__item">
+                <img src="img/edu6.jpg" alt="" />
+              </li>
+              <li class="carousel__item">
+                <img src="img/edu7.jpeg" alt="" />
+              </li>
+              <li class="carousel__item">
+                <img src="img/edu8.jpg" alt="" />
+              </li>
+            </ul>
+            <div class="carousel__prev">
+              <label for="carousel-1"></label>
+              <label for="carousel-2"></label>
+              <label for="carousel-3"></label>
+              <label for="carousel-4"></label>
+              <label for="carousel-5"></label>
+              <label for="carousel-6"></label>
+              <label for="carousel-7"></label>
+              <label for="carousel-8"></label>
+            </div>
+            <div class="carousel__next">
+              <label for="carousel-1"></label>
+              <label for="carousel-2"></label>
+              <label for="carousel-3"></label>
+              <label for="carousel-4"></label>
+              <label for="carousel-5"></label>
+              <label for="carousel-6"></label>
+              <label for="carousel-7"></label>
+              <label for="carousel-8"></label>
+            </div>
+            <div class="carousel__nav">
+              <label for="carousel-1"></label>
+              <label for="carousel-2"></label>
+              <label for="carousel-3"></label>
+              <label for="carousel-4"></label>
+              <label for="carousel-5"></label>
+              <label for="carousel-6"></label>
+              <label for="carousel-7"></label>
+              <label for="carousel-8"></label>
             </div>
           </div>
         </div>
       </div>
     </main>
+
     <footer>
       <div class="footerText" id="contacts">
         <h3>

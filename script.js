@@ -198,7 +198,7 @@ const observerCallback = (entries) => {
 const observer = new IntersectionObserver(observerCallback, observerOptions);
 
 // Наблюдаем за контейнером
-observer.observe(document.querySelector(".containers"));
+observer.observe(document.querySelector(".laptopContainer"));
 
 
 
