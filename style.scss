@@ -916,6 +916,7 @@
               h4 {
                   text-transform: uppercase;
                   margin-bottom: 15px;
+                  font-size: clamp(12px, 2vw, 16px);
               }
           }
   
@@ -927,6 +928,7 @@
               h4 {
                   text-transform: uppercase;
                   margin-bottom: 15px;
+                  font-size: clamp(12px, 2vw, 16px);
               }
             }
       }
@@ -1017,14 +1019,14 @@
               display: inline-flex;
               align-items: center;
               cursor: pointer;
-              font-size: 16px;
+              font-size: 20px;
               gap: 10px; /* Расстояние между чекбоксом и текстом */
               padding-bottom: 10px;
             }
             
             .custom-checkbox .checkmark {
-              width: 20px;
-              height: 20px;
+              width: 18px;
+              height: 18px;
               background-color: #f0f0f0;
               border: 2px solid $color-default;
               border-radius: 4px; /* Скругление углов */
@@ -1739,24 +1741,21 @@
     }
     .prices{
       .buttonContainer {
+        label {
+            font-size: 14px;
+        }
+            .contactForm {
+                width: 95%;
+            }
+
           .form-container {
               width: 97%;
+              height: auto;
+
+              .custom-checkbox {
+                font-size: 13px;
+              }
           }
-          .checkboxChild {
-              display: none; /* Скрываем чекбоксы */
-            }
-      
-            .selectChild {
-              display: block; /* Показываем выпадающий список */
-            }
-          .checkboxAdult {
-              display: none; /* Скрываем чекбоксы */
-            }
-      
-            .selectAdult {
-              display: block; /* Показываем выпадающий список */
-            }
-  
           .form-popup {
               .form-popup {
                   overflow-y: auto; /* Вертикальная прокрутка внутри формы */
@@ -1764,12 +1763,11 @@
                 }
           }
           .tariffsWrapper {
-              flex-direction: column;
               .tariffs_L {
                   padding-right: 0px;
   
                   h4 {
-                      margin-bottom: 0;
+                      margin-bottom: 3px;
                   }
                 }
   
@@ -1777,7 +1775,7 @@
                   padding-left: 0px;
   
                   h4 {
-                      margin-bottom: 0;
+                      margin-bottom: 3px;
                   }
                 }
               }
