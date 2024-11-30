@@ -769,27 +769,6 @@ header .ul .img {
   /* Закрывающая кнопка */
   /* Стили для элементов формы */
 }
-.prices .buttonContainer .tariff-select {
-  width: 100%;
-}
-.prices .buttonContainer .checkboxChild {
-  display: flex;
-  flex-direction: column;
-}
-.prices .buttonContainer .selectChild {
-  display: none; /* Скрываем селект по умолчанию */
-  width: 100%;
-  font-size: 16px;
-}
-.prices .buttonContainer .checkboxAdult {
-  display: flex;
-  flex-direction: column;
-}
-.prices .buttonContainer .selectAdult {
-  display: none; /* Скрываем селект по умолчанию */
-  width: 100%;
-  font-size: 16px;
-}
 .prices .buttonContainer .notification {
   position: fixed;
   top: 20px;
@@ -889,7 +868,7 @@ header .ul .img {
   background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачный фон */
   justify-content: center;
   align-items: center;
-  z-index: 1000;
+  z-index: 8;
 }
 .prices .buttonContainer .form-container {
   display: flex;
@@ -1061,19 +1040,31 @@ header .ul .img {
   justify-content: center;
 }
 .prices .saleWrap .saleBackground {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 1px 10px;
-  width: auto;
-  height: auto;
-  background-color: #821212;
-  border-top-left-radius: 25%;
-  border-bottom-left-radius: 25%;
+  position: relative; /* Для правильного позиционирования дочерних элементов */
+  width: 100%; /* Ширина контейнера */
+  height: 100%; /* Высота контейнера */
+}
+.prices .saleWrap .saleBackground {
+  position: relative; /* Для правильного позиционирования дочерних элементов */
+  display: inline-block; /* Чтобы картинка была в строке с текстом */
+  width: 30px; /* Устанавливаем ширину картинки */
+  height: auto; /* Высота будет пропорциональна ширине */
+}
+.prices .saleWrap .saleBackground img {
+  width: 100%; /* Картинка будет растягиваться на всю ширину контейнера */
+  height: auto; /* Сохраняем пропорции изображения */
 }
 .prices .saleWrap .saleBackground span {
-  color: white;
-  font-size: 12px;
+  position: absolute; /* Абсолютное позиционирование текста относительно контейнера */
+  top: 50%; /* Центрируем по вертикали */
+  left: 50%; /* Центрируем по горизонтали */
+  transform: translate(-50%, -50%) scale(1); /* Центрируем текст и добавляем масштабирование */
+  font-size: 9px; /* Начальный размер текста */
+  font-weight: bold; /* Полужирный шрифт */
+  color: white; /* Цвет текста */
+  z-index: 10; /* Текст будет поверх изображения */
+  white-space: nowrap; /* Запрещаем перенос текста */
+  text-align: center; /* Выравниваем текст по центру */
 }
 
 .aboutMe .backPrices {
