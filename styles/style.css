@@ -895,7 +895,7 @@ header .ul .img {
   height: 23px;
 }
 .prices .buttonContainer .form-container .approval .spanApproval {
-  font-size: clamp(12px, 2vw, 18px);
+  font-size: clamp(10px, 2vw, 18px);
 }
 .prices .buttonContainer .form-container .custom-checkbox input[type=checkbox] {
   display: none;
@@ -1477,6 +1477,9 @@ footer .footerSocial ul img {
   .pictures .secondCarousel img {
     max-width: 300px;
     max-height: 300px;
+  }
+  .prices .buttonContainer .form-container {
+    width: 97%;
   }
   .prices .buttonContainer .checkboxChild {
     display: none; /* Скрываем чекбоксы */

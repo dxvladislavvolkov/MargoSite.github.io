@@ -1005,7 +1005,7 @@ header {
             }
 
             .spanApproval {
-                font-size: clamp(12px, 2vw, 18px);
+                font-size: clamp(10px, 2vw, 18px);
             }
         }
 
@@ -1739,7 +1739,9 @@ footer {
   }
   .prices{
     .buttonContainer {
-
+        .form-container {
+            width: 97%;
+        }
         .checkboxChild {
             display: none; /* Скрываем чекбоксы */
           }
