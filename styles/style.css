@@ -822,31 +822,12 @@ header .socialMedia ul img {
 }
 .prices .buttonContainer .tariffsWrapper {
   display: flex; /* Используем Flexbox */
-  justify-content: space-between; /* Разделяет блоки по краям */
+  justify-content: center; /* Разделяет блоки по краям */
+  flex-direction: column;
   align-items: center; /* Растягивает блоки по высоте */
   width: 100%; /* Занимает всю доступную ширину */
   flex-wrap: wrap;
   align-items: stretch;
-}
-.prices .buttonContainer .tariffsWrapper .tariffs_L {
-  display: flex;
-  flex-direction: column;
-  padding-right: 10px;
-}
-.prices .buttonContainer .tariffsWrapper .tariffs_L h4 {
-  text-transform: uppercase;
-  margin-bottom: 15px;
-  font-size: clamp(12px, 2vw, 16px);
-}
-.prices .buttonContainer .tariffsWrapper .tariffs_R {
-  display: flex;
-  flex-direction: column;
-  padding-left: 10px;
-}
-.prices .buttonContainer .tariffsWrapper .tariffs_R h4 {
-  text-transform: uppercase;
-  margin-bottom: 15px;
-  font-size: clamp(12px, 2vw, 16px);
 }
 .prices .buttonContainer .tariff-options {
   display: flex;
@@ -899,14 +880,13 @@ header .socialMedia ul img {
   overflow-y: auto;
   background-color: white;
   position: relative;
+  padding: 24px;
   /* Внутренний квадрат с отступами */
   /* Эффект при наведении */
   /* Состояние "чекнутый" с отступами */
 }
 .prices .buttonContainer .form-container .approval {
   display: flex;
-  justify-content: center;
-  align-items: center;
   margin-top: 5px;
 }
 .prices .buttonContainer .form-container .approval .custom-checkbox .checkmark {
@@ -925,7 +905,7 @@ header .socialMedia ul img {
   cursor: pointer;
   font-size: 20px;
   gap: 10px; /* Расстояние между чекбоксом и текстом */
-  padding-bottom: 10px;
+  padding: 14px 0;
 }
 .prices .buttonContainer .form-container .custom-checkbox .checkmark {
   width: 18px;
@@ -955,8 +935,6 @@ header .socialMedia ul img {
   background-color: #821212; /* Цвет закрашивания */
 }
 .prices .buttonContainer .form-container h2 {
-  margin-top: 10px;
-  font-size: clamp(25px, 4vw, 32px);
   margin-bottom: 10px;
   text-transform: uppercase;
   color: #821212;
@@ -1005,12 +983,21 @@ header .socialMedia ul img {
   display: block;
 }
 .prices .buttonContainer input,
-.prices .buttonContainer textarea {
+.prices .buttonContainer textarea, .prices .buttonContainer .editor {
   width: 100%;
   padding: 8px;
-  margin: 10px 0;
+  margin: 4px 0 12px;
   border: 1px solid #ccc;
   border-radius: 5px;
+}
+.prices .buttonContainer option:disabled {
+  color: rgb(158, 9, 9); /* Цвет текста */
+}
+.prices .buttonContainer option[hidden] {
+  color: rgb(146, 8, 8); /* Цвет для скрытых */
+}
+.prices .buttonContainer option:disabled[selected] {
+  color: red; /* Цвет для disabled + selected */
 }
 .prices .buttonContainer input::placeholder {
   color: #d9dadb;
@@ -1021,13 +1008,12 @@ header .socialMedia ul img {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-bottom: 15px;
 }
 .prices .buttonContainer button[type=submit] {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 80%;
+  width: 100%;
   padding: 10px;
   background-color: #821212;
   color: white;
@@ -1046,13 +1032,10 @@ header .socialMedia ul img {
 }
 .prices .buttonContainer .totalPrice {
   display: flex;
-  justify-content: center;
 }
 .prices .buttonContainer .saleWrap {
-  max-width: 185px;
   margin: 0 auto;
   display: flex;
-  justify-content: end;
   margin-bottom: 15px;
 }
 .prices .buttonContainer .saleWrap .totalPriceWithoutDiscount {
@@ -1515,18 +1498,6 @@ footer .footerSocial ul img {
   .prices .buttonContainer .form-popup .form-popup {
     overflow-y: auto; /* Вертикальная прокрутка внутри формы */
     max-height: 100vh; /* Ограничение высоты формы на высоту экрана */
-  }
-  .prices .buttonContainer .tariffsWrapper .tariffs_L {
-    padding-right: 0px;
-  }
-  .prices .buttonContainer .tariffsWrapper .tariffs_L h4 {
-    margin-bottom: 3px;
-  }
-  .prices .buttonContainer .tariffsWrapper .tariffs_R {
-    padding-left: 0px;
-  }
-  .prices .buttonContainer .tariffsWrapper .tariffs_R h4 {
-    margin-bottom: 3px;
   }
   .aboutMe .backPrices {
     margin-bottom: 45px;

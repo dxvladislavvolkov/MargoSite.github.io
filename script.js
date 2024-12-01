@@ -252,45 +252,35 @@ function normalizeTariffName(tariffName) {
 }
 
 // Получение выбранных тарифов
-function getSelectedTariffs(tariffType) {
-  const selectedTariffs = [];
-  const tariffs = document.querySelectorAll(`input[name="${tariffType}"]:checked`);
+function getSelectedTariffs(tariffName) {
+  const tariffValue = document.getElementsByClassName(`${tariffName}-traffic`)[0].value;
+  const trafficData =  tariffValue ? JSON.parse(tariffValue) : {};
+  const price = trafficData.price ? parseInt(trafficData.price) : 0;
 
-  tariffs.forEach((tariff) => {
-    const countInput = tariff.parentElement.querySelector('input[type="number"]');
-    const count = countInput ? parseInt(countInput.value, 10) : 1;
-    const price = tariff.dataset.price ? parseFloat(tariff.dataset.price) : 0;
-    const totalPrice = price * count;
-
-    selectedTariffs.push({
-      name: tariff.value,
-      count,
-      price,
-      totalPrice,
-    });
-  });
-
-  return selectedTariffs;
+  return {
+    name: trafficData.name,
+    price,
+  };
 }
+
+document.querySelectorAll(".traffic-editor").forEach((element) => {
+  element.addEventListener("change", function() {
+    updateTotalPrice();
+  })
+});
 
 // Обновление итоговой цены
 function updateTotalPrice() {
-  const tariffCheckboxes = document.querySelectorAll('.tariff-options input[type="checkbox"]');
+  const childTariff = getSelectedTariffs('child').price;
+  const adultTariff = getSelectedTariffs('adult').price;
   let totalPrice = 0;
   let totalPriceWithoutDiscount = 0;
 
-  tariffCheckboxes.forEach((checkbox) => {
-    if (checkbox.checked) {
-      const countInput = checkbox.parentElement.querySelector('input[type="number"]');
-      const count = countInput ? parseInt(countInput.value, 10) : 1;
-      const price = checkbox.dataset.price ? parseFloat(checkbox.dataset.price) : 0;
-      totalPriceWithoutDiscount += price * count;
-      totalPrice += price * count;
-    }
-  });
+  totalPriceWithoutDiscount = childTariff + adultTariff;
+  totalPrice = totalPriceWithoutDiscount;
 
   // Если оба тарифа выбраны, применяем скидку 10%
-  const hasDiscount = document.querySelectorAll('input[name="childTariff"]:checked').length > 0 && document.querySelectorAll('input[name="adultTariff"]:checked').length > 0;
+  const hasDiscount = childTariff > 0 && adultTariff > 0;
   if (hasDiscount) {
     totalPrice *= 0.9; // 10% скидка
   }
@@ -330,16 +320,16 @@ form?.addEventListener("submit", function (event) {
   event.preventDefault();
 
   // Собираем данные
-  const childTariffs = getSelectedTariffs("childTariff");
-  const adultTariffs = getSelectedTariffs("adultTariff");
+  const childTariffs = getSelectedTariffs("child");
+  const adultTariffs = getSelectedTariffs("adult");
   const { totalPrice, totalPriceWithoutDiscount, hasDiscount } = updateTotalPrice();
 
   const formData = {
     name: form.name.value,
     email: form.email.value,
     phone: form.phone.value,
-    childTariffs: childTariffs.map((t) => `${t.name} (x${t.count}) - ${t.totalPrice}р`).join(", "),
-    adultTariffs: adultTariffs.map((t) => `${t.name} (x${t.count}) - ${t.totalPrice}р`).join(", "),
+    childTariffs: `${childTariffs.name} - ${childTariffs.price}р`,
+    adultTariffs: `${adultTariffs.name}- ${adultTariffs.price}р`,
     totalPrice: totalPrice,
     totalPriceWithoutDiscount: totalPriceWithoutDiscount,
     hasDiscount: hasDiscount

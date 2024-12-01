@@ -337,72 +337,24 @@
                 <div class="tariffsWrapper">
                   <div class="tariffs_L">
                     <h4>Детские тарифы</h4>
-                    <div id="childTariffs" class="tariff-options">
-                        <label class="custom-checkbox">
-                          <input
-                            type="checkbox"
-                            name="childTariff"
-                            value="СНЕЖНЫЙ КВЕСТ"
-                            data-price="1990"
-                          />
-                          <span class="checkmark"></span>
-                          <span class="no-wrap">Снежный квест</span>
-                        </label>
-                        <label class="custom-checkbox">
-                          <input
-                            type="checkbox"
-                            name="childTariff"
-                            value="ПОД КРЫЛОМ САНТЫ"
-                            data-price="2990"
-                          />
-                          <span class="checkmark"></span>
-                          <span class="no-wrap">Под крылом Санты</span>
-                        </label>
-                        <label class="custom-checkbox">
-                          <input
-                            type="checkbox"
-                            name="childTariff"
-                            value="ПРЕПОДАВАТЕЛЬ"
-                            data-price="3990"
-                          />
-                          <span class="checkmark"></span>
-                          <span class="no-wrap">Преподаватель</span>
-                        </label>
+                    <div class="selectbox-container">
+                      <select class="editor traffic-editor child-traffic" name="options">
+                          <option value="" class="editor-placeholder" disabled selected hidden>Выберите тариф</option>
+                          <option value='{"name": "СНЕЖНЫЙ КВЕСТ", "price": "1990"}'>Снежный квест</option>
+                          <option value='{"name": "ПОД КРЫЛОМ САНТЫ", "price": "2990"}'>Под крылом Санты</option>
+                          <option value='{"name": "ПРЕПОДАВАТЕЛЬ", "price": "3990"}'>Преподаватель</option>
+                      </select>
                     </div>
                   </div>
                   <div class="tariffs_R">
                     <h4>Взрослые тарифы</h4>
-                    <div id="adultTariffs" class="tariff-options">
-                        <label class="custom-checkbox">
-                          <input
-                            type="checkbox"
-                            name="adultTariff"
-                            value="САМ СЕБЕ СНЕГОВИК"
-                            data-price="1990"
-                          />
-                          <span class="checkmark"></span>
-                          <span class="no-wrap">Сам себе снеговик</span>
-                        </label>
-                        <label class="custom-checkbox">
-                          <input
-                            type="checkbox"
-                            name="adultTariff"
-                            value="ВМЕСТЕ С ЭЛЬФАМИ"
-                            data-price="2990"
-                          />
-                          <span class="checkmark"></span>
-                          <span class="no-wrap">Вместе с эльфами</span>
-                        </label>
-                        <label class="custom-checkbox">
-                          <input
-                            type="checkbox"
-                            name="adultTariff"
-                            value="ПРЕПОДАВАТЕЛЬ"
-                            data-price="3990"
-                          />
-                          <span class="checkmark"></span>
-                          <span class="no-wrap">Преподаватель</span>
-                        </label>
+                    <div class="selectbox-container">
+                      <select class="editor traffic-editor adult-traffic" name="options">
+                          <option value="" class="editor-placeholder" disabled selected hidden>Выберите тариф</option>
+                          <option value='{"name": "САМ СЕБЕ СНЕГОВИК", "price": "1990"}'>Сам себе снеговик</option>
+                          <option value='{"name": "ВМЕСТЕ С ЭЛЬФАМИ", "price": "2990"}'>Вместе с эльфами</option>
+                          <option value='{"name": "ПРЕПОДАВАТЕЛЬ", "price": "3990"}'>Преподаватель</option>
+                      </select>
                     </div>
                   </div>
                 </div>
@@ -417,14 +369,12 @@
                     <span class="no-wrap spanApproval">Я даю согласие на обработку персональных данных</span>
                   </label>
                 </div>
-
-
                 <div
                   class="totalPrice"
                   id="totalPrice"
                   style="font-size: 20px; font-weight: bold"
                 >
-                  Итого:&nbsp;<span id="totalPriceValue">0</span>₽
+                  ИТОГО:&nbsp;<span id="totalPriceValue">0</span>₽
                 </div>
                 <div class="saleWrap">
                   <div
